@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-         This is EDU Bro Website
+         This is EDU Bro Website for Question collections
         </a>
       </header>
     </div>
