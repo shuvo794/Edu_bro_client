@@ -1,7 +1,6 @@
 import React from 'react';
-import Swiper from 'swiper';
 
-
+import Swiper, { Navigation, Pagination } from 'swiper';
 import './AllReviews.css'
 const AllReviews = () => {
     const swiper = new Swiper(".swiper-container", {
@@ -11,9 +10,7 @@ const AllReviews = () => {
         loop: true,
         speed: 600,
     
-        autoplay: {
-            delay: 3000
-        },
+     
     
         coverflowEffect: {
             rotate: 50,
