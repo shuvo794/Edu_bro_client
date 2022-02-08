@@ -1,72 +1,72 @@
-import React from 'react';
-import Swiper from 'swiper';
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+
+
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper";
 
 import './AllReviews.css'
 const AllReviews = () => {
-    const swiper = new Swiper(".swiper-container", {
-        effect: "coverflow",
-        centeredSlides: true,
-        slidesPerView: 1,
-        loop: true,
-        speed: 600,
-    
-     
-    
-        coverflowEffect: {
+ 
+    return (
+      <div>
+          <h1 className="text-center">User Reviews</h1>
+          <>
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        coverflowEffect={{
             rotate: 50,
             stretch: 0,
             depth: 100,
             modifier: 1,
             slideShadows: true
-        },
-    
-        breakpoints: {
-            320: {
-                slidesPerView: 1
-            },
-            560: {
-                slidesPerView: 2
-            },
-            990: {
-                slidesPerView: 3
-            }
-        },
-    
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-        },
-    
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
         }
-    });
-    
-    
-  
-    
-    
+    }
 
-    return (
-      <div>
-          <h1 className="text-center">User Reviews</h1>
-          <div className="swiper-container">
-	<div className="swiper-wrapper">
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-		<div className="swiper-slide"></div>
-	</div>
-	<div className="swiper-pagination"></div>
-	<div className="swiper-button-prev"></div>
-	<div className="swiper-button-next"></div>
-</div>
+    
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide>
+      </Swiper>
+    </>
       </div>
     );
 };
