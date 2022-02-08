@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './Footer.css';
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaPinterest } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -57,6 +57,16 @@ const Footer = () => {
                                 <div className="subscribe-form mt-4">
                                     <input type="email" required placeholder='Enter Email' />
                                     <button type='submit'>Subscribe <FaArrowRight className='link-icon' /></button>
+                                </div>
+                                <div className="footer-social mt-3">
+                                    <h5>Share Social Media</h5>
+                                    <FaFacebook className='social-icon' />
+                                    <FaInstagram className='social-icon' />
+                                    <FaTwitter className='social-icon' />
+                                    <FaYoutube className='social-icon' />
+                                    <FaTwitter className='social-icon' />
+                                    <FaLinkedin className='social-icon' />
+                                    <FaPinterest className='social-icon' />
                                 </div>
                             </div>
                         </Col>

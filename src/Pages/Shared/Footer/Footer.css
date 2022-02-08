@@ -56,3 +56,14 @@
 .horizontal-line{
     height: 2px !important;
 }
+
+.social-icon{
+    font-size: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: all .4s;
+}
+.social-icon:hover{
+    transform: scale(1.5);
+}
