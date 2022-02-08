@@ -1,6 +1,6 @@
 import React from 'react';
+import Swiper from 'swiper';
 
-import Swiper, { Navigation, Pagination } from 'swiper';
 import './AllReviews.css'
 const AllReviews = () => {
     const swiper = new Swiper(".swiper-container", {
