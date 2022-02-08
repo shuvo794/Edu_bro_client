@@ -1,0 +1,11 @@
+.hero-section {
+  position: relative;
+  overflow-x: hidden;
+  background-image: url("../../../Assets/Images/Banner.png");
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+}

@@ -1,7 +1,7 @@
 
-const useFirebase = () =>{
+const useFirebase = () => {
 
-     
+
 }
 
 export default useFirebase;
