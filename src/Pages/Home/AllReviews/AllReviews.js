@@ -17,12 +17,12 @@ const AllReviews = () => {
  
     return (
       <div>
-          <h1 className="text-center">User Reviews</h1>
+          <h1 className="text-center my-3">User Reviews</h1>
           <>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={true}
+        // centeredSlides={true}
         slidesPerView={3}
         coverflowEffect={{
             rotate: 50,
@@ -63,6 +63,15 @@ const AllReviews = () => {
           <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
         </SwiperSlide>
         <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide> <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide> <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide> <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
         </SwiperSlide>
       </Swiper>
