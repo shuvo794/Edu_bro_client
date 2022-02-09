@@ -1,5 +1,6 @@
 import React from 'react';
 import Saikat from '../../../Assets/Images/TeamMember/Saikat.png'
+import Yeasin from '../../../Assets/Images/TeamMember/Yeasin.png'
 import './TeamMember.css'
 const TeamMember = () => {
     return (
@@ -8,10 +9,10 @@ const TeamMember = () => {
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100 hover">
-                        <img src={Saikat} class="card-img-top img-fluid" alt="..." />
+                        <img src={Yeasin} class="card-img-top img-fluid" alt="..." />
                         <div class="card-body">
-                            <h5 class="card-title">BEATRICE PRIOR</h5>
-                            <p class="card-text">Tour Guide</p>
+                            <h5 class="card-title">Yeasin Rahaman</h5>
+                            <p class="card-text">Developer</p>
                         </div>
 
                     </div>
