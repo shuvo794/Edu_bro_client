@@ -5,7 +5,7 @@ import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin
 
 const Footer = () => {
     return (
-        <footer className='footer-area pt-5 pb-3'>
+        <footer className='footer-area pt-5 pb-3 mt-5'>
             <div className="footer-top">
                 <Container>
                     <Row>
