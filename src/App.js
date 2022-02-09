@@ -1,11 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Login from './Login/Login/Login';
-import Register from './Login/Register/Register';
-import Header from './pages/Shared/Header/Header';
-import Footer from './pages/Shared/Footer/Footer';
-import Home from './pages/home/Home/Home';
-
+import Home from './Pages/Home/Home/Home';
+import Footer from './Pages/Shared/Footer/Footer';
+import Header from './Pages/Shared/Header/Header';
 
 
 function App() {
@@ -16,8 +13,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </BrowserRouter>
