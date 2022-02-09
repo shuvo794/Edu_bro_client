@@ -17,7 +17,7 @@ const AllReviews = () => {
  
     return (
       <div>
-          <h1 className="text-center my-3">User Reviews</h1>
+          <h1 data-text="User Reviews" className="text-center my-3 user-reviews">User Reviews</h1>
           <>
       <Swiper
         effect={"coverflow"}
