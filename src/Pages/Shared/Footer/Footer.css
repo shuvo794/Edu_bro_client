@@ -1,5 +1,6 @@
 .footer-area{
     background-color: #B22222;
+
     /* position: fixed; */
     width: 100%;
     left: 0;
@@ -20,7 +21,7 @@
     margin-bottom: 5px;
     cursor: pointer;
     transition: all .4s;
-    color: rgb(243, 243, 243);
+    color: rgb(219, 219, 219);
 }
 .links ul li:hover{
     color: white;
