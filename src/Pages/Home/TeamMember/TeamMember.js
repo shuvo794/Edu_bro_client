@@ -1,26 +1,46 @@
 import React from 'react';
 import Saikat from '../../../Assets/Images/TeamMember/Saikat.png'
+import './TeamMember.css'
 const TeamMember = () => {
     return (
-        <div>
-             <h1 data-text="User Reviews" className="text-center my-3 user-reviews">Team Member</h1>
-           <section>
-               <div className="container">
-                   <div className="row ">
-                       <div className="col-md-3 card ">
-<img src={Saikat} className="w-100 rounded px-0" height="300"alt="" />
-<h3 className="text-center my-1 text-primary">Mehedi Hasan Saikat</h3>
-<h4 className="text-center my-1 text-success"> Team Leader</h4>
-<h4  className="text-center my-1">MERN Stack Developer</h4>
-                       </div>
+        <div className='container py-5'>
+            <div class="d-flex my-5 justify-content-center"><h1>Our Team Mate</h1></div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 hover">
+                        <img src={Saikat} class="card-img-top img-fluid" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">BEATRICE PRIOR</h5>
+                            <p class="card-text">Tour Guide</p>
+                        </div>
 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 hover">
+                        <img src={Saikat} class="card-img-top img-fluid" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">EDWARD DUGHLAS</h5>
+                            <p class="card-text">Tour Planer</p>
+                        </div>
 
-                       <div className="col-md-3"></div>
-                       <div className="col-md-3"></div>
-                   </div>
-                   </div></section> 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 hover">
+                        <img src={Saikat} class="card-img-top img-fluid img-fluid" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">PETER PARKER</h5>
+                            <p class="card-text">Tour Expert</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-    );
+    )
 };
 
 export default TeamMember;
