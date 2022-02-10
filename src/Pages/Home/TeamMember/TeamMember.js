@@ -6,14 +6,14 @@ import './TeamMember.css'
 const TeamMember = () => {
     return (
         <div className='container py-5'>
-            <div className="d-flex my-5 justify-content-center"><h1>Our Team Mate</h1></div>
+            <div className="d-flex my-5 justify-content-center"><h1 className="Team">Our Team Mate</h1></div>
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 <div className="col">
                     <div className="card h-100 hover">
                         <img src={Yeasin} className="card-img-top img-fluid" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">Yeasin Rahaman</h5>
-                            <p className="card-text">Developer</p>
+                        <div className="card-body text-center">
+                            <h3 className="card-title ">Yeasin Rahaman</h3>
+                            <p className="card-text">MERN Stack Developer</p>
                         </div>
 
                     </div>
@@ -21,9 +21,9 @@ const TeamMember = () => {
                 <div className="col">
                     <div className="card h-100 hover">
                         <img src={Saikat} className="card-img-top img-fluid" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">EDWARD DUGHLAS</h5>
-                            <p className="card-text">Tour Planer</p>
+                        <div className="card-body text-center">
+                            <h3 className="card-title">Mehedi hasan Saikat</h3>
+                            <p className="card-text">MERN Stack Developer</p>
                         </div>
 
                     </div>
@@ -31,9 +31,9 @@ const TeamMember = () => {
                 <div className="col">
                     <div className="card h-100 hover">
                         <img src={Hafiz} className="card-img-top img-fluid img-fluid" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">Okshi Hafiz</h5>
-                            <p className="card-text">Tour Expert</p>
+                        <div className="card-body text-center">
+                            <h3 className="card-title">Okshi Hafiz</h3>
+                            <p className="card-text">Frontend Developer</p>
                         </div>
 
                     </div>
