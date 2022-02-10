@@ -27,9 +27,9 @@ const data = [
 const Blogs = () => {
   return (
     <Container className="mt-5">
-      {/* <h5 className="text-center text-info mt-5">
+      <h5 className="text-center text-info mt-5">
         WHAT WE HAVE IN EDUBRO.COM?
-      </h5> */}
+      </h5>
       <h1 className="text-center mb-5">All. That needed for Career.</h1>
       <Row xs={1} md={3} className="g-4">
         {data.map((item) => (
