@@ -1,13 +1,27 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
+import useFirebase from '../../hooks/useFirebase';
 
 const Register = () => {
+
+    const {registerUser, isLoading, error, } = useFirebase()
+
+    //Location & Navigate
+    const location = useLocation()
+    const navigate = useNavigate()
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        // console.log(data)
+        if(data.password !== data.password2){
+            alert('Your Password did not match')
+            return;
+          }
+      
+          registerUser(data.email, data.password, data.name, location, navigate )
     }
     return (
         <div className='py-5'>

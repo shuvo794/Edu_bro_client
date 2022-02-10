@@ -29,6 +29,7 @@ const useFirebase = () => {
   //REGISTER WITH EMAIL END PASSWORD
 
   const registerUser = ( email, password, name,location, navigate) =>{
+           console.log(email, password, name);
     setIsLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -58,6 +59,7 @@ const useFirebase = () => {
 
   //lOGIN WITW EMAIL AND PASSWORD COUSTM 
   const loginWithOwnEmaiAndPass  = (email, password, location, navigate) =>{
+   
     setIsLoading(true)
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {

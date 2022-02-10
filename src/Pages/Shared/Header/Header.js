@@ -1,9 +1,13 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import useFirebase from '../../../hooks/useFirebase';
 import './Header.css'
 
 
 const Header = () => {
+
+    const {userLogOut , user} = useFirebase()
+
     return (
         <div className='header-area'>
             <Navbar expand="md">
@@ -17,7 +21,12 @@ const Header = () => {
                             <Nav.Link href="#forum" className='menu-item'>Forums</Nav.Link>
                             <Nav.Link href="#ask" className='menu-item'>Ask Questions</Nav.Link>
                             <Nav.Link href="#contact" className='menu-item'>Contact</Nav.Link>
-                            <Nav.Link href="#login" className='menu-item'>Login</Nav.Link>
+                            { !user.email ?<Nav.Link href="#login" className='menu-item'>
+                            Login
+                            </Nav.Link>
+                            :
+                            <button onClick={userLogOut}  type="button" className="btn btn-light">Log Out</button>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
