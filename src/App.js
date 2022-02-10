@@ -3,7 +3,7 @@ import './App.css';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
 import Header from './pages/Shared/Header/Header';
-import Home from './pages/home/Home/Home';
+import Home from './pages/Home/Home/Home';
 import Footer from './pages/Shared/Footer/Footer';
 
 
