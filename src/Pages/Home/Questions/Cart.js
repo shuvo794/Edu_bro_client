@@ -1,7 +1,7 @@
 import React from 'react';
-
+import './Cart.css'
 const Cart = ({ data }) => {
-    const { url, subject, year } = data
+    const { url, subject, year ,semester,code } = data
 
 
     console.log(url)
@@ -18,12 +18,12 @@ const Cart = ({ data }) => {
                 <iframe title="question" src={viewUrl}
                     className="img-fluid rounded-start w-100 " style={{ height: "500px" }} allow="autoplay"></iframe>
                 <div className="card-body">
-                    <h5 className="card-title">Subject Name: {subject}</h5>
-                    <h5 className="card-title">Subject Code: {subject}</h5>
-                    <h5 className="card-title">Semester: {subject}</h5>
-                    <p className="card-text">Year: {year}</p>
-                    <div className="btn btn-danger" ><a href={download}>Download</a></div>
-                    <div className="btn btn-danger" ><a href={viewUrl}>Download</a></div>
+                    <h5 className="card-title"><b>Subject Name:</b> {subject}</h5>
+                    <h5 className="card-title"><b>Subject Code:</b> {code}</h5>
+                    <h5 className="card-title"><b>Semester:</b> {semester}</h5>
+                    <h5 className="card-text "><b>Year:</b> {year}</h5>
+                    <div className="btn btn-success me-5 " ><a href={download} className="ahref">Download</a></div>
+                    <div className="btn btn-danger ms-5" ><a href={viewUrl} className="ahref">Show</a></div>
                 </div>
             </div>
         </div>

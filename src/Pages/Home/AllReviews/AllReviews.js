@@ -17,7 +17,7 @@ const AllReviews = () => {
  
     return (
       <div>
-          <h1 data-text="User Reviews" className="text-center my-3 user-reviews">User Reviews</h1>
+          <h1 data-text="User Reviews" className="text-center my-3 user-reviews">Important Book</h1>
           <>
       <Swiper
         effect={"coverflow"}
@@ -39,41 +39,25 @@ const AllReviews = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src="https://images-na.ssl-images-amazon.com/images/I/41VFNO6C4HL.jpg" width="1024" height="1024" />
+    </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://tutorialzine.com/media/2018/01/NodeJs_Succinctly2.jpg"width="1024" height="1024" />
+        </SwiperSlide>
+      
+        <SwiperSlide>
+          <img src="https://i0.wp.com/www.rankred.com/wp-content/uploads/2020/12/C-Programming.jpg?resize=338%2C400&ssl=1" width="1024" height="1024"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img src="https://pmem.io/images/programming_pmem_book_420x350px.png" width="1024" height="1024"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img src="https://images-na.ssl-images-amazon.com/images/I/41VFNO6C4HL.jpg" width="1024" height="1024" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img src="https://tutorialzine.com/media/2018/01/NodeJs_Succinctly2.jpg"width="1024" height="1024" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide> <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide> <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide> <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+        
       </Swiper>
     </>
       </div>
