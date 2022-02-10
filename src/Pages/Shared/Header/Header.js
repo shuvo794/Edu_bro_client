@@ -21,6 +21,7 @@ const Header = () => {
                             <Nav.Link href="#forum" className='menu-item'>Forums</Nav.Link>
                             <Nav.Link href="#ask" className='menu-item'>Ask Questions</Nav.Link>
                             <Nav.Link href="#contact" className='menu-item'>Contact</Nav.Link>
+                            <p className="text-white me-3 ms-2 text-center mt-2">{user.displayName}</p>
                             { !user.email ?<Nav.Link href="#login" className='menu-item'>
                             Login
                             </Nav.Link>

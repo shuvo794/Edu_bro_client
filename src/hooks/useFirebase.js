@@ -29,7 +29,7 @@ const useFirebase = () => {
   //REGISTER WITH EMAIL END PASSWORD
 
   const registerUser = ( email, password, name,location, navigate) =>{
-           console.log(email, password, name);
+     console.log(email, password, name);
     setIsLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -37,13 +37,15 @@ const useFirebase = () => {
     const destination = location?.state?.from || '/'
     navigate(destination)
     setError("");
-    const newUser = {email, displayName:name}
-    setUser(newUser)
     
+    
+    const newUser = {email, displayName:name}
+     //console.log(newUser);
+    setUser(newUser)
 
     //SEND NAME IN THE FIREBASE
     updateProfile(auth.currentUser, {
-     displayName: name
+     displayName:name
    }).then(() => {
      
    }).catch((error) => {

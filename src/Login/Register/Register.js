@@ -7,11 +7,16 @@ import useFirebase from '../../hooks/useFirebase';
 
 const Register = () => {
 
-    const {registerUser, isLoading, error, } = useFirebase()
+    const {registerUser, isLoading, error, loginWithGoogle } = useFirebase()
 
     //Location & Navigate
     const location = useLocation()
     const navigate = useNavigate()
+
+    //handle google login
+    const handleGoogleLogin = () => {
+        loginWithGoogle(location , navigate);
+    };
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -40,7 +45,7 @@ const Register = () => {
                             </form>
                             <div className='login-meta mt-4'>
                                 <p>Already have an account? <Link to={'/login'}><span className='login-links'>Login here</span></Link></p>
-                                <span className='fs-4'>Continue with <FcGoogle className='fs-2 google' /></span>
+                                <span className='fs-4'>Continue with <FcGoogle onClick={handleGoogleLogin} className='fs-2 google' /></span>
                             </div>
                         </div>
                     </Col>
