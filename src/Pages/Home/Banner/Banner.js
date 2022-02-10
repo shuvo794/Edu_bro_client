@@ -28,7 +28,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-
+            <h2>test</h2>
         </section>
     );
 };
