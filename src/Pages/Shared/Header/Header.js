@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import './Header.css'
 
@@ -22,7 +23,7 @@ const Header = () => {
                             <Nav.Link href="#ask" className='menu-item'>Ask Questions</Nav.Link>
                             <Nav.Link href="#contact" className='menu-item'>Contact</Nav.Link>
                             <p className="text-white me-3 ms-2 text-center mt-2">{user.displayName}</p>
-                            { !user.email ?<Nav.Link href="#login" className='menu-item'>
+                            { !user.email ?<Nav.Link    as={NavLink} to="/login" className='menu-item'>
                             Login
                             </Nav.Link>
                             :
