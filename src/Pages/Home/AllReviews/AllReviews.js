@@ -37,6 +37,7 @@ const AllReviews = () => {
             slideShadows: true
         }
     }
+ 
 
     
         pagination={true}
