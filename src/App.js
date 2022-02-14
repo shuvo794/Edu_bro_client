@@ -25,6 +25,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path='/dashboard' element={<DashboardWelcome />} />
+            <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
             <Route path='/dashboard/my-questions' element={<MyQuestions />} />
             <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
             <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />

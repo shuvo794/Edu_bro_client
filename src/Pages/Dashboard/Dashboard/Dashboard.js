@@ -12,7 +12,15 @@ const Dashboard = () => {
                 <Row>
                     <Col md={3}>
                         <div className="dashboard-menu shadow px-3 py-4">
+                            <div className="logo text-center mb-3">
+                                <h4>Edu Bro.</h4>
+                            </div>
                             <ul>
+                                <li>
+                                    <NavLink to={`welcome`} style={({ isActive }) => ({
+                                        color: isActive ? "red" : "black",
+                                    })}>Dashboard</NavLink>
+                                </li>
                                 <li>
                                     <NavLink to={`my-questions`} style={({ isActive }) => ({
                                         color: isActive ? "red" : "black",
