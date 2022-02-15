@@ -31,8 +31,7 @@ function App() {
             <Route path='/dashboard/my-questions' element={<MyQuestions />} />
             <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
             <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
-            <Route path='/dashboard/make-admin' element={<MakeAdmin />} />
-          </Route>
+            <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/contact' element={<Contact />} />
