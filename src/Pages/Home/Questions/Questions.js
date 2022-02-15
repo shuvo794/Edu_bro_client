@@ -8,9 +8,8 @@ const Questions = () => {
      useEffect(() => {
           fetch('/Test.json')
                .then(res => res.json())
-               .then(data => setData(data))
+               .then(data => setData(data.slice(1, 4)))
      }, [])
-
 
 
      return (
