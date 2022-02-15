@@ -18,9 +18,7 @@ const QuestionCart = ({ data }) => {
                     <h5 className="card-title"><b>Subject Name:</b> {subject}</h5>
                     <h5 className="card-title"><b>Subject Code:</b> {code}</h5>
                     <h5 className="card-title"><b>Semester:</b> {semester}</h5>
-                    <h5 className="card-text "><b>Year:</b> {year}</h5>
-                    <div className="btn btn-success me-5 " ><a href={download} className="ahref">Download</a></div>
-                    <div className="btn btn-danger ms-5" ><a href={viewUrl} className="ahref">Show</a></div>
+
 
                 </div>
             </div>
