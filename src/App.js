@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+import AllQuestions from './Pages/AllQuestions/AllQuestions';
 import Contact from './Pages/Contact/Contact';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardWelcome from './Pages/Dashboard/DashboardWelcome/DashboardWelcome';
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/test" element={<AllQuestions />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path='/dashboard' element={<DashboardWelcome />} />
             <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
