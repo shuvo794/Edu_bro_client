@@ -18,14 +18,18 @@
     margin-bottom: 10px;
     font-weight: 600;
 }
-.dashboard-welcome h3>span{
+.dashboard-welcome h2>span{
     color: #B22222;
 }
 .dashboard-logOut{
     position: absolute;
     bottom: 5%;
 }
-
+.dashboard-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
 
 @media (max-width:1000px){
     .logo h4{
