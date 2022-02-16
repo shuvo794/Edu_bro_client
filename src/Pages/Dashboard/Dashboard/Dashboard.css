@@ -21,3 +21,21 @@
     position: absolute;
     bottom: 5%;
 }
+
+
+@media (max-width:760px){
+    .logo h4{
+        text-align: center;
+    }
+    .dashboard-menu{
+        height:100%;
+    }
+    .dashboard-menu ul li{
+        display: inline-block;
+        font-size: 14px;
+        margin-right: 20px;
+    }
+    .dashboard-logOut{
+        position: static;
+    }
+}

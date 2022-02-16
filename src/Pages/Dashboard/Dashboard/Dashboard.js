@@ -31,9 +31,7 @@ const Dashboard = () => {
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
                             </li>
-                            <li className='dashboard-logOut'>
-                                <FaSignOutAlt className='me-1' /> Log Out
-                            </li>
+
 
                             {/* {admin && <div> */}
                             <li>
@@ -48,6 +46,9 @@ const Dashboard = () => {
                             </li>
                             {/* </div>} */}
 
+                            <li className='dashboard-logOut'>
+                                <FaSignOutAlt className='me-1' /> Log Out
+                            </li>
                         </ul>
                     </div>
                 </Col>
