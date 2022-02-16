@@ -4,9 +4,9 @@ import useFirebase from '../../../hooks/useFirebase';
 const DashboardWelcome = () => {
     const { user } = useFirebase()
     return (
-        <div>
-            <h3>Hello, {user.displayName}</h3>
-            <p className='font-lg'>Wel come to Edu Bro.</p>
+        <div className='dashboard-welcome'>
+            <h3>Hello, <span>{user.displayName}</span></h3>
+            <p className='font-lg'>Welcome to Edu Bro.</p>
         </div>
     );
 };
