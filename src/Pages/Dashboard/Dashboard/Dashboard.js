@@ -13,7 +13,7 @@ const Dashboard = () => {
                 <Col md={2}>
                     <div className="dashboard-menu shadow px-3 py-4">
                         <div className="logo mb-4">
-                            <h4 className='fs-2'>Edu Bro.</h4>
+                            <h4>Edu Bro.</h4>
                         </div>
                         <ul>
                             <li>
