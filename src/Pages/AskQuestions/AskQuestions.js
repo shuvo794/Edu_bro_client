@@ -18,7 +18,7 @@ const AskQuestions = () => {
                         <div className="login-form text-center">
                             <h2 className='mb-5'>Add Your Question</h2>
                             <form >
-                            <input className='w-75 mb-3'  {...register("department", { required: true })} placeholder='Enter the Department' /> <br />
+                          
                                 <input className='w-75 mb-3'  {...register("subject", { required: true })} placeholder='Enter Course Title' /> <br />
                                 <input className='w-75 mb-3'  {...register("code", { required: true })} placeholder='Enter Course Code' /> <br />
                                 <input className='w-75 mb-3' {...register("semester", { required: true })} placeholder='Enter Semester' /> <br />
