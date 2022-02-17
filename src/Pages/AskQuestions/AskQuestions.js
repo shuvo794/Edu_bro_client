@@ -28,7 +28,7 @@ const AskQuestions = () => {
 
                                 <button type='submit'>Submit</button>
                             </form>
-                           ////
+                           
                         </div>
                     </Col>
                 </Row>
