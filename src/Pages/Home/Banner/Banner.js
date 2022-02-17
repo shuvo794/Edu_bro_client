@@ -12,7 +12,7 @@ const Banner = () => {
                         <div>
                             <div id="home" className="row align-items-center d-flex  justify-content-start px-5 my-5 py-5">
                                 <div className=" text-center my-5 py-5 ">
-                                    <h1 className="text-white fw-bold  display-1">
+                                    <h1 className="text-white fw-bold  display-2">
                                         <Typewriter
                                             options={{
                                                 strings: ["Question Bank Where Students can find Solution"],
