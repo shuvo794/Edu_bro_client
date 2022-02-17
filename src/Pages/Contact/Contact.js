@@ -15,7 +15,7 @@ const Contact = () => {
                 <Col lg={6}>
                     <div className="contact-left">
                         <h3>Contact Us</h3>
-                        <p>If your looking for a sales-oriented approach, you can use this one from IMPACT's Contact Us page.</p>
+                        <p>If your looking for a Question-oriented approach, you can use this one from Edu-Bro's Contact Us page.</p>
                         <div className="single-contact">
                             <span>Call us</span>
                             <p>(+84) 8 3555 3203</p>
