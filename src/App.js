@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+import AskQuestions from './Pages/AskQuestions/AskQuestions';
 import Contact from './Pages/Contact/Contact';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardWelcome from './Pages/Dashboard/DashboardWelcome/DashboardWelcome';
@@ -11,6 +12,7 @@ import MyQuestions from './Pages/Dashboard/MyQuestions/MyQuestions';
 import PendingQuestions from './Pages/Dashboard/PendingQuestions/PendingQuestions';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import FindQuestions from './Pages/FindQuestions/FindQuestions';
+import Forum from './Pages/Forum/Forum';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
@@ -25,6 +27,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path='/find-questions' element={<FindQuestions />} />
+          <Route path='/forum' element={<Forum />} />
+          <Route path='/ask-questions' element={<AskQuestions />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path='/dashboard' element={<DashboardWelcome />} />
             <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
