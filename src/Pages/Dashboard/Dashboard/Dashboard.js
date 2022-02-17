@@ -32,7 +32,7 @@ const Dashboard = () => {
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
                             </li>
                             <li>
-                                <NavLink to={`add-depertment`} style={({ isActive }) => ({
+                                <NavLink to={`add-depertments`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaSchool className='me-1' /> Add Depertment</NavLink>
                             </li>
