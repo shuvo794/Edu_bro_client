@@ -2,7 +2,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+
+import AllQuestions from './Pages/AllQuestions/AllQuestions';
+
 import AskQuestions from './Pages/AskQuestions/AskQuestions';
+
 import Contact from './Pages/Contact/Contact';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardWelcome from './Pages/Dashboard/DashboardWelcome/DashboardWelcome';
@@ -26,6 +30,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+
+          <Route path="/allQuestions" element={<AllQuestions />} />
+
           <Route path='/find-questions' element={<FindQuestions />} />
           <Route path='/forum' element={<Forum />} />
           <Route path='/ask-questions' element={<AskQuestions />} />
@@ -35,8 +42,7 @@ function App() {
             <Route path='/dashboard/my-questions' element={<MyQuestions />} />
             <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
             <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
-            <Route path='/dashboard/make-admin' element={<MakeAdmin />} />
-          </Route>
+            <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/contact' element={<Contact />} />
