@@ -18,11 +18,11 @@ const Contact = () => {
                         <p>If your looking for a Question-oriented approach, you can use this one from Edu-Bro's Contact Us page.</p>
                         <div className="single-contact">
                             <span>Call us</span>
-                            <p>(+84) 8 3555 3203</p>
+                            <p>(+880)1964587745</p>
                         </div>
                         <div className="single-contact">
                             <span>EMAIL ADDRESS</span>
-                            <p>Cosnize.Info@Gmail.Com</p>
+                            <p>edubro.endgame@Gmail.Com</p>
                         </div>
                         <div className="single-contact">
                             <span>STORE LOCATION</span>
