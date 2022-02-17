@@ -48,6 +48,8 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
+
+        //
         <Footer />
       </BrowserRouter>
     </div>
