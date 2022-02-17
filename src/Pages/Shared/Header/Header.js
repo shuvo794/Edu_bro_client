@@ -11,14 +11,17 @@ const Header = () => {
 
     return (
         <div className='header-area'>
-            <Navbar expand="md">
+            <Navbar expand="lg">
                 <Container>
-                    <Navbar.Brand as={NavLink} to="/" className='logo'>Edu Bro.</Navbar.Brand>
+                    <NavLink to="/" className='logo'><span>Edu Bro.</span></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto menu">
+
                             <Nav.Link as={NavLink} to="/home" className='menu-item'>Home</Nav.Link>
-                            <Nav.Link as={NavLink} to="/allQuestions" className='menu-item'>Find Questions</Nav.Link>
+
+                            <Nav.Link as={NavLink} to="/find-questions" className='menu-item'>Find Questions</Nav.Link>
+
                             <Nav.Link as={NavLink} to="/forum" className='menu-item'>Forums</Nav.Link>
                             <Nav.Link as={NavLink} to="/ask-questions" className='menu-item'>Ask Questions</Nav.Link>
                             <Nav.Link as={NavLink} to="/contact" className='menu-item'>Contact</Nav.Link>
