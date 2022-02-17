@@ -10,6 +10,7 @@ import ManageQuestion from './Pages/Dashboard/ManageQuestions/ManageQuestion';
 import MyQuestions from './Pages/Dashboard/MyQuestions/MyQuestions';
 import PendingQuestions from './Pages/Dashboard/PendingQuestions/PendingQuestions';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import FindQuestions from './Pages/FindQuestions/FindQuestions';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path='/find-questions' element={<FindQuestions />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path='/dashboard' element={<DashboardWelcome />} />
             <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
