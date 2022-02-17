@@ -40,15 +40,15 @@ const Contact = () => {
                         <h3>Get In Touch</h3>
                         <p>Your email address will not be published. Required fields are marked *</p>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <label htmlFor="name">Name   *</label>
-                            <input required id='name' {...register("name", { required: true })} />
+                            <label htmlFor="name" >Name   *</label>
+                            <input required id='name' className="rounde"{...register("name", { required: true })} />
                             <label htmlFor="email">Username or email  *</label>
                             <input required id='email' {...register("email", { required: true })} />
                             <label htmlFor="sub">Subject  *</label>
                             <input required id='sub' {...register("sub", { required: true })} />
                             <label htmlFor="mess">Message  *</label>
                             <input required id='mess'  {...register("mess")} />
-                            <input className='submit-btn btn btn-success' type="submit" value="Send Message" />
+                            <input className='submit-btn btn btn-danger' type="submit" value="Send Message" />
                         </form>
                     </div>
                 </Col>
