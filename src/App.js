@@ -8,6 +8,7 @@ import AllQuestions from './Pages/AllQuestions/AllQuestions';
 import AskQuestions from './Pages/AskQuestions/AskQuestions';
 
 import Contact from './Pages/Contact/Contact';
+import AddDepertments from './Pages/Dashboard/AddDepertMents/AddDepertments';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardWelcome from './Pages/Dashboard/DashboardWelcome/DashboardWelcome';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
@@ -41,6 +42,8 @@ function App() {
             <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
             <Route path='/dashboard/my-questions' element={<MyQuestions />} />
             <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
+            <Route path='/dashboard/add-depertments' element={<AddDepertments />} />
+
             <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
             <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
           <Route path='/login' element={<Login />} />
@@ -49,7 +52,6 @@ function App() {
           <Route path='*' element={<ErrorPage />} />
         </Routes>
 
-        //
         <Footer />
       </BrowserRouter>
     </div>

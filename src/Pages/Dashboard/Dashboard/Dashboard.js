@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import './Dashboard.css';
-import { FaThLarge, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield } from 'react-icons/fa'
+import { FaThLarge, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield, FaSchool } from 'react-icons/fa'
 
 const Dashboard = () => {
     const { admin } = useFirebase()
@@ -31,7 +31,11 @@ const Dashboard = () => {
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
                             </li>
-
+                            <li>
+                                <NavLink to={`add-depertments`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaSchool className='me-1' /> Add Depertment</NavLink>
+                            </li>
 
                             {/* {admin && <div> */}
                             <li>
