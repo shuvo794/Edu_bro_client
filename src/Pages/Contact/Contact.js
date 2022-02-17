@@ -22,7 +22,7 @@ const Contact = () => {
                         </div>
                         <div className="single-contact">
                             <span>EMAIL ADDRESS</span>
-                            <p>edubro.endgame@Gmail.Com</p>
+                            <p>edubro.endgame@gmail.com</p>
                         </div>
                         <div className="single-contact">
                             <span>STORE LOCATION</span>
