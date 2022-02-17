@@ -21,5 +21,6 @@ const AddDepertments = () => {
         </div>
     );
 };
+export default AddDepertments;
 
 
