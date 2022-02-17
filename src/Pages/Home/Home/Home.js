@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import TeamMember from '../TeamMember/TeamMember';
 
 import Questions from '../Questions/Questions';
+import Blogs from '../Blogs/Blogs';
 
 
 const Home = () => {
@@ -14,7 +15,9 @@ const Home = () => {
                <Banner></Banner>
                <Questions></Questions>
                <AllReviews></AllReviews>
+               <Blogs></Blogs>
                <TeamMember></TeamMember>
+               
           </div>
      );
 };
