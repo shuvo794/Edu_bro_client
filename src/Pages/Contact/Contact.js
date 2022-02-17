@@ -26,7 +26,7 @@ const Contact = () => {
                         </div>
                         <div className="single-contact">
                             <span>STORE LOCATION</span>
-                            <p>102 Your Name Road, Your City, United Of Kingdom203</p>
+                            <p>Dhanmondi 32, Dhaka,Bangladesh</p>
                         </div>
                         <div className="single-contact">
                             <span>TIME:</span>
