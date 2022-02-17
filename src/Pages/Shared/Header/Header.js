@@ -13,7 +13,7 @@ const Header = () => {
         <div className='header-area'>
             <Navbar expand="md">
                 <Container>
-                    <Navbar.Brand as={NavLink} to="/" className='logo'>Edu Bro.</Navbar.Brand>
+                    <NavLink to="/" className='logo'><span>Edu Bro.</span></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto menu">
