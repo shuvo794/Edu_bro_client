@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <div className='header-area'>
-            <Navbar expand="lg">
+            <Navbar expand="md">
                 <Container>
                     <NavLink to="/" className='logo'><span>Edu Bro.</span></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
