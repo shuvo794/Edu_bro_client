@@ -1,0 +1,28 @@
+.counter-area{
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+.single-counter{
+    border-radius: 10px;
+    transition: all .4s;
+}
+.single-counter:hover{
+    background-color: #B22222;
+    color: white;
+}
+.single-counter:hover .counter-icon .icon{
+    color: white;
+}
+.counter-icon .icon{
+    font-size: 30px;
+    color: #B22222;
+    transition: all .4s;
+}
+.counter-text h3 {
+    font-size: 40px;
+    margin-top: 15px;
+}
+.counter-text p{
+    margin-bottom: 0;
+    font-weight: 600;
+}
