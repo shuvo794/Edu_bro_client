@@ -7,6 +7,13 @@ const Counter = () => {
     return (
         <div className='counter-area'>
             <Container>
+                <Row></Row>
+                <Col>
+                    <div className="section-title text-center mb-5">
+                        <h3>Our Achievements</h3>
+                        <span></span>
+                    </div>
+                </Col>
                 <Row>
                     <Col md={3}>
                         <div className="single-counter text-center shadow py-5">
