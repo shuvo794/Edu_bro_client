@@ -20,7 +20,7 @@ const Counter = () => {
                         </div>
                     </Col>
                     <Col md={3}>
-                        <div className="single-counter text-center shadow py-5">
+                        <div className="single-counter counter-active text-center shadow py-5">
                             <div className="counter-icon">
                                 <FaUserAlt className='icon' />
                             </div>

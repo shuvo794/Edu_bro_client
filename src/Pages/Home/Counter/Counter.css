@@ -26,3 +26,19 @@
     margin-bottom: 0;
     font-weight: 600;
 }
+.counter-active{
+    background-color: #B22222;
+    color: white;
+    transition: all .4s;
+}
+.counter-active .icon{
+    color: white;
+    transition: all .4s;
+}
+.counter-active:hover{
+    background-color: white;
+    color: black;
+}
+.counter-active:hover .icon{
+    color: #B22222 !important;
+}
