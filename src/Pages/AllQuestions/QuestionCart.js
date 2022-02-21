@@ -3,10 +3,10 @@ import React from 'react';
 const QuestionCart = ({ data }) => {
     const { url, subject, year, semester, code } = data
 
-    console.log(url)
+    // console.log(url)
 
     let googleId = url.slice(32, 65);
-    console.log(googleId)
+    // console.log(googleId);
     const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
     return (
