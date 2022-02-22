@@ -21,9 +21,9 @@ const Header = () => {
                 Home
               </Nav.Link>
 
-              {/* <Nav.Link as={NavLink} to="/find-questions" className="menu-item">
+              <Nav.Link as={NavLink} to="/find-questions" className="menu-item">
                 Find Questions
-              </Nav.Link> */}
+              </Nav.Link>
               <Nav.Link as={NavLink} to="/find-notes" className="menu-item">
                 Find Notes
               </Nav.Link>
