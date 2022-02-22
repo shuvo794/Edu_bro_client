@@ -27,9 +27,6 @@ const AskQuestions = () => {
     return (
         <div className='py-5'>
 
-
-
-
             <Container>
                 <Row>
                     <Col md={{ span: 8, offset: 2 }}>

@@ -18,7 +18,6 @@ const AllQuestions = () => {
                     <QuestionCart
                         key={question.id}
                         data={question}>
-
                     </QuestionCart>
                 ))}
             </div>
