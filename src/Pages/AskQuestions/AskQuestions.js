@@ -2,28 +2,27 @@ import { Container } from 'react-bootstrap';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-
-
-const onSubmit = data => {
-
-    fetch(`http://localhost:5000/postQuestion`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(data),
-    })
-        .then((res) => res.json())
-        .then((result) => {
-            console.log(result)
-
-            alert('Question Added')
-        });
-};
 
 
 const AskQuestions = () => {
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+        fetch(`http://localhost:5000/postQuestion`, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result)
+
+                alert('Question Added')
+                reset()
+            });
+    };
+
+
     return (
         <div className='py-5'>
             <Container>
