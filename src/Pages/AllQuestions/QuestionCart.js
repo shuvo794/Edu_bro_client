@@ -22,8 +22,10 @@ const QuestionCart = ({ data }) => {
                     <h5 className="card-title"><b>Subject Code:</b> {code}</h5>
                     <h5 className="card-title"><b>Semester:</b> {semester}</h5>
                     <h5 className="card-text "><b>Year:</b> {year}</h5>
-                    <div className="btn btn-success me-5 " ><a href={download} className="">Download</a></div>
-                    <div className="btn btn-danger ms-5" ><a href={viewUrl} className="">Show</a></div>
+                    <div className="d-flex justify-content-around pt-5" >
+                        <div className="btn btn-success me-5 " ><a href={download} className="">Download</a></div>
+                        <div className="btn btn-danger ms-5" ><a href={viewUrl} className="">Show</a></div>
+                    </div>
                 </div>
             </div>
         </div>
