@@ -2,7 +2,8 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './FindQuestions.css';
 import { FaSearch } from 'react-icons/fa';
-import Questions from '../Home/Questions/Questions'
+import Questions from '../home/Questions/Questions';
+
 
 const FindQuestions = () => {
     return (

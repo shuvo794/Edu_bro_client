@@ -19,6 +19,10 @@ import Register from "./Login/Register/Register";
 import Contact from "./pages/Contact/Contact";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Footer from "./pages/Shared/Footer/Footer";
+import MyNotes from "./pages/MyNotes/MyNotes";
+import AddNotes from "./pages/AddNotes/AddNotes";
+import PendingNotes from "./pages/PandingNodes/PandingNodes";
+import FindNotes from './pages/FindNotes/FindNotes';
 
 function App() {
   return (
@@ -32,16 +36,20 @@ function App() {
           <Route path="/allQuestions" element={<AllQuestions />} />
 
           <Route path="/find-questions" element={<FindQuestions />} />
+          <Route path="/find-notes" element={<FindNotes />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/ask-questions" element={<AskQuestions />} />
+          <Route path="/add-notes" element={<AddNotes />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard" element={<DashboardWelcome />} />
             <Route path="/dashboard/welcome" element={<DashboardWelcome />} />
             <Route path="/dashboard/my-questions" element={<MyQuestions />} />
+            <Route path="/dashboard/my-notes" element={<MyNotes />} />
             <Route
               path="/dashboard/pending-questions"
               element={<PendingQuestions />}
             />
+            <Route path="/dashboard/pending-notes" element={<PendingNotes />} />
             <Route
               path="/dashboard/add-depertments"
               element={<AddDepertments />}
