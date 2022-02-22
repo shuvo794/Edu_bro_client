@@ -5,6 +5,7 @@ import TeamMember from '../TeamMember/TeamMember';
 import Questions from '../Questions/Questions';
 import Blogs from '../Blogs/Blogs';
 import Counter from '../Counter/Counter';
+import AllBooks from '../../AllBooks/AllBooks';
 
 
 const Home = () => {
@@ -13,6 +14,8 @@ const Home = () => {
 
                <Banner></Banner>
                <Questions></Questions>
+               <AllBooks></AllBooks>
+
                <AllReviews></AllReviews>
                <Blogs></Blogs>
                <Counter />

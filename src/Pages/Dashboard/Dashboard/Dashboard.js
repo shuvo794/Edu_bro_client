@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import './Dashboard.css';
-import { FaThLarge, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield, FaSchool } from 'react-icons/fa'
+import { FaThLarge, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield, FaSchool, FaBook } from 'react-icons/fa'
 
 const Dashboard = () => {
     const { admin } = useFirebase()
@@ -31,6 +31,17 @@ const Dashboard = () => {
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
                             </li>
+
+                            <li>
+                                <NavLink to={`my-books`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBookmark className='me-1' /> My Books</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={`pending-books`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBook className='me-1' /> Pending Books</NavLink>
+                            </li>
                             <li>
                                 <NavLink to={`add-depertments`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
@@ -38,11 +49,7 @@ const Dashboard = () => {
                             </li>
 
                             {/* {admin && <div> */}
-                            <li>
-                                <NavLink to={`manage-questions`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
-                                })}><FaTasks className='me-1' /> Manage Questions</NavLink>
-                            </li>
+
                             <li>
                                 <NavLink to={`make-admin`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
