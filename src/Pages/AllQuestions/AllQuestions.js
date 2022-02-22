@@ -17,8 +17,7 @@ const AllQuestions = () => {
                 {questions?.map((question) => (
                     <QuestionCart
                         key={question.id}
-                        data={questions}>
-
+                        data={question}>
                     </QuestionCart>
                 ))}
             </div>
