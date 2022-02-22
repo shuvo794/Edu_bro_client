@@ -20,7 +20,7 @@ const Header = () => {
 
                             <Nav.Link as={NavLink} to="/home" className='menu-item'>Home</Nav.Link>
 
-                            <Nav.Link as={NavLink} to="/find-questions" className='menu-item'>Find Questions</Nav.Link>
+                            <Nav.Link as={NavLink} to="/allQuestions" className='menu-item'>All Questions</Nav.Link>
 
                             {/* <Nav.Link as={NavLink} to="/forum" className='menu-item'>Forums</Nav.Link> */}
                             <Nav.Link as={NavLink} to="/ask-questions" className='menu-item'>Add Questions</Nav.Link>
