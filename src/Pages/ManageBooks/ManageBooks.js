@@ -5,7 +5,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 const ManageBooks = () => {
     return (
         <div className='manage-questions'>
-            <h2>Manage Questions Admin Panel</h2>
+            <h2>Manage Books Admin Panel</h2>
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>

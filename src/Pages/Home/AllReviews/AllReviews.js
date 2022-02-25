@@ -58,10 +58,12 @@ const AllReviews = () => {
             <img src="https://tutorialzine.com/media/2018/01/NodeJs_Succinctly2.jpg" width="1024" height="1024" />
           </SwiperSlide>
 
+
         </Swiper>
       </>
     </div>
   );
-};
+
+}
 
 export default AllReviews;

@@ -12,7 +12,7 @@ const TeamMember = () => {
         <div className='container py-5'>
             <div className="d-flex my-5 justify-content-center"><h1 className="Team">Our Team Mate</h1></div>
             <div className="row row-cols-1 row-cols-md-3 g-4">
-                <div className="col">
+            <div className="col">
                     <div className="card h-100 hover">
                         <img src={Yeasin} className="card-img-top img-fluid" alt="..." />
                         <div className="card-body text-center">
@@ -21,7 +21,7 @@ const TeamMember = () => {
                         </div>
 
                     </div>
-                </div>
+                </div>  
                 <div className="col">
                     <div className="card h-100 hover">
                         <img src={Saikat} className="card-img-top img-fluid" alt="..." />

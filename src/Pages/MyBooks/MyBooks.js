@@ -6,7 +6,7 @@ import { FaTrashAlt } from 'react-icons/fa'
 const MyBooks = () => {
     return (
         <div className='my-questions'>
-            <h2>My Questions</h2>
+            <h2>My Books</h2>
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>

@@ -3,11 +3,36 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 
+
+
+
+
 const AddBooks = () => {
 
 
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+
+
+
+
+    //react hook form
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+
+        fetch(`http://localhost:5000/addBook`, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result)
+
+                alert('Book Added Successfully')
+                reset()
+            });
+    };
 
     return (
         <div className='py-5'>
@@ -20,15 +45,16 @@ const AddBooks = () => {
                     <Col md={{ span: 8, offset: 2 }}>
                         <div className="login-form text-center">
                             <h2 className='mb-5'>Add Your Books</h2>
-                            <form>
+                            <form onSubmit={handleSubmit(onSubmit)}>
 
-                                <input className='w-75 mb-3'  {...register("department", { required: true })}   {...(errors.title && <span>Name is required</span>)} placeholder='Enter the Department' /> <br />
+                                <input className='w-75 mb-3'  {...register("department", { required: true })} placeholder='Enter the Department' /> <br />
                                 <input className='w-75 mb-3'  {...register("subject", { required: true })} placeholder='Enter Book Title' /> <br />
                                 <input className='w-75 mb-3'  {...register("code", { required: true })} placeholder='Enter Course Code' /> <br />
                                 <input className='w-75 mb-3' {...register("semester", { required: true })} placeholder='Enter Semester' /> <br />
-                                <input className='w-75 mb-3' {...register("year", { required: true })} placeholder='Question Year' /> <br />
+                                <input className='w-75 mb-3' {...register("year", { required: true })} placeholder='Book Publication Year' /> <br />
+                                <input className='w-75 mb-3' {...register("author", { required: true })} placeholder='Book Author' /> <br />
 
-                                <input className='w-75 mb-3' {...register("ypdfLinkear", { required: true })} placeholder='Question Link' /> <br />
+                                <input className='w-75 mb-3' {...register("ypdfLinkear", { required: true })} placeholder='Book Link' /> <br />
 
                                 <button type='submit'>Submit</button>
                             </form>

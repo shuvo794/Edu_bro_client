@@ -13,10 +13,10 @@ const FindBooks = () => {
             <Container>
                 <Row>
                     <Col md={12}>
-                        <div className="search-questions text-center">
+                        <div className="search-books text-center">
                             <h2>Search Books</h2>
                             <div className="search-form">
-                                <input type="text" placeholder='Search Questions' />
+                                <input type="text" placeholder='Search Books' />
                                 <button className='search-btn'>Search <FaSearch /></button>
                             </div>
                         </div>

@@ -5,7 +5,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 const PendingBooks = () => {
     return (
         <div className='pending-questions'>
-            <h2>Pending Questions</h2>
+            <h2>Pending Books</h2>
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>
