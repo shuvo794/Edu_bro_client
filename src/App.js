@@ -3,11 +3,9 @@ import './App.css';
 import AuthProvider from './context/AuthProvider.js/AuthProvider';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+import AllBooks from './Pages/AllBooks/AllBooks';
 
 import AllQuestions from './Pages/AllQuestions/AllQuestions';
-
-import AskQuestions from './Pages/AskQuestions/AskQuestions';
-
 import Contact from './Pages/Contact/Contact';
 import AddBooksDashboard from './Pages/Dashboard/AddBooksDashboard/AddBooksDashboard';
 import AddDepertments from './Pages/Dashboard/AddDepertMents/AddDepertments';
@@ -40,10 +38,10 @@ function App() {
           <Route path="/home" element={<Home />} />
 
           <Route path="/allQuestions" element={<AllQuestions />} />
-
+          <Route path="/allBooks" element={<AllBooks />} />
           <Route path='/find-questions' element={<FindQuestions />} />
           <Route path='/forum' element={<Forum />} />
-          <Route path='/ask-questions' element={<AskQuestions />} />
+
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path='/dashboard' element={<DashboardWelcome />} />
             <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
