@@ -20,7 +20,6 @@ const AllBlogs = () => {
          
          key={blog.id}
          data={blog}>
-
          </BlogsCart>
 
             
