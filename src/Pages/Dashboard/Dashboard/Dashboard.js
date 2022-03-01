@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import './Dashboard.css';
-import { FaThLarge, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield, FaSchool } from 'react-icons/fa'
+import { FaThLarge, FaUser, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield, FaSchool } from 'react-icons/fa'
 
 const Dashboard = () => {
     const { admin } = useFirebase()
@@ -20,6 +20,11 @@ const Dashboard = () => {
                                 <NavLink to={`welcome`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaThLarge className='me-1' /> Dashboard</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={`user-profile`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaUser className='me-1' /> Profile</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`my-questions`} style={({ isActive }) => ({

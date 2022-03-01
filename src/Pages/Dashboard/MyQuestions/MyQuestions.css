@@ -1,6 +1,17 @@
 .manage-questions h2, .pending-questions h2, .my-questions h2{
     margin-bottom: 30px;
 }
+.add-btn{
+    background-color: #B22222;
+    color: white;
+    padding:10px 30px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
 
 .details-btn{
     color: #B22222;
