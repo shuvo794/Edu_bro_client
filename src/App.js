@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './context/AuthProvider.js/AuthProvider';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+import AllBlogs from './Pages/AllBlogs/AllBlogs';
 import AllBooks from './Pages/AllBooks/AllBooks';
 
 import AllQuestions from './Pages/AllQuestions/AllQuestions';
@@ -39,6 +40,7 @@ function App() {
 
           <Route path="/allQuestions" element={<AllQuestions />} />
           <Route path="/allBooks" element={<AllBooks />} />
+          <Route path="/allBlogs" element={<AllBlogs />} />
           <Route path='/find-questions' element={<FindQuestions />} />
           <Route path='/forum' element={<Forum />} />
 
