@@ -71,4 +71,8 @@
      cursor: pointer;
      list-style: none;
      color: white;
+     transition: all .4s;
+}
+.toggle-menu li:hover{
+     margin-left: 5px;
 }
