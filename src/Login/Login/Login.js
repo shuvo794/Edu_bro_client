@@ -15,7 +15,7 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    //handle google login
+    //handle google login here
     const handleGoogleLogin = () => {
         loginWithGoogle(location , navigate);
     };
