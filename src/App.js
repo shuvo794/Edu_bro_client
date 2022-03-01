@@ -9,12 +9,14 @@ import AllQuestions from './Pages/AllQuestions/AllQuestions';
 import AskQuestions from './Pages/AskQuestions/AskQuestions';
 
 import Contact from './Pages/Contact/Contact';
+import AddBooksDashboard from './Pages/Dashboard/AddBooksDashboard/AddBooksDashboard';
 import AddDepertments from './Pages/Dashboard/AddDepertMents/AddDepertments';
 import AddQuestionDashboard from './Pages/Dashboard/AddQuestionDashboard/AddQuestionDashboard';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardWelcome from './Pages/Dashboard/DashboardWelcome/DashboardWelcome';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import ManageQuestion from './Pages/Dashboard/ManageQuestions/ManageQuestion';
+import MyBooks from './Pages/Dashboard/MyBooks/MyBooks';
 import MyQuestions from './Pages/Dashboard/MyQuestions/MyQuestions';
 import PendingQuestions from './Pages/Dashboard/PendingQuestions/PendingQuestions';
 import EditProfile from './Pages/Dashboard/UserProfile/EditProfile';
@@ -46,7 +48,9 @@ function App() {
             <Route path='/dashboard' element={<DashboardWelcome />} />
             <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
             <Route path='/dashboard/my-questions' element={<MyQuestions />} />
+            <Route path='/dashboard/my-books' element={<MyBooks />} />
             <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
+            <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
             <Route path='/dashboard/user-profile' element={<UserProfile />} />
             <Route path='/dashboard/edit-profile' element={<EditProfile />} />
             <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />

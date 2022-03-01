@@ -32,6 +32,11 @@ const Dashboard = () => {
                                 })}><FaBookmark className='me-1' /> My Questions</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`my-books`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBookmark className='me-1' /> My Books</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`pending-questions`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
