@@ -5,12 +5,14 @@ import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
 import AllBlogs from './Pages/AllBlogs/AllBlogs';
 import AllBooks from './Pages/AllBooks/AllBooks';
+import AllNotes from './Pages/AllNotes/AllNotes';
 
 import AllQuestions from './Pages/AllQuestions/AllQuestions';
 import Contact from './Pages/Contact/Contact';
 import AddBlogsDashboard from './Pages/Dashboard/AddBlogsDashboard/AddBlogsDashboard';
 import AddBooksDashboard from './Pages/Dashboard/AddBooksDashboard/AddBooksDashboard';
 import AddDepertments from './Pages/Dashboard/AddDepertMents/AddDepertments';
+import AddNotesDashboard from './Pages/Dashboard/AddNotesDashboard/AddNotesDashboard';
 import AddQuestionDashboard from './Pages/Dashboard/AddQuestionDashboard/AddQuestionDashboard';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardWelcome from './Pages/Dashboard/DashboardWelcome/DashboardWelcome';
@@ -18,6 +20,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import ManageQuestion from './Pages/Dashboard/ManageQuestions/ManageQuestion';
 import MyBlogs from './Pages/Dashboard/MyBlogs/MyBlogs';
 import MyBooks from './Pages/Dashboard/MyBooks/MyBooks';
+import MyNotes from './Pages/Dashboard/MyNotes/MyNotes';
 import MyQuestions from './Pages/Dashboard/MyQuestions/MyQuestions';
 import PendingQuestions from './Pages/Dashboard/PendingQuestions/PendingQuestions';
 import EditProfile from './Pages/Dashboard/UserProfile/EditProfile';
@@ -43,6 +46,7 @@ function App() {
           <Route path="/allQuestions" element={<AllQuestions />} />
           <Route path="/allBooks" element={<AllBooks />} />
           <Route path="/allBlogs" element={<AllBlogs />} />
+          <Route path="/allNotes" element={<AllNotes />} />
           <Route path='/find-questions' element={<FindQuestions />} />
           <Route path='/forum' element={<Forum />} />
 
@@ -52,8 +56,10 @@ function App() {
             <Route path='/dashboard/my-questions' element={<MyQuestions />} />
             <Route path='/dashboard/my-books' element={<MyBooks />} />
             <Route path='/dashboard/my-blogs' element={<MyBlogs />} />
+            <Route path='/dashboard/my-notes' element={<MyNotes />} />
             <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
             <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
+            <Route path='/dashboard/add-notes' element={<AddNotesDashboard />} />
             <Route path='/dashboard/add-blogs' element={<AddBlogsDashboard />} />
             <Route path='/dashboard/user-profile' element={<UserProfile />} />
             <Route path='/dashboard/edit-profile' element={<EditProfile />} />
