@@ -37,7 +37,7 @@ const Dashboard = () => {
                                 })}><FaBookmark className='me-1' /> My Books</NavLink>
                             </li>
                             <li>
-                                <NavLink to={`my-books`} style={({ isActive }) => ({
+                                <NavLink to={`my-blogs`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Blogs</NavLink>
                             </li>
