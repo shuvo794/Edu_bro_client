@@ -3,7 +3,6 @@ import React from 'react';
 const BlogsCart = ({data}) => {
     
     const { topic, blog,yserName, email } = data
-
     // let googleId = driveLink?.slice(32, 65);
     // console.log(driveLink)
 
