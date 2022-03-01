@@ -2,11 +2,17 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import './MyQuestions.css';
 import { FaTrashAlt } from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 
 const MyQuestions = () => {
     return (
         <div className='my-questions'>
-            <h2>My Questions</h2>
+            <div className='d-flex justify-content-between align-items-center my-question-header'>
+                <h2>My Questions</h2>
+                <Link to={'/dashboard/add-question'}>
+                    <button className='add-btn'>Add Questions</button>
+                </Link>
+            </div>
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>

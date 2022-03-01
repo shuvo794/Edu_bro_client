@@ -1,11 +1,13 @@
 import React from 'react';
 
 import Typewriter from 'typewriter-effect';
+import useFirebase from '../../../hooks/useFirebase';
 import './Banner.css';
 
 const Banner = () => {
+    const { handleClick } = useFirebase()
     return (
-        <section className="hero-section">
+        <section onClick={handleClick} className="hero-section">
             <div className="container">
                 <div className="row pt-5 pb-5">
                     <div className="d-flex justify-content-center align-items-center ">

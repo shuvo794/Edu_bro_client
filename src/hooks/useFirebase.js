@@ -21,6 +21,11 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // Navbar toggle
+  const [toggle, setToggle] = useState(false);
+  const handleClick = () => {
+    setToggle(false);
+  };
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -98,6 +103,7 @@ const useFirebase = () => {
   //LOG OUT USER METHOD
   const userLogOut = () => {
     setIsLoading(true)
+    setToggle(false)
     signOut(auth)
       .then(() => {
 
@@ -139,7 +145,10 @@ const useFirebase = () => {
     registerUser,
     isLoading,
     error,
-    loginWithOwnEmaiAndPass
+    loginWithOwnEmaiAndPass,
+    toggle,
+    setToggle,
+    handleClick
   };
 };
 export default useFirebase;
