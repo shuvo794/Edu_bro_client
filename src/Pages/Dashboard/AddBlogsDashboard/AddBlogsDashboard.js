@@ -33,7 +33,7 @@ const AddBlogsDashboard = () => {
                     <h2 className='mb-5'>Add Blogs</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input className='w-75 mb-3' {...register("topic", { required: true })} placeholder='Your Topic' /> <br />
-                        <input className='w-75 mb-3' {...register("Blog", { required: true })} placeholder='Blog' /> <br />
+                        <input className='w-75 mb-3' {...register("blog", { required: true })} placeholder='Blog' /> <br />
                        
                         <button type='submit'>Submit</button>
                     </form>
