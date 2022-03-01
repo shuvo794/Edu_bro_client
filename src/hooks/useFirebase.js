@@ -39,11 +39,13 @@ const useFirebase = () => {
         navigate(destination)
         setError("");
 
+       
 
         const newUser = { email, displayName: name }
         //console.log(newUser);
         setUser(newUser)
-
+        
+        sendUserInfoToDb(email) 
         //SEND NAME IN THE FIREBASE
         updateProfile(auth.currentUser, {
           displayName: name
@@ -106,6 +108,7 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   }
+
   const sendUserInfoToDb = (email) => {
     fetch("http://localhost:5000/addUserInfo", {
       method: "POST",

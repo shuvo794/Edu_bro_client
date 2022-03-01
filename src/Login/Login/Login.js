@@ -4,18 +4,18 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { FcGoogle } from 'react-icons/fc'
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
 
-    const { loginWithGoogle, loginWithOwnEmaiAndPass} = useFirebase()
+    const { loginWithGoogle, loginWithOwnEmaiAndPass} = useAuth()
 
     //Location & navigate
     const location = useLocation()
     const navigate = useNavigate()
 
-    //handle google login
+    //handle google login here
     const handleGoogleLogin = () => {
         loginWithGoogle(location , navigate);
     };

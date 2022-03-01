@@ -3,11 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
 
-    const {registerUser, isLoading, error, loginWithGoogle } = useFirebase()
+    const {registerUser, isLoading, error, loginWithGoogle } = useAuth()
 
     //Location & Navigate
     const location = useLocation()
