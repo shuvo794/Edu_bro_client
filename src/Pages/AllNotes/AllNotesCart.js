@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AllNotesCart = ({data}) => {
-    
     const { topic, department, email, userName, subject, driveLink } = data
 
     let googleId = driveLink?.slice(32, 65);
