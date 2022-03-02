@@ -1,10 +1,15 @@
 import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import useFirebase from '../../../hooks/useFirebase';
 
 const AddQuestionDashboard = () => {
+    const { user } = useFirebase()
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
+        data.userName = user.displayName
+        data.email = user.email
+        data.status = 'Pending'
 
         fetch(`http://localhost:5000/postQuestion`, {
             method: "POST",
