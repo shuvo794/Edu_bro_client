@@ -6,6 +6,7 @@ const AllNotesCart = ({data}) => {
     let googleId = driveLink?.slice(32, 65);
     console.log(driveLink)
 
+    
     const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
 
