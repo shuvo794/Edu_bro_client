@@ -31,4 +31,5 @@ const AllNotesCart = ({data}) => {
     );
 };
 
+
 export default AllNotesCart;
