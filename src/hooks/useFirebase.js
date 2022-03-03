@@ -20,6 +20,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [admin, setAdmin] = useState(false)
 
   // Navbar toggle
   const [toggle, setToggle] = useState(false);
@@ -141,6 +142,15 @@ const useFirebase = () => {
   }, []);
 
 
+  //ADMIN CONDITIONAL DATALOAD
+  useEffect( ()=>{
+  fetch(`http://localhost:5000/users/${user.email}`)
+  .then(res => res.json())
+  .then(data => setAdmin(data.admin))
+  },[user.email])
+
+
+
   return {
     user,
     loginWithGoogle,
@@ -151,7 +161,8 @@ const useFirebase = () => {
     loginWithOwnEmaiAndPass,
     toggle,
     setToggle,
-    handleClick
+    handleClick,
+    admin
   };
 };
 export default useFirebase;
