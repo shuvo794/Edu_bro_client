@@ -1,0 +1,9 @@
+.btn-style {
+    border: 1px solid #B22222;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+}
+.card-body h5{
+    font-size: 16px;
+}
