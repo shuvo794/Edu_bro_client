@@ -30,7 +30,7 @@ const EditProfile = () => {
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input
                                     className='w-75 mb-3' defaultValue={user.displayName}
-                                    {...register("dispayName", { required: true })}
+                                    {...register("displayName", { required: true })}
                                     placeholder='Enter Full Name' />
                                 <br />
 
@@ -45,6 +45,10 @@ const EditProfile = () => {
                                 <input
                                     className='w-75 mb-3'
                                     {...register("department", { required: true })} placeholder='Enter Department' />
+                                <br />
+                                <input
+                                    className='w-75 mb-3'
+                                    {...register("roll", { required: true })} placeholder='Enter Department' />
                                 <br />
                                 <input
                                     className='w-75 mb-3'
