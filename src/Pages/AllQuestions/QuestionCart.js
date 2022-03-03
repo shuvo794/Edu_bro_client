@@ -18,7 +18,7 @@ const QuestionCart = ({ data }) => {
         <div className="col">
             <div className="card custom-cart h-100 hover">
                 <iframe title="question" src={viewUrl}
-                    className="img-fluid rounded-start w-100 " style={{ height: "350px" }} allow="autoplay"></iframe>
+                    className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
                 <div className="card-body">
                     <h4 className="card-title mb-3">Question Title will be here</h4>
                     <h5 className="card-title">Department: {department}</h5>

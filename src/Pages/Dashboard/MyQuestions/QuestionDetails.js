@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import './QuestionDetails.css';
 
 const QuestionDetails = () => {
     const { id } = useParams()
