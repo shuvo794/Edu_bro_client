@@ -1,10 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './QuestionCart.css';
 
-const QuestionCart = ({ data }) => {
-    console.log(data);
-    const { driveLink, semester, code, subject, department, year, _id } = data
+const QuestionSolveCart = ({data}) => {
+    const { subject,year ,code, driveLink ,email  ,topic ,userName , solveNumber ,department} = data
 
 
     let googleId = driveLink?.slice(32, 65);
@@ -20,16 +17,19 @@ const QuestionCart = ({ data }) => {
                 <iframe title="question" src={viewUrl}
                     className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
                 <div className="card-body">
-                    <h4 className="card-title mb-3">Subject{subject}</h4>
+                    <h4 className="card-title mb-3">Subject {subject}</h4>
                     <h5 className="card-title">Department: {department}</h5>
-                    <h5 className="card-title">Department: {semester}</h5>
                     <div className='d-flex justify-content-between'>
                         <h5 className="card-title">Subject Code: {code}</h5>
                         <h5 className="card-text ">Year: {year}</h5>
                     </div>
+                    <div className=''>
+                        <h5 className="card-title">Provider Name: {userName}</h5>
+                        <h5 className="card-text ">Email: {email}</h5>
+                    </div>
                     <div className="d-flex justify-content-between mt-3" >
                         <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
-                        <Link to={`/question-details/${_id}`}><button className="btn-style" >View Answer</button></Link>
+                       
                     </div>
                 </div>
             </div>
@@ -37,4 +37,4 @@ const QuestionCart = ({ data }) => {
     );
 };
 
-export default QuestionCart;
+export default QuestionSolveCart;

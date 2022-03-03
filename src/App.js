@@ -31,6 +31,7 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import FindQuestions from './Pages/FindQuestions/FindQuestions';
 import Forum from './Pages/Forum/Forum';
 import Home from './Pages/Home/Home/Home';
+import QuestionDetailsSolve from './Pages/QuestionDetailsSolve/QuestionDetailsSolve';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 
@@ -70,7 +71,9 @@ function App() {
 
               <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
               <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
-            <Route path='/question-details/:id' element={<QuestionDetails />} />
+        
+        
+            <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
