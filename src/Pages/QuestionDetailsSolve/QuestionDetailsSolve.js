@@ -62,14 +62,9 @@ reset()
             .then((res) => res.json())
             .then((data) => {
                 setQuestionSolves(data)
-      
-
             });
     }, [id, reset]);
 
-
-
-  
 
     return (
         <div className='py-5'>
