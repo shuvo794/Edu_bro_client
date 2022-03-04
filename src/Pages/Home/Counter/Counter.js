@@ -44,7 +44,7 @@ const Counter = () => {
                             </div>
                             <div className="counter-text">
                                 <h3>40</h3>
-                                <p>Countries</p>
+                                <p>International Books</p>
                             </div>
                         </div>
                     </Col>

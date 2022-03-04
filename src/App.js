@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './context/AuthProvider.js/AuthProvider';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+
 import AllBlogs from './Pages/AllBlogs/AllBlogs';
 import BlogDetails from './Pages/AllBlogs/BlogDetails';
 import AllBooks from './Pages/AllBooks/AllBooks';
@@ -59,6 +60,11 @@ function App() {
               <Route path='/dashboard/my-books' element={<MyBooks />} />
               <Route path='/dashboard/my-blogs' element={<MyBlogs />} />
               <Route path='/dashboard/my-notes' element={<MyNotes />} />
+              
+              
+          
+
+
               <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
               <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
               <Route path='/dashboard/add-notes' element={<AddNotesDashboard />} />
@@ -71,6 +77,7 @@ function App() {
               <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
               <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
             <Route path='/question-details/:id' element={<QuestionDetails />} />
+           
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
