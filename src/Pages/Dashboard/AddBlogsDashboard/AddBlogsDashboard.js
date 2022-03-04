@@ -12,7 +12,7 @@ const AddBlogsDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`http://localhost:5000/postblogs`, {
+        fetch(`https://lit-shore-56771.herokuapp.com/postblogs`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

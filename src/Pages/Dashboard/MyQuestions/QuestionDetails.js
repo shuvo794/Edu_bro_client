@@ -13,7 +13,7 @@ const QuestionDetails = () => {
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
 
     useEffect(() => {
-        fetch(`http://localhost:5000/question/${id}`)
+        fetch(`https://lit-shore-56771.herokuapp.com/question/${id}`)
             .then(res => res.json())
             .then(data => {
                 setQuestion(data)
