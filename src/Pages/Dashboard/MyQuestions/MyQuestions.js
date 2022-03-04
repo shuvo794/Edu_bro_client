@@ -1,45 +1,73 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
 import './MyQuestions.css';
-import { FaTrashAlt } from 'react-icons/fa'
+
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
+
 
 const MyQuestions = () => {
+
+    const { user } = useFirebase()
+
+    const [questions, setQuestions] = useState([])
+
+    useEffect(() => {
+        fetch(` http://localhost:5000/myQuestions/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => setQuestions(data));
+    }, [user?.email]);
+
+    
+console.log(questions)
     return (
         <div className='my-questions'>
-            <div className='d-flex justify-content-between align-items-center my-question-header'>
-                <h2>My Questions</h2>
-                <Link to={'/dashboard/add-question'}>
-                    <button className='add-btn'>Add Questions</button>
+        <div className='d-flex justify-content-between align-items-center my-question-header'>
+            <h2>My questions</h2>
+            <Link to={'/dashboard/add-question'}>
+                    <button className='add-btn btn-danger'>Add Questions</button>
                 </Link>
-            </div>
-            <Table responsive striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Questions</th>
-                        <th>Actions</th>
+        </div>
+        <table className="table table-dark" style={{ width: "100%" }}>
+                <thead  >
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ question: "1px solid red" }}>
+
+                        <th >Number</th>
+                        <th >subject</th>
+                        <th >Semester</th>
+                        <th >Code</th>
+                        <th >Year</th>
+            
+                        <th >question Preview</th>
+                       
+                        <th >Status</th>
+                        <th >Request To Delete</th>
+                    
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>CSE 3rd semister Object Oriented Programming problem</td>
-                        <td><button className='details-btn'>See Answer</button> <FaTrashAlt className='btn-delete' /></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Accounting bba 1st year question 2018</td>
-                        <td><button className='details-btn'>See Answer</button><FaTrashAlt className='btn-delete' /></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td >c++ problem solving question 2021 DU</td>
-                        <td><button className='details-btn'>See Answer</button><FaTrashAlt className='btn-delete' /></td>
-                    </tr>
-                </tbody>
-            </Table>
-        </div>
+                {questions?.map((question, index) => (
+                    <tbody key={question._id}>
+                        <tr role="row" style={{ question: "2px solid gray" }} >
+                            <th scope="row">{index + 1}</th>
+                            <td>{question.subject}</td>
+                            <td>{question.code}</td>
+                            <td>{question.year}</td>
+                            <td>{question.semester}</td>
+
+                            <td> <iframe title="question" src={question.driveLink}
+                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            <td>{question.status}</td>
+                            <td> <button
+                                className="btn btn-danger "
+                                // onClick={() => handlequestionDeleteRequest(question._id)}
+                            >
+                                Delete question
+                            </button></td>
+                        </tr>
+                    </tbody>
+
+                ))}
+            </table>
+    </div>
     );
 };
 

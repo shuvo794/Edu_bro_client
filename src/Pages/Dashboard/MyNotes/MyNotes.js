@@ -1,43 +1,64 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
-import { FaTrashAlt } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 
 const MyNotes = () => {
+    const { user } = useFirebase()
+    const [notes, setNotes] = useState([])
+
+    useEffect(() => {
+        fetch(` http://localhost:5000/mynotes/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => setNotes(data));
+    }, [user?.email]);
+
+console.log(notes)
+
     return (
         <div className='my-questions'>
         <div className='d-flex justify-content-between align-items-center my-question-header'>
-            <h2>My Books</h2>
+            <h2>My notes</h2>
             <Link to={'/dashboard/add-notes'}>
-                <button className='add-btn'>Add Notes</button>
+                <button className='add-btn btn-danger'>Add notes</button>
             </Link>
         </div>
-        <Table responsive striped bordered hover>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Questions</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>CSE 3rd semister Object Oriented Programming problem</td>
-                    <td><button className='details-btn'>See Answer</button> <FaTrashAlt className='btn-delete' /></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Accounting bba 1st year question 2018</td>
-                    <td><button className='details-btn'>See Answer</button><FaTrashAlt className='btn-delete' /></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td >c++ problem solving question 2021 DU</td>
-                    <td><button className='details-btn'>See Answer</button><FaTrashAlt className='btn-delete' /></td>
-                </tr>
-            </tbody>
-        </Table>
+        <table className="table table-dark" style={{ width: "100%" }}>
+                <thead  >
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ note: "1px solid red" }}>
+
+                        <th >Number</th>
+                        <th >Subject Name</th>
+                        <th >Topic</th>
+            
+                        <th >Note Preview</th>
+                       
+                        <th >Status</th>
+                        <th >Request To Delete</th>
+                    
+                    </tr>
+                </thead>
+                {notes?.map((note, index) => (
+                    <tbody key={note._id}>
+                        <tr role="row" style={{ note: "2px solid gray" }} >
+                            <th scope="row">{index + 1}</th>
+                            <td>{note.topic}</td>
+                            <td>{note.subject}</td>
+
+                            <td> <iframe title="question" src={note.driveLink}
+                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            <td>{note.status}</td>
+                            <td> <button
+                                className="btn btn-danger"
+                                // onClick={() => handlenoteDeleteRequest(note._id)}
+                            >
+                                Delete note
+                            </button></td>
+                        </tr>
+                    </tbody>
+
+                ))}
+            </table>
     </div>
     );
 };
