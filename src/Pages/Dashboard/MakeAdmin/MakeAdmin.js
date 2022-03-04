@@ -5,7 +5,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         // console.log(data)
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://lit-shore-56771.herokuapp.com/users/admin',{
             method: 'PUT',
             headers:{
                  'content-type' : 'application/json'

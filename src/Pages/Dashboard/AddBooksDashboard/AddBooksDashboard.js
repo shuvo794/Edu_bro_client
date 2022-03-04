@@ -11,7 +11,7 @@ const AddBooksDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`http://localhost:5000/postBooks`, {
+        fetch(`https://lit-shore-56771.herokuapp.com/postBooks`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

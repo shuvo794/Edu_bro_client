@@ -14,7 +14,7 @@ const QuestionDetails = () => {
     console.log('test',viewUrl)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/question/${id}`)
+        fetch(`https://lit-shore-56771.herokuapp.com/question/${id}`)
             .then(res => res.json())
             .then(data => {
                 setQuestion(data)

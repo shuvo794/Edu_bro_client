@@ -30,7 +30,7 @@ const QuestionDetailsSolve = () => {
         data.department= question.department
 
 
-        fetch(`http://localhost:5000/addQuestionSolve`, {
+        fetch(`https://lit-shore-56771.herokuapp.com/addQuestionSolve`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -47,7 +47,7 @@ reset()
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/question/${id}`)
+        fetch(`https://lit-shore-56771.herokuapp.com/question/${id}`)
             .then(res => res.json())
             .then(data => {
                 setQuestion(data)
@@ -58,7 +58,7 @@ reset()
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/questionSolve/${id}`)
+        fetch(`https://lit-shore-56771.herokuapp.com/questionSolve/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setQuestionSolves(data)

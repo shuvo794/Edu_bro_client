@@ -6,7 +6,7 @@ import QuestionCart from './QuestionCart';
 const AllQuestions = () => {
     const [questions, setQuestions] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allQuestions')
+        fetch('https://lit-shore-56771.herokuapp.com/allQuestions')
             .then(res => res.json())
             .then(data => setQuestions(data))
     }, [])

@@ -4,7 +4,7 @@ import AllNotesCart from './AllNotesCart';
 const AllNotes = () => {
     const [notes, setNotes] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allnotes')
+        fetch('https://lit-shore-56771.herokuapp.com/allnotes')
             .then(res => res.json())
             .then(data => setNotes(data))
     }, [])
