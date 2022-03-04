@@ -16,7 +16,7 @@ const AllNotesCart = ({data}) => {
             <iframe title="question" src={viewUrl}
                 className="img-fluid rounded-start w-100 " style={{ height: "500px" }} allow="autoplay"></iframe>
             <div className="card-body">
-                <h5 className="card-title"><b>Book Name:</b> {topic}</h5>
+                <h5 className="card-title"><b>Note Name:</b> {topic}</h5>
                 <h5 className="card-title"><b>Department:</b> {department}</h5>
                 <h5 className="card-title"><b>Subject:</b> {subject}</h5>
                 <h5 className="card-title"><b>Edition:</b> {userName}</h5>
