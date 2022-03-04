@@ -68,11 +68,8 @@ function App() {
               <Route path='/dashboard/edit-profile' element={<EditProfile />} />
               <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
               <Route path='/dashboard/add-depertments' element={<AddDepertments />} />
-
               <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
               <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
-        
-        
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
