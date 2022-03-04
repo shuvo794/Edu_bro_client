@@ -16,7 +16,7 @@ const BlogDetails = ({data}) => {
                         </div>
                         <div className="blog-text px-2 py-3">
                             <div className="blog-meta mb-1 d-flex justify-content-between">
-                                <span>Sea beach</span>
+                          <h3>{topic}</h3>
                                 <span>12/04/2022</span>
                             </div>
                             <div className='py-2 d-flex justify-content-between'>

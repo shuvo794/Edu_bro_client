@@ -8,7 +8,7 @@ const AllBlogs = () => {
     useEffect(() => {
         fetch('http://localhost:5000/allBlogs')
             .then(res => res.json())
-            .then(data => setBlogs(data).reverse())
+            .then(data => setBlogs(data))
     }, [])
     console.log(blogs)
     return (
