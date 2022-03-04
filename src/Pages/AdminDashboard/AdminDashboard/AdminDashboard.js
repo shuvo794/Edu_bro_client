@@ -25,6 +25,16 @@ const AdminDashboard = () => {
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaThLarge className='me-1' /> Admin Blogs</NavLink>
                             </li>
+                            <li>
+                                <NavLink to={`admin-books`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaThLarge className='me-1' /> Admin Books</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={`admin-notes`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaThLarge className='me-1' /> Admin Notes</NavLink>
+                            </li>
 
                             <li className='dashboard-logOut'>
                                 <FaSignOutAlt className='me-1' /> Log Out
