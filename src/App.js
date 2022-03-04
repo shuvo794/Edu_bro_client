@@ -3,6 +3,9 @@ import './App.css';
 import AuthProvider from './context/AuthProvider.js/AuthProvider';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+import AdminBlogs from './Pages/AdminDashboard/AdminBlogs/AdminBlogs';
+import AdminDashboard from './Pages/AdminDashboard/AdminDashboard/AdminDashboard';
+import AdminWelcome from './Pages/AdminDashboard/AdminWelcome/AdminWelcome';
 import AllBlogs from './Pages/AllBlogs/AllBlogs';
 import BlogDetails from './Pages/AllBlogs/BlogDetails';
 import AllBooks from './Pages/AllBooks/AllBooks';
@@ -31,7 +34,6 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import FindQuestions from './Pages/FindQuestions/FindQuestions';
 import Forum from './Pages/Forum/Forum';
 import Home from './Pages/Home/Home/Home';
-import QuestionDetailsSolve from './Pages/QuestionDetailsSolve/QuestionDetailsSolve';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 
@@ -53,6 +55,16 @@ function App() {
             <Route path='/find-questions' element={<FindQuestions />} />
             <Route path='/forum' element={<Forum />} />
 
+            {/* Admin Dashboard  */}
+
+            <Route path='/admin-dashboard' element={<AdminDashboard />}>
+              <Route path='/admin-dashboard' element={<AdminWelcome />} />
+              <Route path='/admin-dashboard/welcome' element={<AdminWelcome />} />
+              <Route path='/admin-dashboard/admin-blogs' element={<AdminBlogs />} />
+            </Route>
+
+            {/* User Dashboard  */}
+
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path='/dashboard' element={<DashboardWelcome />} />
               <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
@@ -68,9 +80,10 @@ function App() {
               <Route path='/dashboard/edit-profile' element={<EditProfile />} />
               <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
               <Route path='/dashboard/add-depertments' element={<AddDepertments />} />
+
               <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
               <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
-            <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
+            <Route path='/question-details/:id' element={<QuestionDetails />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
