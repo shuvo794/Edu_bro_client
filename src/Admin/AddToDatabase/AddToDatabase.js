@@ -73,9 +73,9 @@ const AddToDatabase = () => {
               />
               <span className="shadow-input1"></span>
             </div>
-   
 
-           
+
+
 
             <h3>Department:</h3>
             <br />

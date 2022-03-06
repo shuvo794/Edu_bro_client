@@ -11,7 +11,7 @@ const AllQuestions = () => {
             .then(data => setQuestions(data))
     }, [])
 
-    
+
     // Start data store via Redux toolkit 
 
     // const dispatch = useDispatch()

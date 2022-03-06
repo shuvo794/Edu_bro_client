@@ -140,11 +140,11 @@ const useFirebase = () => {
 
 
   //ADMIN CONDITIONAL DATALOAD
-  useEffect( ()=>{
-  fetch(`https://blooming-sierra-74368.herokuapp.com/users/${user.email}`)
-  .then(res => res.json())
-  .then(data => setAdmin(data.admin))
-  },[user.email])
+  useEffect(() => {
+    fetch(`https://blooming-sierra-74368.herokuapp.com/users/${user.email}`)
+      .then(res => res.json())
+      .then(data => setAdmin(data.admin))
+  }, [user.email])
 
 
 
