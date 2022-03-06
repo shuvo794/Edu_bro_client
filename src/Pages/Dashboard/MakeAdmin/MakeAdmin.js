@@ -5,21 +5,21 @@ const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         // console.log(data)
-        fetch('https://blooming-sierra-74368.herokuapp.com/users/admin',{
+        fetch('https://blooming-sierra-74368.herokuapp.com/users/admin', {
             method: 'PUT',
-            headers:{
-                 'content-type' : 'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(data)
-       })
-       .then(res => res.json())
-       .then( data =>{
-           if(data.modifiedCount){
-                alert('Make Admin successfully')
-           }else{
-            alert('Oops! Not working')
-           }
-       })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    alert('Make Admin successfully')
+                } else {
+                    alert('Oops! Not working')
+                }
+            })
 
         reset()
     }
