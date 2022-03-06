@@ -17,17 +17,17 @@ const MyQuestions = () => {
             .then((data) => setQuestions(data));
     }, [user?.email]);
 
-    
-console.log(questions)
+
+    console.log(questions)
     return (
         <div className='my-questions'>
-        <div className='d-flex justify-content-between align-items-center my-question-header'>
-            <h2>My questions</h2>
-            <Link to={'/dashboard/add-question'}>
+            <div className='d-flex justify-content-between align-items-center my-question-header'>
+                <h2>My questions</h2>
+                <Link to={'/dashboard/add-question'}>
                     <button className='add-btn btn-danger'>Add Questions</button>
                 </Link>
-        </div>
-        <table className="table table-dark" style={{ width: "100%" }}>
+            </div>
+            <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
                     <tr className="bg-dark text-white mb-3 p-2" style={{ question: "1px solid red" }}>
 
@@ -36,12 +36,12 @@ console.log(questions)
                         <th >Semester</th>
                         <th >Code</th>
                         <th >Year</th>
-            
+
                         <th >question Preview</th>
-                       
+
                         <th >Status</th>
                         <th >Request To Delete</th>
-                    
+
                     </tr>
                 </thead>
                 {questions?.map((question, index) => (
@@ -54,11 +54,11 @@ console.log(questions)
                             <td>{question.semester}</td>
 
                             <td> <iframe title="question" src={question.driveLink}
-                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
                             <td>{question.status}</td>
                             <td> <button
                                 className="btn btn-danger "
-                                // onClick={() => handlequestionDeleteRequest(question._id)}
+                            // onClick={() => handlequestionDeleteRequest(question._id)}
                             >
                                 Delete question
                             </button></td>
@@ -67,7 +67,7 @@ console.log(questions)
 
                 ))}
             </table>
-    </div>
+        </div>
     );
 };
 
