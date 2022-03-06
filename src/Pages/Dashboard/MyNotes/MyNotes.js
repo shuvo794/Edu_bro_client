@@ -13,29 +13,29 @@ const MyNotes = () => {
             .then((data) => setNotes(data));
     }, [user?.email]);
 
-console.log(notes)
+    console.log(notes)
 
     return (
         <div className='my-questions'>
-        <div className='d-flex justify-content-between align-items-center my-question-header'>
-            <h2>My notes</h2>
-            <Link to={'/dashboard/add-notes'}>
-                <button className='add-btn btn-danger'>Add notes</button>
-            </Link>
-        </div>
-        <table className="table table-dark" style={{ width: "100%" }}>
+            <div className='d-flex justify-content-between align-items-center my-question-header'>
+                <h2>My notes</h2>
+                <Link to={'/dashboard/add-notes'}>
+                    <button className='add-btn btn-danger'>Add notes</button>
+                </Link>
+            </div>
+            <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
                     <tr className="bg-dark text-white mb-3 p-2" style={{ note: "1px solid red" }}>
 
                         <th >Number</th>
                         <th >Subject Name</th>
                         <th >Topic</th>
-            
+
                         <th >Note Preview</th>
-                       
+
                         <th >Status</th>
                         <th >Request To Delete</th>
-                    
+
                     </tr>
                 </thead>
                 {notes?.map((note, index) => (
@@ -46,11 +46,11 @@ console.log(notes)
                             <td>{note.subject}</td>
 
                             <td> <iframe title="question" src={note.driveLink}
-                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
                             <td>{note.status}</td>
                             <td> <button
                                 className="btn btn-danger"
-                                // onClick={() => handlenoteDeleteRequest(note._id)}
+                            // onClick={() => handlenoteDeleteRequest(note._id)}
                             >
                                 Delete note
                             </button></td>
@@ -59,7 +59,7 @@ console.log(notes)
 
                 ))}
             </table>
-    </div>
+        </div>
     );
 };
 
