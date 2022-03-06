@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cart.css'
 const Cart = ({ data }) => {
-    const { url, subject, year ,semester,code } = data
+    const { url, subject, year, semester, code } = data
 
 
     console.log(url)

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const QuestionSolveCart = ({data}) => {
-    const { subject,year ,code, driveLink ,email  ,topic ,userName , solveNumber ,department} = data
+const QuestionSolveCart = ({ data }) => {
+    const { subject, year, code, driveLink, email, topic, userName, solveNumber, department } = data
 
 
     let googleId = driveLink?.slice(32, 65);
@@ -29,7 +29,7 @@ const QuestionSolveCart = ({data}) => {
                     </div>
                     <div className="d-flex justify-content-between mt-3" >
                         <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
-                       
+
                     </div>
                 </div>
             </div>
