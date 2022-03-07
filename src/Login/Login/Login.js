@@ -4,23 +4,23 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { FcGoogle } from 'react-icons/fc'
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
 
-    const { loginWithGoogle, loginWithOwnEmaiAndPass} = useFirebase()
+    const { loginWithGoogle, loginWithOwnEmaiAndPass } = useAuth()
 
     //Location & navigate
     const location = useLocation()
     const navigate = useNavigate()
 
-    //handle google login
+    //handle google login here
     const handleGoogleLogin = () => {
-        loginWithGoogle(location , navigate);
+        loginWithGoogle(location, navigate);
     };
 
-       
+
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -36,21 +36,21 @@ const Login = () => {
                             <h2 className='mb-5'>Login to Edu Bro</h2>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input
-                                 className='w-75 mb-3' 
-                                  {...register("email", { required: true })} 
-                                  placeholder='Enter Email' /> 
-                                  <br />
-                                
-                                <input 
-                                className='w-75 mb-3' 
-                                {...register("password", { required: true })} placeholder='Enter Password' /> 
+                                    className='w-75 mb-3'
+                                    {...register("email", { required: true })}
+                                    placeholder='Enter Email' />
+                                <br />
+
+                                <input
+                                    className='w-75 mb-3'
+                                    {...register("password", { required: true })} placeholder='Enter Password' />
                                 <br />
 
                                 <button type='submit'>Login</button>
                             </form>
                             <div className='login-meta mt-4'>
                                 <p>New to Edu Bro? <Link to={'/register'}><span className='login-links'>Create a free Account</span></Link></p>
-                                <span onClick={handleGoogleLogin} className='fs-4'>Continue with <FcGoogle className='fs-2 google' /></span>
+                                <span style={{ cursor: "pointer" }} onClick={handleGoogleLogin} className='fs-4'>Continue with <FcGoogle className='fs-2 google' /></span>
                             </div>
                         </div>
                     </Col>

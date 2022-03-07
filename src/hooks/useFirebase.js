@@ -21,6 +21,11 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // Navbar toggle
+  const [toggle, setToggle] = useState(false);
+  const handleClick = () => {
+    setToggle(false);
+  };
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -39,19 +44,15 @@ const useFirebase = () => {
         navigate(destination)
         setError("");
 
-
         const newUser = { email, displayName: name }
-        //console.log(newUser);
         setUser(newUser)
-
-        //SEND NAME IN THE FIREBASE
+        // save use to database 
+        sendUserInfoToDb(email, name, 'POST')
+        // send name to firebase after creation 
         updateProfile(auth.currentUser, {
           displayName: name
-        }).then(() => {
-
-        }).catch((error) => {
-
-        });
+        }).then(() => { })
+          .catch((error) => { })
 
       })
       .catch((error) => {
@@ -82,22 +83,23 @@ const useFirebase = () => {
 
     setIsLoading(true)
     signInWithPopup(auth, googleProvider)
-      .then((result) => {
+      .then(result => {
         const user = result.user;
+        setUser(user)
+        // save to database 
+        sendUserInfoToDb(user.email, user.displayName, 'PUT')
+        setError("")
         const destination = location?.state?.from || '/'
         navigate(destination)
-        setError("");
-      })
-      .catch((error) => {
-        setError(error.message);
-      })
-      .finally(() => setIsLoading(false));
+      }).catch(error => setError(error.message))
+      .finally(() => setIsLoading(false))
 
   };
 
   //LOG OUT USER METHOD
   const userLogOut = () => {
     setIsLoading(true)
+    setToggle(false)
     signOut(auth)
       .then(() => {
 
@@ -106,15 +108,19 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   }
-  const sendUserInfoToDb = (email) => {
-    fetch("http://localhost:5000/addUserInfo", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email }),
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
-  };
+
+  // save user to database 
+  const sendUserInfoToDb = (email, displayName, method) => {
+    const user = { email, displayName }
+    fetch('http://localhost:5000/users', {
+      method: method,
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user)
+    }).then(res => res.json())
+      .then(data => {
+        // console.log(data)
+      })
+  }
 
 
   //OBSERVER USER STATE
@@ -139,7 +145,10 @@ const useFirebase = () => {
     registerUser,
     isLoading,
     error,
-    loginWithOwnEmaiAndPass
+    loginWithOwnEmaiAndPass,
+    toggle,
+    setToggle,
+    handleClick
   };
 };
 export default useFirebase;
