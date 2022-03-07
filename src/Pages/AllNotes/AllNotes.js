@@ -4,7 +4,7 @@ import AllNotesCart from './AllNotesCart';
 const AllNotes = () => {
     const [notes, setNotes] = useState([]);
     useEffect(() => {
-        fetch('https://blooming-sierra-74368.herokuapp.com/allnotes')
+        fetch('http://localhost:5000/allnotes')
             .then(res => res.json())
             .then(data => setNotes(data))
     }, [])

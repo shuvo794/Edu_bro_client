@@ -29,8 +29,9 @@ const QuestionDetailsSolve = () => {
         data.code = question.code
         data.department = question.department
 
+        // post solve 
 
-        fetch(`https://blooming-sierra-74368.herokuapp.com/addQuestionSolve`, {
+        fetch(`http://localhost:5000/addQuestionSolve`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -46,8 +47,10 @@ const QuestionDetailsSolve = () => {
     };
 
 
+    // get question 
+
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/question/${id}`)
+        fetch(`http://localhost:5000/question/${id}`)
             .then(res => res.json())
             .then(data => {
                 setQuestion(data)
@@ -57,13 +60,15 @@ const QuestionDetailsSolve = () => {
 
 
 
+    // get solve 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/questionSolve/${id}`)
+        fetch(`http://localhost:5000/questionSolve/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setQuestionSolves(data)
             });
     }, [id, reset]);
+
 
 
     return (
@@ -95,7 +100,7 @@ const QuestionDetailsSolve = () => {
 
                                 <input className='w-75 mb-3'  {...register("solveNumber", { required: true })} placeholder='Solve Number' /> <br />
                                 <input className='w-75 mb-3' {...register("solveDriveLink", { required: true })} placeholder='Question Link' /> <br />
-                                <button type='submit'>Submit</button>
+                                <button type='submit'>Post Answer</button>
                             </form>
 
                         </div>
@@ -107,7 +112,7 @@ const QuestionDetailsSolve = () => {
                     </div>
                 </div>
                 <div className="container text-black mt-5 mb-5" >
-                    <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Desire Questions</h1></div>
+
                     {QuestionSolves.length ? <div className="row row-cols-1 row-cols-md-3 g-4">
                         {QuestionSolves?.map((QuestionSolve) => (
                             <QuestionSolveCart
