@@ -12,12 +12,10 @@ import AllBlogs from './Pages/AllBlogs/AllBlogs';
 import BlogDetails from './Pages/AllBlogs/BlogDetails';
 import AllBooks from './Pages/AllBooks/AllBooks';
 import AllNotes from './Pages/AllNotes/AllNotes';
-
 import AllQuestions from './Pages/AllQuestions/AllQuestions';
 import Contact from './Pages/Contact/Contact';
 import AddBlogsDashboard from './Pages/Dashboard/AddBlogsDashboard/AddBlogsDashboard';
 import AddBooksDashboard from './Pages/Dashboard/AddBooksDashboard/AddBooksDashboard';
-import AddDepertments from './Pages/Dashboard/AddDepertMents/AddDepertments';
 import AddNotesDashboard from './Pages/Dashboard/AddNotesDashboard/AddNotesDashboard';
 import AddQuestionDashboard from './Pages/Dashboard/AddQuestionDashboard/AddQuestionDashboard';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
@@ -28,7 +26,6 @@ import MyBlogs from './Pages/Dashboard/MyBlogs/MyBlogs';
 import MyBooks from './Pages/Dashboard/MyBooks/MyBooks';
 import MyNotes from './Pages/Dashboard/MyNotes/MyNotes';
 import MyQuestions from './Pages/Dashboard/MyQuestions/MyQuestions';
-import QuestionDetails from './Pages/Dashboard/MyQuestions/QuestionDetails';
 import PendingQuestions from './Pages/Dashboard/PendingQuestions/PendingQuestions';
 import EditProfile from './Pages/Dashboard/UserProfile/EditProfile';
 import UserProfile from './Pages/Dashboard/UserProfile/UserProfile';
@@ -84,11 +81,8 @@ function App() {
               <Route path='/dashboard/user-profile' element={<UserProfile />} />
               <Route path='/dashboard/edit-profile' element={<EditProfile />} />
               <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
-              <Route path='/dashboard/add-depertments' element={<AddDepertments />} />
-
               <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
               <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
-
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />

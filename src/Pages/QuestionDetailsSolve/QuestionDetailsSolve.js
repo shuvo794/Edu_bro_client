@@ -100,7 +100,7 @@ const QuestionDetailsSolve = () => {
 
                                 <input className='w-75 mb-3'  {...register("solveNumber", { required: true })} placeholder='Solve Number' /> <br />
                                 <input className='w-75 mb-3' {...register("solveDriveLink", { required: true })} placeholder='Question Link' /> <br />
-                                <button type='submit'>Submit</button>
+                                <button type='submit'>Post Answer</button>
                             </form>
 
                         </div>
@@ -112,7 +112,7 @@ const QuestionDetailsSolve = () => {
                     </div>
                 </div>
                 <div className="container text-black mt-5 mb-5" >
-                    <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Desire Questions</h1></div>
+
                     {QuestionSolves.length ? <div className="row row-cols-1 row-cols-md-3 g-4">
                         {QuestionSolves?.map((QuestionSolve) => (
                             <QuestionSolveCart
