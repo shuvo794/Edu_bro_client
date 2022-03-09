@@ -15,12 +15,12 @@ const QuestionCart = ({ data }) => {
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
 
     return (
-        <div className="col">
+        <div className="col-12 col-md-4 mb-4">
             <div className="card custom-cart h-100 hover">
                 <iframe title="question" src={viewUrl}
                     className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
                 <div className="card-body">
-                    <h4 className="card-title mb-3">Subject{subject}</h4>
+                    <h4 className="card-title mb-3">{subject}</h4>
                     <h5 className="card-title">Department: {department}</h5>
                     <h5 className="card-title">Department: {semester}</h5>
                     <div className='d-flex justify-content-between'>

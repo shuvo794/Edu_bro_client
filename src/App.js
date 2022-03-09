@@ -20,8 +20,8 @@ import AddNotesDashboard from './Pages/Dashboard/AddNotesDashboard/AddNotesDashb
 import AddQuestionDashboard from './Pages/Dashboard/AddQuestionDashboard/AddQuestionDashboard';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardWelcome from './Pages/Dashboard/DashboardWelcome/DashboardWelcome';
-import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
-import ManageQuestion from './Pages/Dashboard/ManageQuestions/ManageQuestion';
+import MakeAdmin from './Pages/AdminDashboard/MakeAdmin/MakeAdmin';
+import ManageQuestion from './Pages/AdminDashboard/ManageQuestions/ManageQuestion';
 import MyBlogs from './Pages/Dashboard/MyBlogs/MyBlogs';
 import MyBooks from './Pages/Dashboard/MyBooks/MyBooks';
 import MyNotes from './Pages/Dashboard/MyNotes/MyNotes';
@@ -63,6 +63,8 @@ function App() {
               <Route path='/admin-dashboard/admin-blogs' element={<AdminBlogs />} />
               <Route path='/admin-dashboard/admin-notes' element={<AdminNotes />} />
               <Route path='/admin-dashboard/admin-books' element={<AdminBooks />} />
+              <Route path='/admin-dashboard/manage-questions' element={<ManageQuestion />} />
+              <Route path='/admin-dashboard/make-admin' element={<MakeAdmin />} />
             </Route>
 
             {/* User Dashboard  */}
@@ -81,8 +83,7 @@ function App() {
               <Route path='/dashboard/user-profile' element={<UserProfile />} />
               <Route path='/dashboard/edit-profile' element={<EditProfile />} />
               <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
-              <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
-              <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
+            </Route>
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
