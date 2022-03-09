@@ -5,11 +5,37 @@ import QuestionCart from './QuestionCart';
 
 const AllQuestions = () => {
     const [questions, setQuestions] = useState([]);
+
+
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/allQuestions')
+    //         .then(res => res.json())
+    //         .then(data => setQuestions(data))
+    // }, [])
+
+
+
+
+
+    const department = ''
+    const year = ''
+    const status = 'approve'
     useEffect(() => {
-        fetch('http://localhost:5000/allQuestions')
+        fetch(`http://localhost:5000/allQuestions?department=${department}&&year=${year}&&status=${status}`)
             .then(res => res.json())
-            .then(data => setQuestions(data))
+            .then(data => {
+                setQuestions(data)
+
+                // setQuestions(data.blogs)
+                // const count = data.count;
+                // const pageNumber = Math.ceil(count / size)
+                // setPageCount(pageNumber)
+            })
     }, [])
+
+
+
 
 
     // Start data store via Redux toolkit 
