@@ -36,6 +36,7 @@ import Home from './Pages/Home/Home/Home';
 import QuestionDetailsSolve from './Pages/QuestionDetailsSolve/QuestionDetailsSolve';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
+import AdminQuestion from './Pages/AdminDashboard/AdminQuestion/AdminQuestion';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
             <Route path='/admin-dashboard' element={<AdminDashboard />}>
               <Route path='/admin-dashboard' element={<AdminWelcome />} />
               <Route path='/admin-dashboard/welcome' element={<AdminWelcome />} />
+              <Route path='/admin-dashboard/admin-questions' element={<AdminQuestion />} />
               <Route path='/admin-dashboard/admin-blogs' element={<AdminBlogs />} />
               <Route path='/admin-dashboard/admin-notes' element={<AdminNotes />} />
               <Route path='/admin-dashboard/admin-books' element={<AdminBooks />} />

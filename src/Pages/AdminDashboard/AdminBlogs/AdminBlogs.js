@@ -59,14 +59,13 @@ const AdminBlogs = () => {
                     <tbody key={blog._id}>
                         <tr role="row" style={{ blog: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{blog.blogName}</td>
-                            <td>{blog.author}</td>
+                            <td>{blog.topic}</td>
+                            <td>{blog.email}</td>
+                            {/* 
+                    <td> <iframe title="blog" src={download}
+        className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+        </td> */}
 
-                            <td>
-                                {/* <iframe title="question" src={blog.driveLink}
-        className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe> */}
-                            </td>
-                            <td>{blog.status}</td>
                             <td>
                                 <div >
                                     <select onChange={handleSelectValue} className="pending p-2 ">
