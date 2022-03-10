@@ -40,7 +40,6 @@ const AdminBlogs = () => {
             <div className="text-center pb-3">
                 <h1 className="mb-5 text-center pt-5">Total Blogs <span className="text-danger">{blogs.length}</span>  </h1>
             </div>
-
             <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
                     <tr className="bg-dark text-white mb-3 p-2" style={{ blog: "1px solid red" }}>
