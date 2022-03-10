@@ -36,6 +36,12 @@ import Home from './Pages/Home/Home/Home';
 import QuestionDetailsSolve from './Pages/QuestionDetailsSolve/QuestionDetailsSolve';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
+import AdminQuestion from './Pages/AdminDashboard/AdminQuestion/AdminQuestion';
+import AddSyllabusDashboard from './Pages/Dashboard/AddSyllabusDashboard/AddSyllabusDashboard';
+import AllSyllabus from './Pages/AllSyllabus/AllSyllabus';
+import MySyllabus from './Pages/Dashboard/MySyllabus/MySyllabus';
+import AdminSyllabus from './Pages/AdminDashboard/AdminSyllabus/AdminSyllabus';
+
 
 
 function App() {
@@ -50,6 +56,7 @@ function App() {
 
             <Route path="/allQuestions" element={<AllQuestions />} />
             <Route path="/allBooks" element={<AllBooks />} />
+            <Route path="/allSyllabus" element={<AllSyllabus />} />
             <Route path="/allBlogs" element={<AllBlogs />} />
             <Route path="/allNotes" element={<AllNotes />} />
             <Route path='/find-questions' element={<FindQuestions />} />
@@ -60,9 +67,11 @@ function App() {
             <Route path='/admin-dashboard' element={<AdminDashboard />}>
               <Route path='/admin-dashboard' element={<AdminWelcome />} />
               <Route path='/admin-dashboard/welcome' element={<AdminWelcome />} />
+              <Route path='/admin-dashboard/admin-questions' element={<AdminQuestion />} />
               <Route path='/admin-dashboard/admin-blogs' element={<AdminBlogs />} />
               <Route path='/admin-dashboard/admin-notes' element={<AdminNotes />} />
               <Route path='/admin-dashboard/admin-books' element={<AdminBooks />} />
+              <Route path='/admin-dashboard/admin-syllabus' element={<AdminSyllabus />} />
               <Route path='/admin-dashboard/manage-questions' element={<ManageQuestion />} />
               <Route path='/admin-dashboard/make-admin' element={<MakeAdmin />} />
             </Route>
@@ -74,10 +83,17 @@ function App() {
               <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
               <Route path='/dashboard/my-questions' element={<MyQuestions />} />
               <Route path='/dashboard/my-books' element={<MyBooks />} />
+              <Route path='/dashboard/my-syllabus' element={<MySyllabus />} />
               <Route path='/dashboard/my-blogs' element={<MyBlogs />} />
               <Route path='/dashboard/my-notes' element={<MyNotes />} />
+
+
+
+
+
               <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
               <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
+              <Route path='/dashboard/add-syllabus' element={<AddSyllabusDashboard />} />
               <Route path='/dashboard/add-notes' element={<AddNotesDashboard />} />
               <Route path='/dashboard/add-blogs' element={<AddBlogsDashboard />} />
               <Route path='/dashboard/user-profile' element={<UserProfile />} />

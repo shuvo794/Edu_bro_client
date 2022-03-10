@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import useFirebase from '../../../hooks/useFirebase';
-const AdminBlogs = () => {
 
-    const [blogs, setBlogs] = useState([])
+const AdminSyllabus = () => {
+
+
+    const [syllabus, setSyllabus] = useState([])
     const { user } = useFirebase()
-    console.log(blogs)
 
     const [status, setStatus] = useState('')
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBlogs`)
+        fetch(`http://localhost:5000/allSyllabus`)
             .then((res) => res.json())
-            .then((data) => setBlogs(data));
+            .then((data) => setSyllabus(data));
     }, [user?.email]);
 
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/BlogStatusUpdate/${id}`, {
+        fetch(`http://localhost:5000/SyllabusStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -34,42 +35,40 @@ const AdminBlogs = () => {
     }
 
 
-
     return (
-        < div className="container all-blog-container" >
+        < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total Blogs <span className="text-danger">{blogs.length}</span>  </h1>
+                <h1 className="mb-5 text-center pt-5">Total Syllabus <span className="text-danger">{syllabus.length}</span>  </h1>
             </div>
 
             <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
-                    <tr className="bg-dark text-white mb-3 p-2" style={{ blog: "1px solid red" }}>
-
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ book: "1px solid red" }}>
                         <th >Number</th>
-                        <th >blog Name</th>
-                        <th >Author Name</th>
+                        <th >Department</th>
+                        <th >Year</th>
 
-                        {/* <th >Blog Preview</th> */}
+                        {/* <th >Book Preview</th> */}
 
                         <th >Status</th>
-                        <th >Request To Delete</th>
+                        <th >Update</th>
                     </tr>
                 </thead>
-                {blogs?.map((blog, index) => (
-                    <tbody key={blog._id}>
-                        <tr role="row" style={{ blog: "2px solid gray" }} >
+                {syllabus?.map((syllabuss, index) => (
+                    <tbody key={syllabuss._id}>
+                        <tr role="row" style={{ book: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{blog.topic}</td>
-                            <td>{blog.email}</td>
+                            <td>{syllabuss.syllabusName}</td>
+                            <td>{syllabuss.year}</td>
                             {/* 
-                    <td> <iframe title="blog" src={download}
+                    <td> <iframe title="question" src={download}
         className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
         </td> */}
 
                             <td>
                                 <div >
                                     <select onChange={handleSelectValue} className="pending p-2 ">
-                                        <option defaultValue={blog.status}>{blog.status}</option>
+                                        <option defaultValue={syllabuss.status}>{syllabuss.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
                                         <option defaultValue="cancelled">Cancelled</option>
@@ -77,7 +76,7 @@ const AdminBlogs = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(blog._id)}>update</button>
+                                <button className="btn btn-danger" onClick={() => handleUpdate(syllabuss._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>
@@ -88,5 +87,4 @@ const AdminBlogs = () => {
     );
 };
 
-export default AdminBlogs;
-
+export default AdminSyllabus;
