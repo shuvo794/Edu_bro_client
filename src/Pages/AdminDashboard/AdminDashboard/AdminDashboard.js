@@ -36,6 +36,11 @@ const AdminDashboard = () => {
                                 })}><FaTasks className='me-1' /> Manage Books</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`admin-syllabus`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaTasks className='me-1' /> Manage Syllabus</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`admin-notes`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaUserShield className='me-1' /> Manage Notes</NavLink>
