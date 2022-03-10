@@ -21,19 +21,34 @@ const AdminDashboard = () => {
                                 })}><FaThLarge className='me-1' /> Dashboard</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`manage-questions`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBookmark className='me-1' /> Manage Questions</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`admin-blogs`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
-                                })}><FaThLarge className='me-1' /> Admin Blogs</NavLink>
+                                })}><FaCommentDots className='me-1' /> Manage Blogs</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-books`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
-                                })}><FaThLarge className='me-1' /> Admin Books</NavLink>
+                                })}><FaTasks className='me-1' /> Manage Books</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={`admin-syllabus`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaTasks className='me-1' /> Manage Syllabus</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-notes`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
-                                })}><FaThLarge className='me-1' /> Admin Notes</NavLink>
+                                })}><FaUserShield className='me-1' /> Manage Notes</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={`make-admin`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaUser className='me-1' /> Make Admin</NavLink>
                             </li>
 
                             <li className='dashboard-logOut'>

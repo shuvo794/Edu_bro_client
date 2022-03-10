@@ -5,7 +5,7 @@ import Hafiz from '../../../Assets/Images/TeamMember/jrHafiz.png'
 import Shuvo from '../../../Assets/Images/TeamMember/Shuvo.png'
 import Monib from '../../../Assets/Images/TeamMember/Monib.png'
 import Hasnat from '../../../Assets/Images/TeamMember/Hasnat.png'
-                                    
+
 import './TeamMember.css'
 const TeamMember = () => {
     return (
@@ -51,7 +51,7 @@ const TeamMember = () => {
                         </div>
 
                     </div>
-                </div>              
+                </div>
                 <div className="col">
                     <div className="card h-100 hover">
                         <img src={Monib} className="card-img-top img-fluid img-fluid" alt="..." />
@@ -61,7 +61,7 @@ const TeamMember = () => {
                         </div>
 
                     </div>
-                </div>              
+                </div>
                 <div className="col">
                     <div className="card h-100 hover">
                         <img src={Hasnat} className="card-img-top img-fluid img-fluid" alt="..." />
@@ -71,7 +71,7 @@ const TeamMember = () => {
                         </div>
 
                     </div>
-                </div>              
+                </div>
 
             </div>
 

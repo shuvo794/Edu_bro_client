@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BooksCart = ({ data }) => {
+const SyllabusCart = ({ data }) => {
 
 
-    const { author, bookName, driveLink, edition, subject, year } = data
+    const { year,syllabusName ,driveLink } = data
 
     let googleId = driveLink?.slice(32, 65);
     console.log(driveLink)
@@ -16,14 +16,12 @@ const BooksCart = ({ data }) => {
                 <iframe title="question" src={viewUrl}
                     className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
                 <div className="card-body">
-                    <h5 className="card-title"><b>Book Name:</b> {bookName}</h5>
-                    <h5 className="card-title"><b>Author:</b> {author}</h5>
-                    <h5 className="card-title"><b>Subject:</b> {subject}</h5>
-                    <h5 className="card-title"><b>Edition:</b> {edition}</h5>
-                    <h5 className="card-text "><b>Year:</b> {year}</h5>
+                    <h5 className="card-title"><b>Department</b> {syllabusName}</h5>
+                    <h5 className="card-title"><b>Year</b> {year}</h5>
+                   
                     <div className="d-flex justify-content-between pt-3" >
                         <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
-                        <button className="btn-style download-btn " ><a href={viewUrl} className="">See Book</a></button>
+                        <button className="btn-style download-btn " ><a href={viewUrl} className="">See Syllabus</a></button>
                     </div>
                 </div>
             </div>
@@ -31,4 +29,4 @@ const BooksCart = ({ data }) => {
     );
 };
 
-export default BooksCart;
+export default SyllabusCart;

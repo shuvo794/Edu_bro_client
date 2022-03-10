@@ -6,7 +6,7 @@ const AllBlogs = () => {
 
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch('https://blooming-sierra-74368.herokuapp.com/allBlogs')
+        fetch('http://localhost:5000/allBlogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
@@ -17,11 +17,11 @@ const AllBlogs = () => {
             <div className="row g-4 d-flex my-5 ">
                 {blogs?.map((blog) => (
 
-                  <BlogDetails
-                  key={blog.id}
-                  data={blog}>
-      
-                  </BlogDetails>
+                    <BlogDetails
+                        key={blog.id}
+                        data={blog}>
+
+                    </BlogDetails>
 
 
 

@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import useFirebase from '../../../hooks/useFirebase';
 
-const AdminNotes = () => {
+const AdminSyllabus = () => {
 
 
-
-    const [notes, setNotes] = useState([])
+    const [syllabus, setSyllabus] = useState([])
     const { user } = useFirebase()
-    console.log(notes)
 
     const [status, setStatus] = useState('')
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allNotes`)
+        fetch(`http://localhost:5000/allSyllabus`)
             .then((res) => res.json())
-            .then((data) => setNotes(data));
+            .then((data) => setSyllabus(data));
     }, [user?.email]);
 
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/notesStatusUpdate/${id}`, {
+        fetch(`http://localhost:5000/SyllabusStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -37,32 +35,31 @@ const AdminNotes = () => {
     }
 
 
-
     return (
-        < div className="container all-note-container" >
+        < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total Notes <span className="text-danger">{notes.length}</span>  </h1>
+                <h1 className="mb-5 text-center pt-5">Total Syllabus <span className="text-danger">{syllabus.length}</span>  </h1>
             </div>
 
             <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
-                    <tr className="bg-dark text-white mb-3 p-2" style={{ note: "1px solid red" }}>
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ book: "1px solid red" }}>
                         <th >Number</th>
-                        <th >Note Name</th>
-                        <th >Uploader Email</th>
+                        <th >Department</th>
+                        <th >Year</th>
 
-                        {/* <th >note Preview</th> */}
+                        {/* <th >Book Preview</th> */}
 
                         <th >Status</th>
                         <th >Update</th>
                     </tr>
                 </thead>
-                {notes?.map((note, index) => (
-                    <tbody key={note._id}>
-                        <tr role="row" style={{ note: "2px solid gray" }} >
+                {syllabus?.map((syllabuss, index) => (
+                    <tbody key={syllabuss._id}>
+                        <tr role="row" style={{ book: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{note.topic}</td>
-                            <td>{note.email}</td>
+                            <td>{syllabuss.syllabusName}</td>
+                            <td>{syllabuss.year}</td>
                             {/* 
                     <td> <iframe title="question" src={download}
         className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
@@ -71,7 +68,7 @@ const AdminNotes = () => {
                             <td>
                                 <div >
                                     <select onChange={handleSelectValue} className="pending p-2 ">
-                                        <option defaultValue={note.status}>{note.status}</option>
+                                        <option defaultValue={syllabuss.status}>{syllabuss.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
                                         <option defaultValue="cancelled">Cancelled</option>
@@ -79,7 +76,7 @@ const AdminNotes = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(note._id)}>update</button>
+                                <button className="btn btn-danger" onClick={() => handleUpdate(syllabuss._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>
@@ -90,4 +87,4 @@ const AdminNotes = () => {
     );
 };
 
-export default AdminNotes;
+export default AdminSyllabus;
