@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import useFirebase from '../../../hooks/useFirebase';
-const AdminBlogs = () => {
 
-    const [blogs, setBlogs] = useState([])
+const AdminLabs = () => {
+
+    const [labs, setLabs] = useState([])
     const { user } = useFirebase()
-    console.log(blogs)
+    console.log(labs)
 
     const [status, setStatus] = useState('')
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBlogs`)
+        fetch(`http://localhost:5000/allLabs`)
             .then((res) => res.json())
-            .then((data) => setBlogs(data));
+            .then((data) => setLabs(data));
     }, [user?.email]);
 
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/BlogStatusUpdate/${id}`, {
+        fetch(`http://localhost:5000/labsStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -33,44 +34,41 @@ const AdminBlogs = () => {
         setStatus(statusData)
     }
 
-
-
     return (
-        < div className="container all-blog-container" >
+        < div className="container all-note-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total Blogs <span className="text-danger">{blogs.length}</span>  </h1>
+                <h1 className="mb-5 text-center pt-5">Total Notes <span className="text-danger">{labs.length}</span>  </h1>
             </div>
 
             <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
-                    <tr className="bg-dark text-white mb-3 p-2" style={{ blog: "1px solid red" }}>
-
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ lab: "1px solid red" }}>
                         <th >Number</th>
-                        <th >blog Name</th>
-                        <th >Author Name</th>
+                        <th >Note Name</th>
+                        <th >Uploader Email</th>
 
-                        {/* <th >Blog Preview</th> */}
+                        {/* <th >note Preview</th> */}
 
                         <th >Status</th>
-                        <th >Request To Delete</th>
+                        <th >Update</th>
                     </tr>
                 </thead>
-                {blogs?.map((blog, index) => (
-                    <tbody key={blog._id}>
-                        <tr role="row" style={{ blog: "2px solid gray" }} >
+                {labs?.map((lab, index) => (
+                    <tbody key={lab._id}>
+                        <tr role="row" style={{ note: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{blog.blogName}</td>
-                            <td>{blog.author}</td>
+                            <td>{lab.labName}</td>
 
-                            <td>
-                                {/* <iframe title="question" src={blog.driveLink}
-        className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe> */}
-                            </td>
-                            <td>{blog.status}</td>
+                            <td>{lab.email}</td>
+                            {/* 
+                    <td> <iframe title="question" src={download}
+        className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+        </td> */}
+
                             <td>
                                 <div >
                                     <select onChange={handleSelectValue} className="pending p-2 ">
-                                        <option defaultValue={blog.status}>{blog.status}</option>
+                                        <option defaultValue={lab.status}>{lab.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
                                         <option defaultValue="cancelled">Cancelled</option>
@@ -78,7 +76,7 @@ const AdminBlogs = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(blog._id)}>update</button>
+                                <button className="btn btn-danger" onClick={() => handleUpdate(lab._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>
@@ -89,5 +87,4 @@ const AdminBlogs = () => {
     );
 };
 
-export default AdminBlogs;
-
+export default AdminLabs;

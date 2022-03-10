@@ -17,11 +17,11 @@ const AllBlogs = () => {
             <div className="row g-4 d-flex my-5 ">
                 {blogs?.map((blog) => (
 
-                  <BlogDetails
-                  key={blog.id}
-                  data={blog}>
-      
-                  </BlogDetails>
+                    <BlogDetails
+                        key={blog.id}
+                        data={blog}>
+
+                    </BlogDetails>
 
 
 

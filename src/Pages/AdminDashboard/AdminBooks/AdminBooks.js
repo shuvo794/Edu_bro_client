@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import useFirebase from '../../../hooks/useFirebase';
-const AdminBlogs = () => {
 
-    const [blogs, setBlogs] = useState([])
+const AdminBooks = () => {
+
+
+    const [books, setBooks] = useState([])
     const { user } = useFirebase()
-    console.log(blogs)
+    console.log(books)
 
     const [status, setStatus] = useState('')
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBlogs`)
+        fetch(`http://localhost:5000/allBooks`)
             .then((res) => res.json())
-            .then((data) => setBlogs(data));
+            .then((data) => setBooks(data));
     }, [user?.email]);
 
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/BlogStatusUpdate/${id}`, {
+        fetch(`http://localhost:5000/BookStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -34,43 +36,40 @@ const AdminBlogs = () => {
     }
 
 
-
     return (
-        < div className="container all-blog-container" >
+        < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total Blogs <span className="text-danger">{blogs.length}</span>  </h1>
+                <h1 className="mb-5 text-center pt-5">Total Books <span className="text-danger">{books.length}</span>  </h1>
             </div>
 
             <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
-                    <tr className="bg-dark text-white mb-3 p-2" style={{ blog: "1px solid red" }}>
-
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ book: "1px solid red" }}>
                         <th >Number</th>
-                        <th >blog Name</th>
-                        <th >Author Name</th>
+                        <th >Book Name</th>
+                        <th >Uploader</th>
 
-                        {/* <th >Blog Preview</th> */}
+                        {/* <th >Book Preview</th> */}
 
                         <th >Status</th>
-                        <th >Request To Delete</th>
+                        <th >Update</th>
                     </tr>
                 </thead>
-                {blogs?.map((blog, index) => (
-                    <tbody key={blog._id}>
-                        <tr role="row" style={{ blog: "2px solid gray" }} >
+                {books?.map((book, index) => (
+                    <tbody key={book._id}>
+                        <tr role="row" style={{ book: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{blog.blogName}</td>
-                            <td>{blog.author}</td>
+                            <td>{book.bookName}</td>
+                            <td>{book.email}</td>
+                            {/* 
+                    <td> <iframe title="question" src={download}
+        className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+        </td> */}
 
-                            <td>
-                                {/* <iframe title="question" src={blog.driveLink}
-        className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe> */}
-                            </td>
-                            <td>{blog.status}</td>
                             <td>
                                 <div >
                                     <select onChange={handleSelectValue} className="pending p-2 ">
-                                        <option defaultValue={blog.status}>{blog.status}</option>
+                                        <option defaultValue={book.status}>{book.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
                                         <option defaultValue="cancelled">Cancelled</option>
@@ -78,7 +77,7 @@ const AdminBlogs = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(blog._id)}>update</button>
+                                <button className="btn btn-danger" onClick={() => handleUpdate(book._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>
@@ -89,5 +88,4 @@ const AdminBlogs = () => {
     );
 };
 
-export default AdminBlogs;
-
+export default AdminBooks;

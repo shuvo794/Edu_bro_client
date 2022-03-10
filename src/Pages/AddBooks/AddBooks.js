@@ -2,6 +2,7 @@ import { Container } from 'react-bootstrap';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import Rating from 'react-rating';
 
 
 

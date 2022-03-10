@@ -1,58 +1,58 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useFirebase from '../../hooks/useFirebase';
 
-const MyNotes = () => {
+const MyLabs = () => {
     const { user } = useFirebase()
-    const [notes, setNotes] = useState([])
+
+    const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(` http://localhost:5000/mynotes/${user?.email}`)
+        fetch(` http://localhost:5000/myLabs/${user?.email}`)
             .then((res) => res.json())
-            .then((data) => setNotes(data));
+            .then((data) => setLabs(data));
     }, [user?.email]);
 
-    console.log(notes)
-
+    console.log(labs)
     return (
         <div className='my-questions'>
             <div className='d-flex justify-content-between align-items-center my-question-header'>
-                <h2>My notes</h2>
-                <Link to={'/dashboard/add-notes'}>
-                    <button className='add-btn btn-danger'>Add notes</button>
+                <h2>My Labs</h2>
+                <Link to={'/dashboard/add-labs'}>
+                    <button className='add-btn btn-danger'>Add Labs</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
-                    <tr className="bg-dark text-white mb-3 p-2" style={{ note: "1px solid red" }}>
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ lab: "1px solid red" }}>
 
                         <th >Number</th>
-                        <th >Subject Name</th>
-                        <th >Topic</th>
+                        <th >Lab Name</th>
+                        <th >DepartMent Name</th>
 
-                        <th >Note Preview</th>
+                        <th >Lab Preview</th>
 
                         <th >Status</th>
                         <th >Request To Delete</th>
 
                     </tr>
                 </thead>
-                {notes?.map((note, index) => (
-                    <tbody key={note._id}>
-                        <tr role="row" style={{ note: "2px solid gray" }} >
+                {labs?.map((lab, index) => (
+                    <tbody key={lab._id}>
+                        <tr role="row" style={{ lab: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{note.topic}</td>
-                            <td>{note.subject}</td>
+                            <td>{lab.labName}</td>
+                            <td>{lab.department}</td>
 
-                            <td> <iframe title="question" src={note.driveLink}
+                            <td> <iframe title="question" src={lab.driveLink}
                                 className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
-                            <td>{note.status}</td>
+                            <td>{lab.status}</td>
                             <td> <button
                                 className="btn btn-danger"
-                            // onClick={() => handlenoteDeleteRequest(note._id)}
+                            // onClick={() => handlebookDeleteRequest(book._id)}
                             >
-                                Delete note
+                                Delete Lab
                             </button></td>
                         </tr>
                     </tbody>
@@ -63,4 +63,4 @@ const MyNotes = () => {
     );
 };
 
-export default MyNotes;
+export default MyLabs;

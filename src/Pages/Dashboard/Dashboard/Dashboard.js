@@ -37,6 +37,11 @@ const Dashboard = () => {
                                 })}><FaBookmark className='me-1' /> My Books</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`my-labs`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBookmark className='me-1' /> My Labs</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`my-blogs`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Blogs</NavLink>
@@ -73,14 +78,18 @@ const Dashboard = () => {
                                 })}><FaSchool className='me-1' /> Add Depertment</NavLink>
                             </li>
 
-                            {/* {admin && <div> */}
-
-                            <li>
-                                <NavLink to={`make-admin`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
-                                })}><FaUserShield /> Make Admin</NavLink>
-                            </li>
-                            {/* </div>} */}
+                            admin && <div>
+                                <li>
+                                    <NavLink to={`manage-questions`} style={({ isActive }) => ({
+                                        color: isActive ? "#B22222" : "black",
+                                    })}><FaTasks className='me-1' /> Manage Questions</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to={`make-admin`} style={({ isActive }) => ({
+                                        color: isActive ? "#B22222" : "black",
+                                    })}><FaUserShield /> Make Admin</NavLink>
+                                </li>
+                            </div>
 
                             <li className='dashboard-logOut'>
                                 <FaSignOutAlt className='me-1' /> Log Out

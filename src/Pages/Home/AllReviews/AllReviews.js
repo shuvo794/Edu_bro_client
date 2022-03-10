@@ -29,6 +29,11 @@ const AllReviews = () => {
             stretch: 0,
             depth: 100,
             modifier: 1,
+            loop: true,
+            speed: 600,
+            autoplay: {
+              delay: 3000,
+            },
             slideShadows: true
           }
           }
@@ -58,12 +63,10 @@ const AllReviews = () => {
             <img src="https://tutorialzine.com/media/2018/01/NodeJs_Succinctly2.jpg" width="1024" height="1024" />
           </SwiperSlide>
 
-
         </Swiper>
       </>
     </div>
   );
-
-}
+};
 
 export default AllReviews;

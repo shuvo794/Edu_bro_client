@@ -31,7 +31,7 @@ const AddAdmin = () => {
                             <button type='submit' className="contact1-form-btn ">
                                 <span>
                                     Make admin
-                                
+
                                 </span>
                             </button>
                         </div>
