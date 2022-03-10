@@ -3,7 +3,11 @@ import './App.css';
 import AuthProvider from './context/AuthProvider.js/AuthProvider';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
-
+import AdminBlogs from './Pages/AdminDashboard/AdminBlogs/AdminBlogs';
+import AdminBooks from './Pages/AdminDashboard/AdminBooks/AdminBooks';
+import AdminDashboard from './Pages/AdminDashboard/AdminDashboard/AdminDashboard';
+import AdminNotes from './Pages/AdminDashboard/AdminNotes/AdminNotes';
+import AdminWelcome from './Pages/AdminDashboard/AdminWelcome/AdminWelcome';
 import AllBlogs from './Pages/AllBlogs/AllBlogs';
 import BlogDetails from './Pages/AllBlogs/BlogDetails';
 import AllBooks from './Pages/AllBooks/AllBooks';
@@ -53,6 +57,18 @@ function App() {
             <Route path='/find-questions' element={<FindQuestions />} />
             <Route path='/forum' element={<Forum />} />
 
+            {/* Admin Dashboard  */}
+
+            <Route path='/admin-dashboard' element={<AdminDashboard />}>
+              <Route path='/admin-dashboard' element={<AdminWelcome />} />
+              <Route path='/admin-dashboard/welcome' element={<AdminWelcome />} />
+              <Route path='/admin-dashboard/admin-blogs' element={<AdminBlogs />} />
+              <Route path='/admin-dashboard/admin-notes' element={<AdminNotes />} />
+              <Route path='/admin-dashboard/admin-books' element={<AdminBooks />} />
+            </Route>
+
+            {/* User Dashboard  */}
+
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path='/dashboard' element={<DashboardWelcome />} />
               <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
@@ -76,6 +92,7 @@ function App() {
 
               <Route path='/dashboard/manage-questions' element={<ManageQuestion />} />
               <Route path='/dashboard/make-admin' element={<MakeAdmin />} /> </Route>
+
             <Route path='/question-details/:id' element={<QuestionDetails />} />
            
             <Route path='/blog-details/:id' element={<BlogDetails />} />

@@ -46,7 +46,7 @@ const Dashboard = () => {
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Notes</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink to={`pending-questions`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
@@ -55,10 +55,10 @@ const Dashboard = () => {
                                 <NavLink to={`add-depertments`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaSchool className='me-1' /> Add Depertment</NavLink>
-                            </li>
+                            </li> */}
 
                             {/* {admin && <div> */}
-                            <li>
+                            {/* <li>
                                 <NavLink to={`manage-questions`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaTasks className='me-1' /> Manage Questions</NavLink>
@@ -67,7 +67,7 @@ const Dashboard = () => {
                                 <NavLink to={`make-admin`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaUserShield /> Make Admin</NavLink>
-                            </li>
+                            </li> */}
                             {/* </div>} */}
 
                             <li className='dashboard-logOut'>

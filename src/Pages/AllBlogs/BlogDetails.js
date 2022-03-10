@@ -2,29 +2,33 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa'
 
-const BlogDetails = () => {
+const BlogDetails = ({data}) => {
+    const {topic, blog, BlogImg, userName, email} = data
+
     const { id } = useParams()
     return (
         <div className='py-5'>
             <div className="container">
-                <div className="row">
-                    <div className="col-md-8">
+                <div className="row justify-content-center">
+                    <div className="col-md-8 ">
                         <div className="blog-image">
-                            <img className='w-100' src="https://image.freepik.com/free-photo/sunrise_74190-169.jpg" alt="blog-bg" />
+                            <img className='w-100' src={BlogImg} alt="blog-bg" />
                         </div>
                         <div className="blog-text px-2 py-3">
                             <div className="blog-meta mb-1 d-flex justify-content-between">
-                                <span>Sea beach</span>
+                          <h3>{topic}</h3>
                                 <span>12/04/2022</span>
                             </div>
                             <div className='py-2 d-flex justify-content-between'>
-                                <span>Author: Alex Akash</span>
+                                <span>Author: {userName}</span>
+                                <span>Author: {email}</span>
                                 <span>Rating: <FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span>
                             </div>
-                            <h4>World's largest sea beach Cox's Bazar</h4>
-                            <p>Cox's Bazar is the largest sea beach in the world and the beauty and sea shore of the Cox's Bazar really enjoyable. I was really surprised going there. This is my first visit to cox's bazar. But after reaching there I fell this is the place what I am looking for. you are already feeling the tense atmosphere of the video playing in the background, and the more you read through easily-digestible paragraphs, the more you want to see how it all went down. The Travel Episodes blog takes travel blogging into the realm of short stories like no other travel blogs I have seen.Its focus on world-changing photography accompanying the travel stories written by on this list.The moment you arrive on that page, you will see a full-screen video of drones flying around Wales together with many full-page photos of mountains and castles of Wales. If that doesn't create the best first impression for a travel website, I do not know what is.Another Escape's design shines the best when you are viewing travel stories like where the article follows a couple who traded their city lives to live lives on the road. Its white space and simple design of the website make ways for the engaging travel story and photography to surface and shine on its own.</p>
-                        </div>
+                            <h4>{topic}</h4>
+                            <p>{blog}</p>
+                            </div>
                     </div>
+             
                 </div>
             </div>
         </div>
@@ -32,3 +36,109 @@ const BlogDetails = () => {
 };
 
 export default BlogDetails;
+
+
+
+
+// import React, { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
+// import { FaStar } from 'react-icons/fa'
+// import { useForm } from 'react-hook-form';
+// import useFirebase from '../../hooks/useFirebase';
+// import BlogComment from './BlogComment';
+
+
+// const BlogDetails = ({data}) => {
+//     const { user } = useFirebase()
+//     const {topic, blog, BlogImg, userName, email ,_id} = data
+//     const { register, handleSubmit, reset } = useForm();
+//     const [blogComments, setBlogComments] = useState([])
+//     const { id } = useParams()
+
+//     const onSubmit = data => {
+
+//         data.userName = user.displayName
+//         data.userEmail = user.email
+
+//         fetch(`https://blooming-sierra-74368.herokuapp.com/PostBlogComment`, {
+//             method: "POST",
+//             headers: { "content-type": "application/json" },
+//             body: JSON.stringify(data),
+//         })
+//             .then((res) => res.json())
+//             .then((result) => {
+//                 console.log(result)
+
+//                 alert('order confirmed')
+//                 reset()
+//             });
+
+//     };
+
+
+
+//     useEffect(() => {
+//         fetch(`https://blooming-sierra-74368.herokuapp.com/getBlogComment/${id}`)
+//             .then((res) => res.json())
+//             .then((data) => {
+//                 setBlogComments(data)
+      
+
+//             });
+//     }, [id, reset]);
+
+
+
+
+
+
+//     return (
+//         <div className='py-5'>
+//             <div className="container">
+//                 <div className="row justify-content-center">
+//                     <div className="col-md-8 ">
+//                         <div className="blog-image">
+//                             <img className='w-100' src={BlogImg} alt="blog-bg" />
+//                         </div>
+//                         <div className="blog-text px-2 py-3">
+//                             <div className="blog-meta mb-1 d-flex justify-content-between">
+//                                 <span>Sea beach</span>
+//                                 <span>12/04/2022</span>
+//                             </div>
+//                             <div className='py-2 d-flex justify-content-between'>
+//                                 <span>Author: {userName}</span>
+//                                 <span>Author: {email}</span>
+//                                 <span>Rating: <FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span>
+//                             </div>
+//                             <h4>{topic}</h4>
+//                             <p>{blog}</p>
+//                             </div>
+//                     </div>
+                 
+//                     <div>
+//                         <ul>
+//                           {
+//                               blogComments.map(blogComment =>(
+// <>
+// <li> {blogComments}</li>
+// <li>{userName }</li> 
+// {/* <li>{userEmail}</li>  */}
+
+// </>
+//                               ))
+//                           }
+//                         </ul>
+//                     </div>
+
+//   <form onSubmit={handleSubmit(onSubmit, _id)}>
+//                         <input className='w-75 mb-3' {...register("comment", { required: true })} placeholder='Comment' /> <br />
+//                         <button type='submit'>Submit</button>
+//                     </form>
+
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default BlogDetails;
