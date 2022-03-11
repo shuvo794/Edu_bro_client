@@ -23,6 +23,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.0",
+    "react-year-picker": "^0.3.7",
     "sweetalert": "^2.1.2",
     "swiper": "^8.0.3",
     "typewriter-effect": "^2.18.2",
