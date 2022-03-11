@@ -21,7 +21,7 @@ const AddBooks = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        fetch(`http://localhost:5000/addBook`, {
+        fetch(`https://blooming-sierra-74368.herokuapp.com/addBook`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

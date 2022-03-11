@@ -23,7 +23,7 @@ const AllQuestions = () => {
 
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/allQuestions')
+    //     fetch('https://blooming-sierra-74368.herokuapp.com/allQuestions')
     //         .then(res => res.json())
     //         .then(data => setQuestions(data))
     // }, [])
@@ -37,7 +37,7 @@ const AllQuestions = () => {
     // const year = ''
     const status = ''
     useEffect(() => {
-        fetch(`http://localhost:5000/allQuestions?department=${department}&&year=${year}&&status=${status}`)
+        fetch(`https://blooming-sierra-74368.herokuapp.com/allQuestions?department=${department}&&year=${year}&&status=${status}`)
             .then(res => res.json())
             .then(data => {
                 setQuestions(data)

@@ -13,7 +13,7 @@ const AdminNotes = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allNotes`)
+        fetch(`https://blooming-sierra-74368.herokuapp.com/allNotes`)
             .then((res) => res.json())
             .then((data) => setNotes(data));
     }, [user?.email]);
@@ -21,7 +21,7 @@ const AdminNotes = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/notesStatusUpdate/${id}`, {
+        fetch(`https://blooming-sierra-74368.herokuapp.com/notesStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

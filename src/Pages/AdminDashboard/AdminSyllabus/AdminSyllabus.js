@@ -11,7 +11,7 @@ const AdminSyllabus = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allSyllabus`)
+        fetch(`https://blooming-sierra-74368.herokuapp.com/allSyllabus`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
     }, [user?.email]);
@@ -19,7 +19,7 @@ const AdminSyllabus = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/SyllabusStatusUpdate/${id}`, {
+        fetch(`https://blooming-sierra-74368.herokuapp.com/SyllabusStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
