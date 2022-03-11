@@ -38,10 +38,10 @@ const AdminSyllabus = () => {
     return (
         < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total Syllabus <span className="text-danger">{syllabus.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Syllabus <span className="text-danger">{syllabus.length}</span>  </h1>
             </div>
 
-            <table className="table table-dark" style={{ width: "100%" }}>
+            <table className="table table-gray" style={{ width: "100%" }}>
                 <thead  >
                     <tr className="bg-dark text-white mb-3 p-2" style={{ book: "1px solid red" }}>
                         <th >Number</th>

@@ -14,7 +14,10 @@ const MyQuestions = () => {
     useEffect(() => {
         fetch(` http://localhost:5000/myQuestions/${user?.email}`)
             .then((res) => res.json())
-            .then((data) => setQuestions(data));
+            .then((data) => {
+                console.log(data)
+                setQuestions(data)
+            });
     }, [user?.email]);
 
 
