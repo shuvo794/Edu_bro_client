@@ -123,30 +123,7 @@ const AllQuestions = () => {
                         </div>
                     </div>
 
-                    <div className="d-flex mt-5">
-                        <div className='mx-auto'>
 
-
-                            <ReactPaginate
-                                previousLabel={'previous'}
-                                nextLabel={'next'}
-                                breakLabel={'...'}
-                                marginPagesDisplayed={3}
-                                pageRangeDisplayed={3}
-                                pageCount={pageCount}
-                                onPageChange={handlePageChange}
-                                containerClassName='pagination'
-                                pageClassName='page-item'
-                                pageLinkClassName='page-link'
-                                previousClassName='page-link'
-                                nextClassName='page-link'
-                                breakClassName='page-item'
-                                breakLinkClassName='page-link'
-                                activeClassName='active'
-                            />
-
-                        </div>
-                    </div>
                 </div >
 
                 : <div><h5>Loading...</h5></div>}
