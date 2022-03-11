@@ -22,12 +22,14 @@ const Header = () => {
                             <Nav.Link as={NavLink} to="/home" className='menu-item'>Home</Nav.Link>
 
                             <Nav.Link as={NavLink} to="/allQuestions" className='menu-item'>Questions</Nav.Link>
+                            <Nav.Link as={NavLink} to="/allSyllabus" className='menu-item'>Syllabus</Nav.Link>
                             <Nav.Link as={NavLink} to="/allBlogs" className='menu-item'>Blogs</Nav.Link>
                             <Nav.Link as={NavLink} to="/allNotes" className='menu-item'>Notes</Nav.Link>
                             <Nav.Link as={NavLink} to="/allLabs" className='menu-item'>Labs</Nav.Link>
                             {/* <Nav.Link as={NavLink} to="/forum" className='menu-item'>Forums</Nav.Link> */}
-                            <Nav.Link as={NavLink} to="/allBooks" className='menu-item'>All Bookss</Nav.Link>
+                            <Nav.Link as={NavLink} to="/allBooks" className='menu-item'>All BOOKS</Nav.Link>
                             <Nav.Link as={NavLink} to="/contact" className='menu-item'>Contact</Nav.Link>
+                            <Nav.Link as={NavLink} to="/admin-dashboard/welcome" className='menu-item'>Admin Dashboard</Nav.Link>
                         </Nav>
                         {!user.email ? <Nav.Link as={NavLink} to="/login" className='menu-item'>
                             Login

@@ -37,6 +37,11 @@ const Dashboard = () => {
                                 })}><FaBookmark className='me-1' /> My Books</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`my-syllabus`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBookmark className='me-1' /> My Syllabus</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`my-blogs`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Blogs</NavLink>
@@ -46,12 +51,16 @@ const Dashboard = () => {
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Notes</NavLink>
                             </li>
+<<<<<<< HEAD
                             <li>
                                 <NavLink to={`my-labs`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Labs</NavLink>
                             </li>
                             <li>
+=======
+                            {/* <li>
+>>>>>>> fa83bc534e8d73e5071883ca1b3893a5adf7802c
                                 <NavLink to={`pending-questions`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
@@ -60,10 +69,10 @@ const Dashboard = () => {
                                 <NavLink to={`add-depertments`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaSchool className='me-1' /> Add Depertment</NavLink>
-                            </li>
+                            </li> */}
 
                             {/* {admin && <div> */}
-                            <li>
+                            {/* <li>
                                 <NavLink to={`manage-questions`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaTasks className='me-1' /> Manage Questions</NavLink>
@@ -72,7 +81,7 @@ const Dashboard = () => {
                                 <NavLink to={`make-admin`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaUserShield /> Make Admin</NavLink>
-                            </li>
+                            </li> */}
                             {/* </div>} */}
 
                             <li className='dashboard-logOut'>

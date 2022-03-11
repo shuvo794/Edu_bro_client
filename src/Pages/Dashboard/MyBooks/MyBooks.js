@@ -1,44 +1,67 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
-import { FaTrashAlt } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 
 const MyBooks = () => {
+    const { user } = useFirebase()
+
+    const [books, setBooks] = useState([])
+
+    useEffect(() => {
+        fetch(` http://localhost:5000/myBooks/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => setBooks(data));
+    }, [user?.email]);
+
+    console.log(books)
+
+
     return (
         <div className='my-questions'>
-        <div className='d-flex justify-content-between align-items-center my-question-header'>
-            <h2>My Books</h2>
-            <Link to={'/dashboard/add-books'}>
-                <button className='add-btn'>Add Books</button>
-            </Link>
+            <div className='d-flex justify-content-between align-items-center my-question-header'>
+                <h2>My books</h2>
+                <Link to={'/dashboard/add-books'}>
+                    <button className='add-btn btn-danger'>Add books</button>
+                </Link>
+            </div>
+            <table className="table table-dark" style={{ width: "100%" }}>
+                <thead  >
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ book: "1px solid red" }}>
+
+                        <th >Number</th>
+                        <th >Book Name</th>
+                        <th >Author Name</th>
+
+                        <th >Book Preview</th>
+
+                        <th >Status</th>
+                        <th >Request To Delete</th>
+
+                    </tr>
+                </thead>
+                {books?.map((book, index) => (
+                    <tbody key={book._id}>
+                        <tr role="row" style={{ book: "2px solid gray" }} >
+                            <th scope="row">{index + 1}</th>
+                            <td>{book.bookName}</td>
+                            <td>{book.author}</td>
+
+                            <td> <iframe title="question" src={book.driveLink}
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            <td>{book.status}</td>
+                            <td> <button
+                                className="btn btn-danger"
+                            // onClick={() => handlebookDeleteRequest(book._id)}
+                            >
+                                Delete book
+                            </button></td>
+                        </tr>
+                    </tbody>
+
+                ))}
+            </table>
         </div>
-        <Table responsive striped bordered hover>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Questions</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>CSE 3rd semister Object Oriented Programming problem</td>
-                    <td><button className='details-btn'>See Answer</button> <FaTrashAlt className='btn-delete' /></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Accounting bba 1st year question 2018</td>
-                    <td><button className='details-btn'>See Answer</button><FaTrashAlt className='btn-delete' /></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td >c++ problem solving question 2021 DU</td>
-                    <td><button className='details-btn'>See Answer</button><FaTrashAlt className='btn-delete' /></td>
-                </tr>
-            </tbody>
-        </Table>
-    </div>
     );
 };
 

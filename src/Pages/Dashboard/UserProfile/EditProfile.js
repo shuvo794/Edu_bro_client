@@ -7,7 +7,18 @@ const EditProfile = () => {
     const { user } = useFirebase()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        data.complete = true
+        fetch(`http://localhost:5000/updateUser`, {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result)
+                alert('Profile updated Successfully')
+                reset()
+            });
     }
     return (
         <div className='py-5 edit-profile'>
@@ -19,7 +30,7 @@ const EditProfile = () => {
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input
                                     className='w-75 mb-3' defaultValue={user.displayName}
-                                    {...register("dispayName", { required: true })}
+                                    {...register("displayName", { required: true })}
                                     placeholder='Enter Full Name' />
                                 <br />
 
@@ -34,6 +45,14 @@ const EditProfile = () => {
                                 <input
                                     className='w-75 mb-3'
                                     {...register("department", { required: true })} placeholder='Enter Department' />
+                                <br />
+                                <input
+                                    className='w-75 mb-3'
+                                    {...register("roll", { required: true })} placeholder='Enter Department' />
+                                <br />
+                                <input
+                                    className='w-75 mb-3'
+                                    {...register("university", { required: true })} placeholder='Enter Your University' />
                                 <br />
 
                                 <button type='submit'>Update Profile</button>

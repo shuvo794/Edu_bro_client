@@ -27,21 +27,21 @@ const AddBlogsDashboard = () => {
     };
     return (
         <Container>
-        <Row>
-            <Col md={{ span: 8, offset: 2 }}>
-                <div className="login-form text-center">
-                    <h2 className='mb-5'>Add Blogs</h2>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input className='w-75 mb-3' {...register("topic", { required: true })} placeholder='Your Topic' /> <br />
-                        <input className='w-75 mb-3' {...register("blog", { required: true })} placeholder='Blog' /> <br />
-                       
-                        <button type='submit'>Submit</button>
-                    </form>
+            <Row>
+                <Col md={{ span: 8, offset: 2 }}>
+                    <div className="login-form text-center">
+                        <h2 className='mb-5'>Add Blogs</h2>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input className='w-75 mb-3' {...register("topic", { required: true })} placeholder='Your Topic' /> <br />
+                            <input className='w-75 mb-3' {...register("blog", { required: true })} placeholder='Blog' /> <br />
+                            <input className='w-75 mb-3' {...register("BlogImg", { required: true })} placeholder='Blog Image URL' /> <br />
+                            <button type='submit'>Submit</button>
+                        </form>
 
-                </div>
-            </Col>
-        </Row>
-    </Container>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
