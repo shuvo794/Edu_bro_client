@@ -11,7 +11,7 @@ const AdminLabs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allLabs`)
+        fetch(`https://blooming-sierra-74368.herokuapp.com/allLabs`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
     }, [user?.email]);
@@ -19,7 +19,7 @@ const AdminLabs = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/labsStatusUpdate/${id}`, {
+        fetch(`https://blooming-sierra-74368.herokuapp.com/labsStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

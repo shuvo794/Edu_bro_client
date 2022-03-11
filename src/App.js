@@ -41,6 +41,8 @@ import AddSyllabusDashboard from './Pages/Dashboard/AddSyllabusDashboard/AddSyll
 import AllSyllabus from './Pages/AllSyllabus/AllSyllabus';
 import MySyllabus from './Pages/Dashboard/MySyllabus/MySyllabus';
 import AdminSyllabus from './Pages/AdminDashboard/AdminSyllabus/AdminSyllabus';
+import AdminRoute from './Login/AdminRoute/AdminRoute';
+import PrivateRoute from './Login/PrivateRoute/PrivateRoute';
 
 
 
@@ -52,8 +54,6 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-
             <Route path="/allQuestions" element={<AllQuestions />} />
             <Route path="/allBooks" element={<AllBooks />} />
             <Route path="/allSyllabus" element={<AllSyllabus />} />
@@ -64,42 +64,38 @@ function App() {
 
             {/* Admin Dashboard  */}
 
-            <Route path='/admin-dashboard' element={<AdminDashboard />}>
-              <Route path='/admin-dashboard' element={<AdminWelcome />} />
-              <Route path='/admin-dashboard/welcome' element={<AdminWelcome />} />
-              <Route path='/admin-dashboard/admin-questions' element={<AdminQuestion />} />
-              <Route path='/admin-dashboard/admin-blogs' element={<AdminBlogs />} />
-              <Route path='/admin-dashboard/admin-notes' element={<AdminNotes />} />
-              <Route path='/admin-dashboard/admin-books' element={<AdminBooks />} />
-              <Route path='/admin-dashboard/admin-syllabus' element={<AdminSyllabus />} />
-              <Route path='/admin-dashboard/manage-questions' element={<ManageQuestion />} />
-              <Route path='/admin-dashboard/make-admin' element={<MakeAdmin />} />
+            <Route path='/admin-dashboard' element={<AdminRoute><AdminDashboard /></AdminRoute>}>
+              <Route path='/admin-dashboard' element={<AdminRoute><AdminWelcome /></AdminRoute>} />
+              <Route path='/admin-dashboard/welcome' element={<AdminRoute><AdminWelcome /></AdminRoute>} />
+              <Route path='/admin-dashboard/admin-questions' element={<AdminRoute><AdminQuestion /></AdminRoute>} />
+              <Route path='/admin-dashboard/admin-blogs' element={<AdminRoute><AdminBlogs /></AdminRoute>} />
+              <Route path='/admin-dashboard/admin-notes' element={<AdminRoute><AdminNotes /></AdminRoute>} />
+              <Route path='/admin-dashboard/admin-books' element={<AdminRoute><AdminBooks /></AdminRoute>} />
+              <Route path='/admin-dashboard/admin-syllabus' element={<AdminRoute><AdminSyllabus /></AdminRoute>} />
+              <Route path='/admin-dashboard/manage-questions' element={<AdminRoute><ManageQuestion /></AdminRoute>} />
+              <Route path='/admin-dashboard/make-admin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
             </Route>
 
             {/* User Dashboard  */}
 
-            <Route path="/dashboard" element={<Dashboard />}>
-              <Route path='/dashboard' element={<DashboardWelcome />} />
-              <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
-              <Route path='/dashboard/my-questions' element={<MyQuestions />} />
-              <Route path='/dashboard/my-books' element={<MyBooks />} />
-              <Route path='/dashboard/my-syllabus' element={<MySyllabus />} />
-              <Route path='/dashboard/my-blogs' element={<MyBlogs />} />
-              <Route path='/dashboard/my-notes' element={<MyNotes />} />
-
-
-
-
-
-              <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
-              <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
-              <Route path='/dashboard/add-syllabus' element={<AddSyllabusDashboard />} />
-              <Route path='/dashboard/add-notes' element={<AddNotesDashboard />} />
-              <Route path='/dashboard/add-blogs' element={<AddBlogsDashboard />} />
-              <Route path='/dashboard/user-profile' element={<UserProfile />} />
-              <Route path='/dashboard/edit-profile' element={<EditProfile />} />
-              <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
+            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
+              <Route path='/dashboard' element={<PrivateRoute><DashboardWelcome /></PrivateRoute>} />
+              <Route path='/dashboard/welcome' element={<PrivateRoute><DashboardWelcome /></PrivateRoute>} />
+              <Route path='/dashboard/my-questions' element={<PrivateRoute><MyQuestions /></PrivateRoute>} />
+              <Route path='/dashboard/my-books' element={<PrivateRoute><MyBooks /></PrivateRoute>} />
+              <Route path='/dashboard/my-syllabus' element={<PrivateRoute><MySyllabus /></PrivateRoute>} />
+              <Route path='/dashboard/my-blogs' element={<PrivateRoute><MyBlogs /></PrivateRoute>} />
+              <Route path='/dashboard/my-notes' element={<PrivateRoute><MyNotes /></PrivateRoute>} />
+              <Route path='/dashboard/add-question' element={<PrivateRoute><AddQuestionDashboard /></PrivateRoute>} />
+              <Route path='/dashboard/add-books' element={<PrivateRoute><AddBooksDashboard /></PrivateRoute>} />
+              <Route path='/dashboard/add-syllabus' element={<PrivateRoute><AddSyllabusDashboard /></PrivateRoute>} />
+              <Route path='/dashboard/add-notes' element={<PrivateRoute><AddNotesDashboard /></PrivateRoute>} />
+              <Route path='/dashboard/add-blogs' element={<PrivateRoute><AddBlogsDashboard /></PrivateRoute>} />
+              <Route path='/dashboard/user-profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
+              <Route path='/dashboard/edit-profile' element={<PrivateRoute><EditProfile /></PrivateRoute>} />
+              <Route path='/dashboard/pending-questions' element={<PrivateRoute><PendingQuestions /></PrivateRoute>} />
             </Route>
+
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />

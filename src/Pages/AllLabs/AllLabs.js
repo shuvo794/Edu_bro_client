@@ -4,7 +4,7 @@ import LabsCart from './LabsCart'
 const AllLabs = () => {
     const [labs, setLabs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allLabs')
+        fetch('https://blooming-sierra-74368.herokuapp.com/allLabs')
             .then(res => res.json())
             .then(data => setLabs(data))
     }, [])
