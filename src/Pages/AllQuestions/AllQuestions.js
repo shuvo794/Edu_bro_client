@@ -72,61 +72,62 @@ const AllQuestions = () => {
 
     return (
         <div className="container text-black mt-5 mb-5" >
-            <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Find All Questions</h1></div>
-            {questions.length ?
-                <div className="row g-4" >
-                    <div className="col-12 col-md-2">
-                        <div className="question-sidebar">
+            <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Find All Questions</h1>
+            </div>
+            {/* {questions.length ? */}
+            <div className="row g-4" >
+                <div className="col-12 col-md-2">
+                    <div className="question-sidebar">
 
-                            <form
-                                onChange={(e) => setDepartment(e.target.value)}
-                            >
+                        <form
+                            onChange={(e) => setDepartment(e.target.value)}
+                        >
 
-                                <div className="form-check align-items-center">
-                                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                    <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                        All
-                                    </label>
-                                </div>
-                                <div className="form-check align-items-center">
-                                    <input className="form-check-input" type="checkbox" value="CSE" id="flexCheckDefault" />
-                                    <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                        CSE
-                                    </label>
-                                </div>
-                                <div className="form-check align-items-center">
-                                    <input className="form-check-input" type="checkbox" value="ece" id="flexCheckDefault" />
-                                    <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                        EEE
-                                    </label>
-                                </div>
-                                <div className="form-check align-items-center">
-                                    <input className="form-check-input" type="checkbox" value="bba" id="flexCheckDefault" />
-                                    <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                        BBA
-                                    </label>
-                                </div>
-                            </form>
+                            <div className="form-check align-items-center">
+                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label fw-bold" for="flexCheckDefault">
+                                    All
+                                </label>
+                            </div>
+                            <div className="form-check align-items-center">
+                                <input className="form-check-input" type="checkbox" value="CSE" id="flexCheckDefault" />
+                                <label className="form-check-label fw-bold" for="flexCheckDefault">
+                                    CSE
+                                </label>
+                            </div>
+                            <div className="form-check align-items-center">
+                                <input className="form-check-input" type="checkbox" value="ece" id="flexCheckDefault" />
+                                <label className="form-check-label fw-bold" for="flexCheckDefault">
+                                    EEE
+                                </label>
+                            </div>
+                            <div className="form-check align-items-center">
+                                <input className="form-check-input" type="checkbox" value="bba" id="flexCheckDefault" />
+                                <label className="form-check-label fw-bold" for="flexCheckDefault">
+                                    BBA
+                                </label>
+                            </div>
+                        </form>
 
 
 
-                        </div>
                     </div>
-                    <div className="col-12 col-md-10">
-                        <div className="row">
-                            {questions?.map((question) => (
-                                <QuestionCart
-                                    key={question.id}
-                                    data={question}>
-                                </QuestionCart>
-                            ))}
-                        </div>
+                </div>
+                <div className="col-12 col-md-10">
+                    <div className="row">
+                        {questions?.map((question) => (
+                            <QuestionCart
+                                key={question.id}
+                                data={question}>
+                            </QuestionCart>
+                        ))}
                     </div>
+                </div>
 
 
-                </div >
+            </div >
 
-                : <div><h5>Loading...</h5></div>}
+            {/* : <div><h5>Loading...</h5></div>} */}
 
 
 

@@ -38,10 +38,10 @@ const AdminQuestion = () => {
     return (
         < div className="container all-question-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total questions <span className="text-danger">{questions.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Questions <span className="text-danger">{questions.length}</span>  </h1>
             </div>
 
-            <table className="table table-dark" style={{ width: "100%" }}>
+            <table className="table table-gray" style={{ width: "100%" }}>
                 <thead  >
                     <tr className="bg-dark text-white mb-3 p-2" style={{ question: "1px solid red" }}>
 

@@ -143,7 +143,9 @@ const useFirebase = () => {
   useEffect(() => {
     fetch(`https://blooming-sierra-74368.herokuapp.com/users/${user.email}`)
       .then(res => res.json())
-      .then(data => setAdmin(data.admin))
+      .then(data => {
+        setAdmin(data.role)
+      })
   }, [user.email])
 
 

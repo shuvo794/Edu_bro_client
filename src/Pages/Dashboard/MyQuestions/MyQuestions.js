@@ -14,7 +14,10 @@ const MyQuestions = () => {
     useEffect(() => {
         fetch(` https://blooming-sierra-74368.herokuapp.com/myQuestions/${user?.email}`)
             .then((res) => res.json())
-            .then((data) => setQuestions(data));
+            .then((data) => {
+                console.log(data)
+                setQuestions(data)
+            });
     }, [user?.email]);
 
 
