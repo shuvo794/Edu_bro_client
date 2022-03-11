@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useFirebase from '../../../hooks/useFirebase';
 
 const MyLabs = () => {
     const { user } = useFirebase()

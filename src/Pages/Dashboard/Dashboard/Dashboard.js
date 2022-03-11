@@ -32,6 +32,11 @@ const Dashboard = () => {
                                 })}><FaBookmark className='me-1' /> My Questions</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`my-labs`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBookmark className='me-1' /> My Labs</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`my-books`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Books</NavLink>
@@ -51,16 +56,7 @@ const Dashboard = () => {
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaBookmark className='me-1' /> My Notes</NavLink>
                             </li>
-<<<<<<< HEAD
-                            <li>
-                                <NavLink to={`my-labs`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
-                                })}><FaBookmark className='me-1' /> My Labs</NavLink>
-                            </li>
-                            <li>
-=======
                             {/* <li>
->>>>>>> fa83bc534e8d73e5071883ca1b3893a5adf7802c
                                 <NavLink to={`pending-questions`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>

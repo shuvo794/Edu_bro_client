@@ -41,6 +41,9 @@ import AddSyllabusDashboard from './Pages/Dashboard/AddSyllabusDashboard/AddSyll
 import AllSyllabus from './Pages/AllSyllabus/AllSyllabus';
 import MySyllabus from './Pages/Dashboard/MySyllabus/MySyllabus';
 import AdminSyllabus from './Pages/AdminDashboard/AdminSyllabus/AdminSyllabus';
+import MyLabs from './Pages/Dashboard/MyLabs/MyLabs';
+import AddLabsDashboard from './Pages/Dashboard/AddLabsDashboard/AddLabsDashboard';
+import AllLabs from './Pages/AllLabs/AllLabs';
 
 
 
@@ -58,7 +61,8 @@ function App() {
             <Route path="/allBooks" element={<AllBooks />} />
             <Route path="/allSyllabus" element={<AllSyllabus />} />
             <Route path="/allBlogs" element={<AllBlogs />} />
-            <Route path="/allNotes" element={<AllNotes />} />
+            <Route path="/allBlogs" element={<AllBlogs />} />
+            <Route path="/allLabs" element={<AllLabs />} />
             <Route path='/find-questions' element={<FindQuestions />} />
             <Route path='/forum' element={<Forum />} />
 
@@ -86,6 +90,7 @@ function App() {
               <Route path='/dashboard/my-syllabus' element={<MySyllabus />} />
               <Route path='/dashboard/my-blogs' element={<MyBlogs />} />
               <Route path='/dashboard/my-notes' element={<MyNotes />} />
+              <Route path='/dashboard/my-labs' element={<MyLabs />} />
 
 
 
@@ -94,6 +99,7 @@ function App() {
               <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
               <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
               <Route path='/dashboard/add-syllabus' element={<AddSyllabusDashboard />} />
+              <Route path='/dashboard/add-labs' element={<AddLabsDashboard />} />
               <Route path='/dashboard/add-notes' element={<AddNotesDashboard />} />
               <Route path='/dashboard/add-blogs' element={<AddBlogsDashboard />} />
               <Route path='/dashboard/user-profile' element={<UserProfile />} />
