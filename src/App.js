@@ -43,6 +43,9 @@ import MySyllabus from './Pages/Dashboard/MySyllabus/MySyllabus';
 import AdminSyllabus from './Pages/AdminDashboard/AdminSyllabus/AdminSyllabus';
 import AdminRoute from './Login/AdminRoute/AdminRoute';
 import PrivateRoute from './Login/PrivateRoute/PrivateRoute';
+import MyLabs from './Pages/Dashboard/MyLabs/MyLabs';
+import AddLabsDashboard from './Pages/Dashboard/AddLabsDashboard/AddLabsDashboard';
+import AllLabs from './Pages/AllLabs/AllLabs';
 
 
 
@@ -59,6 +62,7 @@ function App() {
             <Route path="/allSyllabus" element={<AllSyllabus />} />
             <Route path="/allBlogs" element={<AllBlogs />} />
             <Route path="/allNotes" element={<AllNotes />} />
+            <Route path="/allLabs" element={<AllLabs />} />
             <Route path='/find-questions' element={<FindQuestions />} />
             <Route path='/forum' element={<Forum />} />
 
@@ -78,22 +82,29 @@ function App() {
 
             {/* User Dashboard  */}
 
-            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
-              <Route path='/dashboard' element={<PrivateRoute><DashboardWelcome /></PrivateRoute>} />
-              <Route path='/dashboard/welcome' element={<PrivateRoute><DashboardWelcome /></PrivateRoute>} />
-              <Route path='/dashboard/my-questions' element={<PrivateRoute><MyQuestions /></PrivateRoute>} />
-              <Route path='/dashboard/my-books' element={<PrivateRoute><MyBooks /></PrivateRoute>} />
-              <Route path='/dashboard/my-syllabus' element={<PrivateRoute><MySyllabus /></PrivateRoute>} />
-              <Route path='/dashboard/my-blogs' element={<PrivateRoute><MyBlogs /></PrivateRoute>} />
-              <Route path='/dashboard/my-notes' element={<PrivateRoute><MyNotes /></PrivateRoute>} />
-              <Route path='/dashboard/add-question' element={<PrivateRoute><AddQuestionDashboard /></PrivateRoute>} />
-              <Route path='/dashboard/add-books' element={<PrivateRoute><AddBooksDashboard /></PrivateRoute>} />
-              <Route path='/dashboard/add-syllabus' element={<PrivateRoute><AddSyllabusDashboard /></PrivateRoute>} />
-              <Route path='/dashboard/add-notes' element={<PrivateRoute><AddNotesDashboard /></PrivateRoute>} />
-              <Route path='/dashboard/add-blogs' element={<PrivateRoute><AddBlogsDashboard /></PrivateRoute>} />
-              <Route path='/dashboard/user-profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
-              <Route path='/dashboard/edit-profile' element={<PrivateRoute><EditProfile /></PrivateRoute>} />
-              <Route path='/dashboard/pending-questions' element={<PrivateRoute><PendingQuestions /></PrivateRoute>} />
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path='/dashboard' element={<DashboardWelcome />} />
+              <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
+              <Route path='/dashboard/my-questions' element={<MyQuestions />} />
+              <Route path='/dashboard/my-books' element={<MyBooks />} />
+              <Route path='/dashboard/my-syllabus' element={<MySyllabus />} />
+              <Route path='/dashboard/my-blogs' element={<MyBlogs />} />
+              <Route path='/dashboard/my-notes' element={<MyNotes />} />
+              <Route path='/dashboard/my-labs' element={<MyLabs />} />
+
+
+
+
+
+              <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
+              <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
+              <Route path='/dashboard/add-syllabus' element={<AddSyllabusDashboard />} />
+              <Route path='/dashboard/add-labs' element={<AddLabsDashboard />} />
+              <Route path='/dashboard/add-notes' element={<AddNotesDashboard />} />
+              <Route path='/dashboard/add-blogs' element={<AddBlogsDashboard />} />
+              <Route path='/dashboard/user-profile' element={<UserProfile />} />
+              <Route path='/dashboard/edit-profile' element={<EditProfile />} />
+              <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
             </Route>
 
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
@@ -111,4 +122,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;  

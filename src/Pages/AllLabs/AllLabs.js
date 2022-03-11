@@ -1,10 +1,13 @@
+
+
+
 import React, { useEffect, useState } from 'react';
 import LabsCart from './LabsCart'
 
 const AllLabs = () => {
     const [labs, setLabs] = useState([]);
     useEffect(() => {
-        fetch('https://blooming-sierra-74368.herokuapp.com/allLabs')
+        fetch('http://localhost:5000/allLabs')
             .then(res => res.json())
             .then(data => setLabs(data))
     }, [])
@@ -28,4 +31,4 @@ const AllLabs = () => {
     );
 };
 
-export default AllLabs;
+export default AllLabs; 

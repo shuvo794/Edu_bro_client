@@ -40,4 +40,4 @@ const LabsCart = ({ data }) => {
     );
 };
 
-export default LabsCart;
+export default LabsCart;  
