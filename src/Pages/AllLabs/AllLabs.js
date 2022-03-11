@@ -1,3 +1,6 @@
+
+
+export default AllLabs;
 import React, { useEffect, useState } from 'react';
 import LabsCart from './LabsCart'
 

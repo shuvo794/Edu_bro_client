@@ -48,4 +48,4 @@ const AddLabsDashboard = () => {
     );
 };
 
-export default AddLabsDashboard;
+export default AddLabsDashboard; 
