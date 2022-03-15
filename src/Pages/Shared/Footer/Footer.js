@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './Footer.css';
 import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaPinterest } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -14,11 +15,15 @@ const Footer = () => {
                                 <h4>Get In Touch</h4>
                                 <div className="links mt-4">
                                     <ul>
-                                        <li> <FaArrowRight className='link-icon' />contact admin</li>
-                                        <li> <FaArrowRight className='link-icon' />our moderators </li>
-                                        <li> <FaArrowRight className='link-icon' />location map</li>
-                                        <li> <FaArrowRight className='link-icon' />newsletter update</li>
-                                        <li> <FaArrowRight className='link-icon' />report on security issues</li>
+                                        <Link to={'/contact'}>
+                                            <li> <FaArrowRight className='link-icon' />Contact</li>
+                                        </Link>
+                                        <Link to={'/'}>
+                                            <li> <FaArrowRight className='link-icon' />Go to Home</li>
+                                        </Link>
+                                        <Link to='/dashboard/welcome'>
+                                            <li> <FaArrowRight className='link-icon' />Dashboard</li>
+                                        </Link>
                                     </ul>
                                 </div>
                             </div>
@@ -28,11 +33,11 @@ const Footer = () => {
                                 <h4>Useful Category</h4>
                                 <div className="links mt-4">
                                     <ul>
-                                        <li> <FaArrowRight className='link-icon' />CSE Guideline</li>
-                                        <li> <FaArrowRight className='link-icon' />EEE Guideline</li>
-                                        <li> <FaArrowRight className='link-icon' />BSC Guideline</li>
-                                        <li> <FaArrowRight className='link-icon' />BBA Guideline</li>
-                                        <li> <FaArrowRight className='link-icon' />BCS Guideline</li>
+                                        <Link to={'/allQuestions'}><li> <FaArrowRight className='link-icon' />All Questions</li></Link>
+                                        <Link to={'/allSyllabus'}><li> <FaArrowRight className='link-icon' />All Syllabus</li></Link>
+                                        <Link to={'/allBlogs'}><li> <FaArrowRight className='link-icon' />All Blogs</li></Link>
+                                        <Link to={'/allNotes'}><li> <FaArrowRight className='link-icon' />All Notes</li></Link>
+                                        <Link to={'/allLabs'}><li> <FaArrowRight className='link-icon' />All Labs</li></Link>
                                     </ul>
                                 </div>
                             </div>
@@ -42,11 +47,21 @@ const Footer = () => {
                                 <h4>Important Links</h4>
                                 <div className="links mt-4">
                                     <ul>
-                                        <li> <FaArrowRight className='link-icon' />Forums</li>
-                                        <li> <FaArrowRight className='link-icon' />FAQ </li>
-                                        <li> <FaArrowRight className='link-icon' />Portal</li>
-                                        <li> <FaArrowRight className='link-icon' />Privacy & Policy</li>
-                                        <li> <FaArrowRight className='link-icon' />Terms & Conditions</li>
+                                        <Link to={'/allBooks'}>
+                                            <li> <FaArrowRight className='link-icon' />All Books</li>
+                                        </Link>
+                                        <Link to='/dashboard/welcome'>
+                                            <li> <FaArrowRight className='link-icon' />Dashboard</li>
+                                        </Link>
+                                        <Link to='/dashboard/user-profile'>
+                                            <li> <FaArrowRight className='link-icon' />User Profile</li>
+                                        </Link>
+                                        <Link to='/dashboard/my-questions'>
+                                            <li> <FaArrowRight className='link-icon' />My Questions</li>
+                                        </Link>
+                                        <Link to='/dashboard/my-notes'>
+                                            <li> <FaArrowRight className='link-icon' />My Notes</li>
+                                        </Link>
                                     </ul>
                                 </div>
                             </div>
