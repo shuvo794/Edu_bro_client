@@ -5,6 +5,8 @@ const LabsCart = ({ data }) => {
 
 
 
+
+
     const { LabReportName, department, driveLink, subject, year, } = data
 
     let googleId = driveLink?.slice(32, 65);
@@ -27,6 +29,7 @@ const LabsCart = ({ data }) => {
                     <div className="d-flex justify-content-around pt-5" >
                         <div className="btn btn-success me-5 " ><a href={download} className="">Download</a></div>
                         <div className="btn btn-danger ms-5" ><a href={viewUrl} className="">Show</a></div>
+
                     </div>
 
                 </div>

@@ -45,6 +45,8 @@ import MyLabs from './Pages/Dashboard/MyLabs/MyLabs';
 import AddLabsDashboard from './Pages/Dashboard/AddLabsDashboard/AddLabsDashboard';
 import AllLabs from './Pages/AllLabs/AllLabs';
 
+import CustomerReview from './Pages/Dashboard/CustomerReview/CustomerReview';
+
 
 
 function App() {
@@ -88,6 +90,7 @@ function App() {
               <Route path='/dashboard/my-questions' element={<MyQuestions />} />
               <Route path='/dashboard/my-books' element={<MyBooks />} />
               <Route path='/dashboard/my-syllabus' element={<MySyllabus />} />
+              <Route path='/dashboard/user-review' element={<CustomerReview />} />
               <Route path='/dashboard/my-blogs' element={<MyBlogs />} />
               <Route path='/dashboard/my-notes' element={<MyNotes />} />
               <Route path='/dashboard/my-labs' element={<MyLabs />} />
@@ -107,6 +110,7 @@ function App() {
               <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
             </Route>
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
+
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
