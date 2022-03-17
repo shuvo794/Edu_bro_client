@@ -5,6 +5,7 @@
 .single-counter{
     border-radius: 10px;
     transition: all .4s;
+    margin-bottom: 15px;
 }
 .single-counter:hover{
     background-color: #1289A7;
@@ -14,12 +15,12 @@
     color: white;
 }
 .counter-icon .icon{
-    font-size: 30px;
+    font-size: 40px;
     color: #1289A7;
     transition: all .4s;
 }
 .counter-text h3 {
-    font-size: 40px;
+    font-size: 48px;
     margin-top: 15px;
 }
 .counter-text p{
