@@ -36,13 +36,13 @@
     color: white;
     transition: all .4s;
 }
-.counter-active:hover{
+/* .counter-active:hover{
     background-color: white;
     color: black;
 }
 .counter-active:hover .icon{
     color: #1289A7 !important;
-}
+} */
 
 .section-title h3 {
     font-size: 48px;
