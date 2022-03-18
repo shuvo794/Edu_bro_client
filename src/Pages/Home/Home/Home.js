@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import Blogs from '../Blogs/Blogs';
 import Counter from '../Counter/Counter';
 import useFirebase from '../../../hooks/useFirebase';
+import Reviews from '../../Dashboard/ReviewSection/ReviewSection';
 import Services from '../Services/Services';
 
 
@@ -19,6 +20,7 @@ const Home = () => {
                <AllReviews></AllReviews>
                <Blogs></Blogs>
                <Counter />
+               <Reviews />
 
                {/* <TeamMember></TeamMember> */}
 

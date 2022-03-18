@@ -52,6 +52,11 @@ const Dashboard = () => {
                                 })}><FaTasks className='me-1' /> My Blogs</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`user-review`} style={({ isActive }) => ({
+                                    color: isActive ? "#B22222" : "black",
+                                })}><FaBookmark className='me-1' /> user review</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`my-notes`} style={({ isActive }) => ({
                                     color: isActive ? "#B22222" : "black",
                                 })}><FaUserShield className='me-1' /> My Notes</NavLink>
