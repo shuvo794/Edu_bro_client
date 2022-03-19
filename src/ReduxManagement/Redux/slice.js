@@ -6,6 +6,7 @@ export const questionsArchiveSlice = createSlice({
           syllabusData: [],
           notesData:[],
           blogsData:[],
+          booksData:[],
      },
      reducers: {
           setData: (state, action) => {
@@ -19,6 +20,9 @@ export const questionsArchiveSlice = createSlice({
           },
           setBlogsData: (state, action) => {
                state.blogsData = action.payload
+          },
+          setBooksData: (state, action) => {
+               state.booksData = action.payload
           },
      }
      
