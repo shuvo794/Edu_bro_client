@@ -21,3 +21,9 @@ export const getNotesAction = () => (dispatch) => {
     .then(response => response.json())
     .then((josn) => dispatch(slice.setNotesData(josn)))
 }
+export const getBlogsAction = () => (dispatch) => {
+  // dispatch()
+  fetch('https://blooming-sierra-74368.herokuapp.com/allBlogs')
+    .then(response => response.json())
+    .then((josn) => dispatch(slice.setBlogsData(josn)))
+}

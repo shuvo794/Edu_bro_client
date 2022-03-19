@@ -4,7 +4,8 @@ export const questionsArchiveSlice = createSlice({
      name: 'questionsArchiveData',
      initialState: {
           syllabusData: [],
-          notesData:[]
+          notesData:[],
+          blogsData:[],
      },
      reducers: {
           setData: (state, action) => {
@@ -15,6 +16,9 @@ export const questionsArchiveSlice = createSlice({
           },
           setNotesData: (state, action) => {
                state.notesData = action.payload
+          },
+          setBlogsData: (state, action) => {
+               state.blogsData = action.payload
           },
      }
      
