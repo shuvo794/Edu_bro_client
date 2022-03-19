@@ -1,5 +1,5 @@
-import { questionsSlice } from "./slice";
-const { actions: slice } = questionsSlice;
+import { questionsArchiveSlice } from "./slice";
+const { actions: slice } = questionsArchiveSlice;
 
 
 export const getDataAction = () => (dispatch) => {

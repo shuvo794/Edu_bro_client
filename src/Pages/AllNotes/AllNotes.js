@@ -15,7 +15,7 @@ const AllNotes = () => {
 
 const dispatch = useDispatch()
 
-const allNotesData = useSelector( (state)=> state.questionsData.notesData)
+const allNotesData = useSelector( (state)=> state.questionsArchiveData.notesData)
 
 useEffect(()=>{
     dispatch(getNotesAction())

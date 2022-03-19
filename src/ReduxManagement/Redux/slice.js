@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const questionsSlice = createSlice({
-     name: 'questionsData',
+export const questionsArchiveSlice = createSlice({
+     name: 'questionsArchiveData',
      initialState: {
-          data: [],
-          allData: [],
+          syllabusData: [],
           notesData:[]
      },
      reducers: {
@@ -12,7 +11,7 @@ export const questionsSlice = createSlice({
                state.data = action.payload
           },
           setSyllabusData: (state, action) => {
-               state.allData = action.payload
+               state.syllabusData = action.payload
           },
           setNotesData: (state, action) => {
                state.notesData = action.payload

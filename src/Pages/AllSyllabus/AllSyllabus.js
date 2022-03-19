@@ -16,7 +16,7 @@ const AllSyllabus = () => {
 
     const dispatch = useDispatch()
 
-    const allSyllabusData = useSelector( (state)=> state.questionsData.allData)
+    const allSyllabusData = useSelector( (state)=> state.questionsArchiveData.syllabusData)
 
     useEffect(()=>{
         dispatch(getSyllabusAction())
