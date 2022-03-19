@@ -58,18 +58,7 @@ const AllQuestions = () => {
 
 
 
-    // Start data store via Redux toolkit 
-
-    // const dispatch = useDispatch()
-
-    // const allQuestionsData = useSelector( (state)=> state.questionsData.data)
-
-    // useEffect(()=>{
-    //     dispatch(getDataAction())
-    //   },[])
-
-    // end data store via Redux toolkit 
-
+    
 
 
 

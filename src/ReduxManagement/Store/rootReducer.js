@@ -1,7 +1,7 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { questionsSlice } from "../Redux/slice";
+import { questionsArchiveSlice } from "../Redux/slice";
 
 
 export const rootReducer = combineReducers({
-    questionsData: questionsSlice.reducer
+    questionsArchiveData: questionsArchiveSlice.reducer,
 })
