@@ -11,7 +11,6 @@ const Footer = () => {
         e.preventDefault()
         if (email) {
             alert("Thanks for Subscribing our newsletter")
-
         }
     }
     return (

@@ -5,14 +5,7 @@ import QuestionCart from './QuestionCart';
 import YearPicker from "react-year-picker";
 import ReactPaginate from 'react-paginate';
 
-
-
-
 const AllQuestions = () => {
-
-
-
-
 
     const [questions, setQuestions] = useState([]);
     const [department, setDepartment] = useState("")
@@ -22,23 +15,22 @@ const AllQuestions = () => {
     const [pageCount, setPageCount] = useState(0)
     const size = 10;
 
+    console.log(questions)
+
     const handlePageChange = (data) => {
         setPage(data.selected);
     }
 
-
-
-
+    const handleSearch = (e) => {
+        e.preventDefault()
+    }
     // checkbox er value true or false return kore
-
 
     // useEffect(() => {
     //     fetch('https://blooming-sierra-74368.herokuapp.com/allQuestions')
     //         .then(res => res.json())
     //         .then(data => setQuestions(data))
     // }, [])
-
-
 
     const status = ''
     useEffect(() => {
@@ -55,23 +47,27 @@ const AllQuestions = () => {
     }, [department, year, semester, page]);
 
 
-
-
-
-    
-
-
-
-
     return (
         <div className="container text-black mt-5 mb-5" >
-            <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Find All Questions</h1>
+            <div className="row align-items-center">
+                <div className="col-md-6">
+                    <div className='mb-5'><h1 className="user-desire-question">Find All Questions</h1>
+                    </div>
+                </div>
+                <div className="col-md-6">
+                    <div className="search-box mb-5">
+                        <form onSubmit={handleSearch}>
+                            <input type="text" name='search' placeholder='Search Questions' />
+                            <button type='submit'>Search</button>
+                        </form>
+                    </div>
+                </div>
             </div>
             {/* {questions.length ? */}
             <div className="row g-4" >
                 <div className="col-12 col-md-2">
                     <div className="question-sidebar">
-
+                        <h5 className='mb-3'>Filter Questions</h5>
                         <form
                             onChange={(e) => setDepartment(e.target.value)}
                         >
@@ -101,66 +97,25 @@ const AllQuestions = () => {
                                 </label>
                             </div>
                         </form>
-                        <form
-                            onChange={(e) => setYear(e.target.value)}
-                        >
 
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    empty
-                                </label>
-                            </div>
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="2020" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    2020
-                                </label>
-                            </div>
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="2021" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    2021
-                                </label>
-                            </div>
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="2022" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    2022
-                                </label>
-                            </div>
-                        </form>
-                        <form
-                            onChange={(e) => setSemester(e.target.value)}
-                        >
-
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    All
-                                </label>
-                            </div>
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="CSE" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    CSE
-                                </label>
-                            </div>
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="ece" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    EEE
-                                </label>
-                            </div>
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="bba" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    BBA
-                                </label>
-                            </div>
-                        </form>
-
-
+                        <div className='mt-3'>
+                            <h5>Filter Year</h5>
+                            <select onChange={(e) => setYear(e.target.value)} name="year" id="year">
+                                <option value="Select Year">Select Year</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                            </select>
+                        </div>
 
                     </div>
                 </div>
@@ -177,7 +132,6 @@ const AllQuestions = () => {
 
                 <div className="d-flex mt-5">
                     <div className='mx-auto'>
-
 
                         <ReactPaginate
                             previousLabel={'previous'}

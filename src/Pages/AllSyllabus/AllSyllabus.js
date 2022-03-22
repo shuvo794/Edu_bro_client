@@ -16,11 +16,11 @@ const AllSyllabus = () => {
 
     const dispatch = useDispatch()
 
-    const allSyllabusData = useSelector( (state)=> state.questionsArchiveData.syllabusData)
+    const allSyllabusData = useSelector((state) => state.questionsArchiveData.syllabusData)
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getSyllabusAction())
-      },[])
+    }, [])
 
     // end data store via Redux toolkit 
 
@@ -28,7 +28,7 @@ const AllSyllabus = () => {
     return (
         <div className="container text-black mt-5 mb-5" >
             <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Syllabus Collection</h1></div>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row g-4">
                 {allSyllabusData?.map((syllabuss) => (
 
                     <SyllabusCart
