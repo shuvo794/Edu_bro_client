@@ -1,12 +1,12 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import './Dashboard.css';
 import { FaThLarge, FaUser, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield, FaSchool } from 'react-icons/fa'
 
 const Dashboard = () => {
-    const { admin } = useFirebase()
+    const { admin, userLogOut } = useFirebase()
     return (
         <div className='dashboard'>
             <Row>
@@ -85,9 +85,9 @@ const Dashboard = () => {
                             </li> */}
                             {/* </div>} */}
 
-                            <li className='dashboard-logOut'>
+                            <Link to={'/'}><li onClick={userLogOut} className='dashboard-logOut'>
                                 <FaSignOutAlt className='me-1' /> Log Out
-                            </li>
+                            </li></Link>
                         </ul>
                     </div>
                 </Col>
