@@ -11,23 +11,17 @@ const SyllabusCart = ({ data }) => {
     const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
     return (
-        <div className="col-12">
-            <div className="card custom-cart h-100 hover">
-                <div className="row align-items-center">
-                    <div className="col-md-6">
-                        <iframe title="question" src={viewUrl}
-                            className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="card-body">
-                            <h5 className="card-title"><b>Department</b> {syllabusName}</h5>
-                            <h5 className="card-title"><b>Year</b> {year}</h5>
+        <div className="col-12 col-md-4">
+            <div className="card custom-cart h-100 shadow">
+                <iframe title="question" src={viewUrl}
+                    className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
+                <div className="card-body mt-3">
+                    <h5 className="card-title fs-6"><b>Department:</b> {syllabusName}</h5>
+                    <h5 className="card-title"><b>Year</b> {year}</h5>
 
-                            <div>
-                                <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
-                                <button className="btn-style download-btn " ><a href={viewUrl} className="">See Syllabus</a></button>
-                            </div>
-                        </div>
+                    <div className='mt-3'>
+                        <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
+                        <button className="btn-style download-btn " ><a href={viewUrl} className="">See Syllabus</a></button>
                     </div>
                 </div>
             </div>

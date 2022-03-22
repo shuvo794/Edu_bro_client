@@ -11,23 +11,23 @@ const AllNotes = () => {
     //         .then(data => setNotes(data))
     // }, [])
 
-// Start data store via Redux toolkit 
+    // Start data store via Redux toolkit 
 
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-const allNotesData = useSelector( (state)=> state.questionsArchiveData.notesData)
+    const allNotesData = useSelector((state) => state.questionsArchiveData.notesData)
 
-useEffect(()=>{
-    dispatch(getNotesAction())
-  },[])
+    useEffect(() => {
+        dispatch(getNotesAction())
+    }, [])
 
-// end data store via Redux toolkit 
+    // end data store via Redux toolkit 
 
 
     return (
         <div className="container text-black mt-5 mb-5" >
             <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Important Notes</h1></div>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row g-4">
                 {allNotesData?.map((note) => (
                     <AllNotesCart
                         key={note.id}
