@@ -5,14 +5,12 @@ import useFirebase from '../../../hooks/useFirebase';
 
 const AddBlogsDashboard = () => {
 
-    const [selectedFile, setSelectedFile] = useState('')
     const [previewSource, setPreviewSource] = useState('')
-    const [fileInputState, SetFileInputState] = useState('')
-
 
     const { user } = useFirebase()
 
     const { register, handleSubmit, reset } = useForm();
+
     const onSubmit = data => {
 
 
@@ -20,13 +18,13 @@ const AddBlogsDashboard = () => {
 
 
 
-        data.img = previewSource
+        data.blogImg = previewSource
         data.userName = user.displayName
         data.email = user.email
         data.status = 'Pending'
 
 
-        fetch(`http://localhost:5000/postblogs`, {
+        fetch(`http://localhost:5000/postBlogs`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -40,17 +38,13 @@ const AddBlogsDashboard = () => {
             });
     };
 
-    // const uploadImage = (base64EncodedImage) => {
 
-    //     console.log(base64EncodedImage)
-    // }
 
 
     const handleFineInputChange = (e) => {
         const file = e.target.files[0];
         previewFile(file);
-        // setSelectedFile(file);
-        // setFileInputState(e.target.value);
+
     };
 
 
@@ -72,11 +66,11 @@ const AddBlogsDashboard = () => {
                         <form
                             onSubmit={handleSubmit(onSubmit)}
                         >
-                            {/* <input className='w-75 mb-3' {...register("topic", { required: true })} placeholder='Your Topic' /> <br />
-                            <input className='w-75 mb-3' {...register("blog", { required: true })} placeholder='Blog' /> <br /> */}
+                            <input className='w-75 mb-3' {...register("topic", { required: true })} placeholder='Your Topic' /> <br />
+                            <input className='w-75  mb-3' {...register("blog", { required: true })} placeholder='Blog' /> <br />
                             <input className='w-75 mb-3 form-input'
                                 //  {...register("BlogImg", { required: true })} placeholder='Blog Image URL' 
-                                type='file' onChange={handleFineInputChange} value={fileInputState} />  <br />
+                                type='file' onChange={handleFineInputChange} />  <br />
                             <button type='submit'>Submit</button>
                         </form>
 
