@@ -12,13 +12,35 @@ const MySyllabus = () => {
         fetch(` https://blooming-sierra-74368.herokuapp.com/mySyllabus/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
-    }, [user?.email]);
+    }, [user?.email, syllabus]);
 
+
+
+    const handleSyllabusDeleteRequest = id => {
+
+        const proceed = window.confirm('Are you sure you want to Cancel this syllabus')
+        if (proceed) {
+            const url = `http://localhost:5000/deleteSyllabus/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = syllabus?.filter(syllabus => syllabus._id !== id);
+                        setSyllabus(remaining);
+
+                    }
+                })
+        }
+    }
 
 
     return (
-        <div className='my-questions'>
-            <div className='d-flex justify-content-between align-items-center my-question-header'>
+        <div className='my-syllabuss'>
+            <div className='d-flex justify-content-between align-items-center my-syllabus-header'>
                 <h2>My Syllabus</h2>
                 <Link to={'/dashboard/add-syllabus'}>
                     <button className='add-btn btn-danger'>Add Syllabus</button>
@@ -26,32 +48,33 @@ const MySyllabus = () => {
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
                 <thead  >
-                    <tr className="bg-dark text-white mb-3 p-2" style={{ book: "1px solid red" }}>
+                    <tr className="bg-dark text-white mb-3 p-2" style={{ syllabus: "1px solid red" }}>
 
                         <th >Number</th>
                         <th >Department</th>
                         <th >Year</th>
 
-                        <th >Syllabus Preview</th>
+                        {/* <th >Syllabus Preview</th> */}
 
                         <th >Status</th>
                         <th >Request To Delete</th>
 
                     </tr>
                 </thead>
-                {syllabus?.map((syllabuss, index) => (
-                    <tbody key={syllabuss._id}>
-                        <tr role="row" style={{ syllabuss: "2px solid gray" }} >
+                {syllabus?.map((syllabus, index) => (
+                    <tbody key={syllabus._id}>
+                        <tr role="row" style={{ syllabus: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{syllabuss.syllabusName}</td>
-                            <td>{syllabuss.year}</td>
+                            <td>{syllabus.syllabusName}</td>
+                            <td>{syllabus.year}</td>
 
-                            <td> <iframe title="question" src={syllabuss.driveLink}
-                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
-                            <td>{syllabuss.status}</td>
+                            {/* <td> <iframe title="syllabus" src={syllabus.driveLink}
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+                            </td> */}
+                            <td>{syllabus.status}</td>
                             <td> <button
                                 className="btn btn-danger"
-                            // onClick={() => handlebookDeleteRequest(book._id)}
+                                onClick={() => handleSyllabusDeleteRequest(syllabus._id)}
                             >
                                 Delete Syllabus
                             </button></td>

@@ -15,24 +15,32 @@ const MyBlogs = () => {
         fetch(` https://blooming-sierra-74368.herokuapp.com/myBlogs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
-    }, [user?.email]);
+    }, [user?.email, blogs]);
 
     console.log(blogs)
 
 
 
-    // const handleBlogDeleteRequest = (data) => {
-    //     fetch("https://blooming-sierra-74368.herokuapp.com/requestBlogsDelete", {
-    //         method: "PUT",
-    //         headers: { "content-type": "application/json" },
-    //         body: JSON.stringify(data),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((result) => console.log(result));
-    //     alert('Added admin successfully!!!!')
+    const handleBlogDeleteRequest = id => {
 
-    // };
+        const proceed = window.confirm('Are you sure you want to Cancel this blog')
+        if (proceed) {
+            const url = `http://localhost:5000/deleteBlog/${id}`;
+            fetch(url, {
+                method: 'DELETE'
 
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = blogs?.filter(blog => blog._id !== id);
+                        setBlogs(remaining);
+
+                    }
+                })
+        }
+    }
 
 
 
@@ -51,7 +59,7 @@ const MyBlogs = () => {
                         <th >Number</th>
                         <th >Topic</th>
 
-                        <th >Image</th>
+                        {/* <th >Image</th> */}
 
                         <th >Status</th>
                         <th >Request To Delete</th>
@@ -63,11 +71,11 @@ const MyBlogs = () => {
                         <tr role="row" style={{ blog: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
                             <td>{blog.topic}</td>
-                            <td><img style={{ width: "70px", height: "50px" }} src={blog.BlogImg} alt="" /></td>
+                            {/* <td><img style={{ width: "70px", height: "50px" }} src={blog.BlogImg} alt="" /></td> */}
                             <td>{blog.status}</td>
                             <td> <button
                                 className="btn btn-danger"
-                            // onClick={() => handleBlogDeleteRequest(blog._id)}
+                                onClick={() => handleBlogDeleteRequest(blog._id)}
                             >
                                 Delete Blog
                             </button></td>

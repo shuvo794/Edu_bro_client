@@ -12,9 +12,30 @@ const MyBooks = () => {
         fetch(` https://blooming-sierra-74368.herokuapp.com/myBooks/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBooks(data));
-    }, [user?.email]);
+    }, [user?.email, books]);
 
-    console.log(books)
+
+
+    const handleBookDeleteRequest = id => {
+
+        const proceed = window.confirm('Are you sure you want to Cancel this book')
+        if (proceed) {
+            const url = `http://localhost:5000/deleteBook/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = books?.filter(book => book._id !== id);
+                        setBooks(remaining);
+
+                    }
+                })
+        }
+    }
 
 
     return (
@@ -33,7 +54,7 @@ const MyBooks = () => {
                         <th >Book Name</th>
                         <th >Author Name</th>
 
-                        <th >Book Preview</th>
+                        {/* <th >Book Preview</th> */}
 
                         <th >Status</th>
                         <th >Request To Delete</th>
@@ -47,12 +68,12 @@ const MyBooks = () => {
                             <td>{book.bookName}</td>
                             <td>{book.author}</td>
 
-                            <td> <iframe title="question" src={book.driveLink}
-                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            {/* <td> <iframe title="question" src={book.driveLink}
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td> */}
                             <td>{book.status}</td>
                             <td> <button
                                 className="btn btn-danger"
-                            // onClick={() => handlebookDeleteRequest(book._id)}
+                                onClick={() => handleBookDeleteRequest(book._id)}
                             >
                                 Delete book
                             </button></td>

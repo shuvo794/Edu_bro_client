@@ -20,8 +20,26 @@ const MyQuestions = () => {
             });
     }, [user?.email]);
 
+    const handleQuestionDeleteRequest = id => {
 
-    console.log(questions)
+        const proceed = window.confirm('Are you sure you want to Cancel this question')
+        if (proceed) {
+            const url = `http://localhost:5000/deleteQuestion/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = questions?.filter(question => question._id !== id);
+                        setQuestions(remaining);
+
+                    }
+                })
+        }
+    }
     return (
         <div className='my-questions'>
             <div className='d-flex justify-content-between align-items-center my-question-header'>
@@ -40,7 +58,7 @@ const MyQuestions = () => {
                         <th >Code</th>
                         <th >Year</th>
 
-                        <th >question Preview</th>
+                        {/* <th >question Preview</th> */}
 
                         <th >Status</th>
                         <th >Request To Delete</th>
@@ -56,12 +74,13 @@ const MyQuestions = () => {
                             <td>{question.year}</td>
                             <td>{question.semester}</td>
 
-                            <td> <iframe title="question" src={question.driveLink}
-                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            {/* <td> <iframe title="question" src={question.driveLink}
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+                            </td> */}
                             <td>{question.status}</td>
                             <td> <button
                                 className="btn btn-danger "
-                            // onClick={() => handlequestionDeleteRequest(question._id)}
+                                onClick={() => handleQuestionDeleteRequest(question._id)}
                             >
                                 Delete question
                             </button></td>
