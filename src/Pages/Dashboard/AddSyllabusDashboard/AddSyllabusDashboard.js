@@ -11,7 +11,7 @@ const AddSyllabusDashboard = () => {
     data.email = user.email;
     data.status = "Pending";
 
-    fetch(`https://blooming-sierra-74368.herokuapp.com/postSyllabus`, {
+    fetch(`https://peaceful-sands-08700.herokuapp.com/postSyllabus`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

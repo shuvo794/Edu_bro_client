@@ -12,7 +12,7 @@ const MyBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/myBlogs/${user?.email}`)
+        fetch(` https://peaceful-sands-08700.herokuapp.com/myBlogs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
     }, [user?.email]);
@@ -22,7 +22,7 @@ const MyBlogs = () => {
 
 
     // const handleBlogDeleteRequest = (data) => {
-    //     fetch("https://blooming-sierra-74368.herokuapp.com/requestBlogsDelete", {
+    //     fetch("https://peaceful-sands-08700.herokuapp.com/requestBlogsDelete", {
     //         method: "PUT",
     //         headers: { "content-type": "application/json" },
     //         body: JSON.stringify(data),

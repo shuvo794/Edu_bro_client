@@ -9,7 +9,7 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/myLabs/${user?.email}`)
+        fetch(` https://peaceful-sands-08700.herokuapp.com/myLabs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
     }, [user?.email]);

@@ -14,7 +14,7 @@ const QuestionDetails = () => {
     console.log('test', viewUrl)
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/question/${id}`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/question/${id}`)
             .then(res => res.json())
             .then(data => {
                 setQuestion(data)

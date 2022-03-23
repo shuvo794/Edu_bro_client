@@ -10,7 +10,7 @@ const AdminBlogs = () => {
 
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/allBlogs`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/allBlogs`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
     }, [user?.email]);
@@ -18,7 +18,7 @@ const AdminBlogs = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/BlogStatusUpdate/${id}`, {
+        fetch(`https://peaceful-sands-08700.herokuapp.com/BlogStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

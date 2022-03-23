@@ -19,7 +19,7 @@ const CustomerReview = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch("http://localhost:5000/review", {
+        fetch("https://peaceful-sands-08700.herokuapp.com/review", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

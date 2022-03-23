@@ -12,7 +12,7 @@ const AdminQuestion = () => {
 
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/allquestions`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/allquestions`)
             .then((res) => res.json())
             .then((data) => setQuestions(data));
     }, [user?.email]);
@@ -20,7 +20,7 @@ const AdminQuestion = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/QuestionStatusUpdate/${id}`, {
+        fetch(`https://peaceful-sands-08700.herokuapp.com/QuestionStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

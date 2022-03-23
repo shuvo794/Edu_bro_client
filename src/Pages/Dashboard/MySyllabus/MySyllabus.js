@@ -9,7 +9,7 @@ const MySyllabus = () => {
     const [syllabus, setSyllabus] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/mySyllabus/${user?.email}`)
+        fetch(` https://peaceful-sands-08700.herokuapp.com/mySyllabus/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
     }, [user?.email]);
