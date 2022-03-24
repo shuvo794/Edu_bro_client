@@ -7,7 +7,7 @@ const AllBooks = () => {
 
     // const [books, setBooks] = useState([]);
     // useEffect(() => {
-    //     fetch('https://blooming-sierra-74368.herokuapp.com/allBooks')
+    //     fetch('https://peaceful-sands-08700.herokuapp.com/allBooks')
     //         .then(res => res.json())
     //         .then(data => setBooks(data))
     // }, [])

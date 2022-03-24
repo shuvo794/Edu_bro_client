@@ -24,7 +24,7 @@ const AddBlogsDashboard = () => {
         data.status = 'Pending'
 
 
-        fetch(`http://localhost:5000/postBlogs`, {
+        fetch(`https://peaceful-sands-08700.herokuapp.com/postBlogs`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

@@ -7,9 +7,8 @@ const EditProfile = () => {
     const { user } = useFirebase()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        data.complete = true;
-        console.log(data)
-        fetch(`https://blooming-sierra-74368.herokuapp.com/updateUser`, {
+        data.complete = true
+        fetch(`https://peaceful-sands-08700.herokuapp.com/updateUser`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

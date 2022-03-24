@@ -12,7 +12,7 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/myQuestions/${user?.email}`)
+        fetch(` https://peaceful-sands-08700.herokuapp.com/myQuestions/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)

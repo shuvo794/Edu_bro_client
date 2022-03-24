@@ -12,7 +12,7 @@ const AdminBooks = () => {
 
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/allBooks`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/allBooks`)
             .then((res) => res.json())
             .then((data) => setBooks(data));
     }, [user?.email]);
@@ -20,7 +20,7 @@ const AdminBooks = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/BookStatusUpdate/${id}`, {
+        fetch(`https://peaceful-sands-08700.herokuapp.com/BookStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -39,7 +39,7 @@ const AdminBooks = () => {
     return (
         < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Books <span className="text-danger">{books.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Books <span style={{ color: "#1289A7" }}>{books.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>
@@ -77,7 +77,7 @@ const AdminBooks = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(book._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(book._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>

@@ -24,7 +24,7 @@ const BooksDetails = () => {
 
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/allBooks/${id}`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/allBooks/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setSelected(data)
@@ -37,7 +37,7 @@ const BooksDetails = () => {
 
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/review/${id}`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/review/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setReviews(data)
@@ -55,7 +55,7 @@ const BooksDetails = () => {
         data.email = user.email
 
 
-        fetch(`https://blooming-sierra-74368.herokuapp.com/addReview`, {
+        fetch(`https://peaceful-sands-08700.herokuapp.com/addReview`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

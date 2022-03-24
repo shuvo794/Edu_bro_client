@@ -27,7 +27,7 @@ const AllQuestions = () => {
     // checkbox er value true or false return kore
 
     // useEffect(() => {
-    //     fetch('https://blooming-sierra-74368.herokuapp.com/allQuestions')
+    //     fetch('https://peaceful-sands-08700.herokuapp.com/allQuestions')
     //         .then(res => res.json())
     //         .then(data => setQuestions(data))
     // }, [])
@@ -35,7 +35,7 @@ const AllQuestions = () => {
     const status = ''
     useEffect(() => {
         console.log(department, year, semester)
-        fetch(`http://localhost:5000/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&status=${status}&&semester=${semester}`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&status=${status}&&semester=${semester}`)
             .then(res => res.json())
             .then(data => {
                 setQuestions(data.allQuestions)

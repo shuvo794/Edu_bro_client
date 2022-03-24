@@ -18,47 +18,47 @@ const Dashboard = () => {
                         <ul>
                             <li>
                                 <NavLink to={`welcome`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7;" : "black",
                                 })}><FaThLarge className='me-1' /> Dashboard</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`user-profile`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaUser className='me-1' /> Profile</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`my-questions`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaBookmark className='me-1' /> My Questions</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`my-labs`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaBookmark className='me-1' /> My Labs</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`my-books`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaCommentDots className='me-1' /> My Books</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`my-syllabus`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaSchool className='me-1' /> My Syllabus</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`my-blogs`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaTasks className='me-1' /> My Blogs</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`user-review`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaBookmark className='me-1' /> user review</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`my-notes`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaUserShield className='me-1' /> My Notes</NavLink>
                             </li>
                             {/* <li>

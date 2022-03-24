@@ -8,7 +8,7 @@ const AllBlogs = () => {
 
     // const [blogs, setBlogs] = useState([]);
     // useEffect(() => {
-    //     fetch('https://blooming-sierra-74368.herokuapp.com/allBlogs')
+    //     fetch('https://peaceful-sands-08700.herokuapp.com/allBlogs')
     //         .then(res => res.json())
     //         .then(data => setBlogs(data))
     // }, [])

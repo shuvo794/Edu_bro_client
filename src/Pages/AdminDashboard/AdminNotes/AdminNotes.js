@@ -13,7 +13,7 @@ const AdminNotes = () => {
 
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/allNotes`)
+        fetch(`https://peaceful-sands-08700.herokuapp.com/allNotes`)
             .then((res) => res.json())
             .then((data) => setNotes(data));
     }, [user?.email]);
@@ -21,7 +21,7 @@ const AdminNotes = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/notesStatusUpdate/${id}`, {
+        fetch(`https://peaceful-sands-08700.herokuapp.com/notesStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -41,7 +41,7 @@ const AdminNotes = () => {
     return (
         < div className="container all-note-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Notes <span className="text-danger">{notes.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Notes <span style={{ color: "#1289A7" }}>{notes.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>
@@ -79,7 +79,7 @@ const AdminNotes = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(note._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(note._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>
