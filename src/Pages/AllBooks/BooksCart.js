@@ -12,11 +12,11 @@ const BooksCart = ({ data }) => {
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
     return (
         <div className="col">
-            <div className="card custom-cart h-100 hover">
+            <div className="card custom-cart h-100 shadow">
                 <iframe title="question" src={viewUrl}
                     className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
                 <div className="card-body">
-                    <h5 className="card-title"><b>Book Name:</b> {bookName}</h5>
+                    <h5 className="card-title fs-3">{bookName}</h5>
                     <h5 className="card-title"><b>Author:</b> {author}</h5>
                     <h5 className="card-title"><b>Subject:</b> {subject}</h5>
                     <h5 className="card-title"><b>Edition:</b> {edition}</h5>

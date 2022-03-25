@@ -19,7 +19,8 @@
     font-weight: 600;
 }
 .dashboard-welcome h2>span{
-    color: #B22222;
+    color: #1289A7;
+    text-transform: capitalize;
 }
 .dashboard-logOut{
     position: absolute;

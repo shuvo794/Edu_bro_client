@@ -10,7 +10,7 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(` http://localhost:5000/myLabs/${user?.email}`)
+        fetch(`http://localhost:5000/myLabs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
     }, [user?.email, labs]);
@@ -41,7 +41,7 @@ const MyLabs = () => {
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My Labs</h2>
                 <Link to={'/dashboard/add-labs'}>
-                    <button className='add-btn btn-danger'>Add Labs</button>
+                    <button className='btn-style'>Add Lab Question</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -71,7 +71,7 @@ const MyLabs = () => {
                             </td> */}
                             <td>{lab.status}</td>
                             <td> <button
-                                className="btn btn-danger"
+                                className="btn-style download-btn"
                                 onClick={() => handleLabDeleteRequest(lab._id)}
                             >
                                 Delete Lab

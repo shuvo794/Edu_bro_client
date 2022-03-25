@@ -12,7 +12,7 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/myQuestions/${user?.email}`)
+        fetch(`http://localhost:5000/myQuestions/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
@@ -20,32 +20,12 @@ const MyQuestions = () => {
             });
     }, [user?.email]);
 
-    const handleQuestionDeleteRequest = id => {
-
-        const proceed = window.confirm('Are you sure you want to Cancel this question')
-        if (proceed) {
-            const url = `http://localhost:5000/deleteQuestion/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-
-            })
-                .then(res => res.json())
-                .then(data => {
-
-                    if (data.deletedCount) {
-                        const remaining = questions?.filter(question => question._id !== id);
-                        setQuestions(remaining);
-
-                    }
-                })
-        }
-    }
     return (
         <div className='my-questions'>
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My questions</h2>
                 <Link to={'/dashboard/add-question'}>
-                    <button className='add-btn btn-danger'>Add Questions</button>
+                    <button className='btn-style'>Post Your Questions</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -79,8 +59,8 @@ const MyQuestions = () => {
                             </td> */}
                             <td>{question.status}</td>
                             <td> <button
-                                className="btn btn-danger "
-                                onClick={() => handleQuestionDeleteRequest(question._id)}
+                                className="btn-style download-btn"
+                            // onClick={() => handlequestionDeleteRequest(question._id)}
                             >
                                 Delete question
                             </button></td>

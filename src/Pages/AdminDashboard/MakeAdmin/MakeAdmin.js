@@ -1,11 +1,12 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         // console.log(data)
-        fetch('https://blooming-sierra-74368.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -15,7 +16,13 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    alert('Make Admin successfully')
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Admin Added Successfully!',
+                        showConfirmButton: false,
+                        timer: 4000
+                    })
                 } else {
                     alert('Oops! Not working')
                 }

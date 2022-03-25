@@ -9,7 +9,7 @@ const MyBooks = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/myBooks/${user?.email}`)
+        fetch(`http://localhost:5000/myBooks/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBooks(data));
     }, [user?.email, books]);
@@ -43,7 +43,7 @@ const MyBooks = () => {
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My books</h2>
                 <Link to={'/dashboard/add-books'}>
-                    <button className='add-btn btn-danger'>Add books</button>
+                    <button className='btn-style'>Add Your books</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>

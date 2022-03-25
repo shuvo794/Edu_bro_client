@@ -12,7 +12,7 @@ const MyBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/myBlogs/${user?.email}`)
+        fetch(`http://localhost:5000/myBlogs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
     }, [user?.email, blogs]);
@@ -49,7 +49,7 @@ const MyBlogs = () => {
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My Blogs</h2>
                 <Link to={'/dashboard/add-blogs'}>
-                    <button className='add-btn btn-danger'>Add Blogs</button>
+                    <button className='btn-style'>Post Your Blogs</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -74,8 +74,10 @@ const MyBlogs = () => {
                             {/* <td><img style={{ width: "70px", height: "50px" }} src={blog.BlogImg} alt="" /></td> */}
                             <td>{blog.status}</td>
                             <td> <button
-                                className="btn btn-danger"
+                                className="btn btn-danger btn-style download-btn"
                                 onClick={() => handleBlogDeleteRequest(blog._id)}
+
+
                             >
                                 Delete Blog
                             </button></td>

@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../../hooks/useFirebase";
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const AddSyllabusDashboard = () => {
   const { user } = useFirebase();
@@ -11,16 +12,16 @@ const AddSyllabusDashboard = () => {
     data.email = user.email;
     data.status = "Pending";
 
-    fetch(`https://blooming-sierra-74368.herokuapp.com/postSyllabus`, {
+    fetch(`http://localhost:5000/postSyllabus`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-
-        alert("Syllabus Added Successfully");
+        Swal.fire(
+          'Syllabus Added Successfully.',
+        )
         reset();
       });
   };

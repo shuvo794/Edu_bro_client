@@ -11,7 +11,7 @@ const AddNotesDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`https://blooming-sierra-74368.herokuapp.com/postNotes`, {
+        fetch(`http://localhost:5000/postNotes`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -24,6 +24,7 @@ const AddNotesDashboard = () => {
                 reset()
             });
     };
+
     return (
         <Container>
             <Row>

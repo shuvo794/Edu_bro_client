@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import useFirebase from '../../../hooks/useFirebase';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const AddQuestionDashboard = () => {
     const { user } = useFirebase()
@@ -11,7 +12,7 @@ const AddQuestionDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`https://blooming-sierra-74368.herokuapp.com/postQuestion`, {
+        fetch(`http://localhost:5000/postQuestion`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -19,8 +20,9 @@ const AddQuestionDashboard = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)
-
-                alert('Question Added Successfully')
+                Swal.fire(
+                    'Question Posted Successfully.',
+                )
                 reset()
             });
     };

@@ -9,7 +9,7 @@ const MySyllabus = () => {
     const [syllabus, setSyllabus] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/mySyllabus/${user?.email}`)
+        fetch(`http://localhost:5000/mySyllabus/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
     }, [user?.email, syllabus]);
@@ -43,7 +43,7 @@ const MySyllabus = () => {
             <div className='d-flex justify-content-between align-items-center my-syllabus-header'>
                 <h2>My Syllabus</h2>
                 <Link to={'/dashboard/add-syllabus'}>
-                    <button className='add-btn btn-danger'>Add Syllabus</button>
+                    <button className='btn-style'>Add Syllabus</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -73,7 +73,7 @@ const MySyllabus = () => {
                             </td> */}
                             <td>{syllabus.status}</td>
                             <td> <button
-                                className="btn btn-danger"
+                                className="btn-style download-btn "
                                 onClick={() => handleSyllabusDeleteRequest(syllabus._id)}
                             >
                                 Delete Syllabus
