@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useFirebase from '../../../hooks/useFirebase';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const AddBooksDashboard = () => {
     const { user } = useFirebase()
@@ -19,8 +20,9 @@ const AddBooksDashboard = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)
-
-                alert('Question Added Successfully')
+                Swal.fire(
+                    'Book Posted Successfully.',
+                )
                 reset()
             });
     };

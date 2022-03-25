@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Swal from 'sweetalert2/dist/sweetalert2';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useFirebase from '../../../hooks/useFirebase';
@@ -20,8 +20,9 @@ const AddLabsDashboard = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)
-
-                alert('Question Added Successfully')
+                Swal.fire(
+                    'Lab Question Added Successfully.',
+                )
                 reset()
             });
     };

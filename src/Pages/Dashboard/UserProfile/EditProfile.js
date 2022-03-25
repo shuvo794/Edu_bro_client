@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import useFirebase from '../../../hooks/useFirebase';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const EditProfile = () => {
     const { user } = useFirebase()
@@ -16,7 +17,9 @@ const EditProfile = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)
-                alert('Profile updated Successfully')
+                Swal.fire(
+                    'Updated the profile Successfully.',
+                )
                 reset()
             });
     }

@@ -21,7 +21,7 @@ const MyLabs = () => {
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My Labs</h2>
                 <Link to={'/dashboard/add-labs'}>
-                    <button className='add-btn btn-danger'>Add Labs</button>
+                    <button className='btn-style'>Add Lab Question</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -50,7 +50,7 @@ const MyLabs = () => {
                                 className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
                             <td>{lab.status}</td>
                             <td> <button
-                                className="btn btn-danger"
+                                className="btn-style download-btn"
                             // onClick={() => handlebookDeleteRequest(book._id)}
                             >
                                 Delete Lab

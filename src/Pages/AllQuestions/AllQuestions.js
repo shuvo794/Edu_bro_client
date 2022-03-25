@@ -120,14 +120,19 @@ const AllQuestions = () => {
                     </div>
                 </div>
                 <div className="col-12 col-md-10">
-                    <div className="row">
-                        {questions?.map((question) => (
-                            <QuestionCart
-                                key={question.id}
-                                data={question}>
-                            </QuestionCart>
-                        ))}
-                    </div>
+                    {
+                        questions.length === 0 ? <div className='text-center'><div class="spinner-border m-5" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div></div> :
+                            <div className="row">
+                                {questions?.map((question) => (
+                                    <QuestionCart
+                                        key={question.id}
+                                        data={question}>
+                                    </QuestionCart>
+                                ))}
+                            </div>
+                    }
                 </div>
 
                 <div className="d-flex mt-5">

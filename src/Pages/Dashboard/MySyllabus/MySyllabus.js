@@ -21,7 +21,7 @@ const MySyllabus = () => {
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My Syllabus</h2>
                 <Link to={'/dashboard/add-syllabus'}>
-                    <button className='add-btn btn-danger'>Add Syllabus</button>
+                    <button className='btn-style'>Add Syllabus</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -50,7 +50,7 @@ const MySyllabus = () => {
                                 className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
                             <td>{syllabuss.status}</td>
                             <td> <button
-                                className="btn btn-danger"
+                                className="btn-style download-btn "
                             // onClick={() => handlebookDeleteRequest(book._id)}
                             >
                                 Delete Syllabus

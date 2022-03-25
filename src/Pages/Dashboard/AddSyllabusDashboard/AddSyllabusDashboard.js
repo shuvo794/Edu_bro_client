@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../../hooks/useFirebase";
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const AddSyllabusDashboard = () => {
   const { user } = useFirebase();
@@ -18,9 +19,9 @@ const AddSyllabusDashboard = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-
-        alert("Syllabus Added Successfully");
+        Swal.fire(
+          'Syllabus Added Successfully.',
+        )
         reset();
       });
   };
