@@ -28,7 +28,6 @@ const AddBooks = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result)
 
                 alert('Book Added Successfully')
                 reset()
