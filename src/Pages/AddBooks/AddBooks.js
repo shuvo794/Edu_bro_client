@@ -21,14 +21,13 @@ const AddBooks = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        fetch(`https://blooming-sierra-74368.herokuapp.com/addBook`, {
+        fetch(`http://localhost:5000/addBook`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result)
 
                 alert('Book Added Successfully')
                 reset()

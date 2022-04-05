@@ -6,12 +6,12 @@ import './Header.css'
 
 
 const Header = () => {
-    const { userLogOut, user, toggle, setToggle, handleClick, admin  } = useFirebase()
+    const { userLogOut, user, toggle, setToggle, handleClick, admin } = useFirebase()
 
 
 
     return (
-        
+
         <div className='header-area'>
             <Navbar expand="lg">
                 <Container>

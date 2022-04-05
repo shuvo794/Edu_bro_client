@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa'
 
 const BlogDetails = ({data}) => {
-    const {topic, blog, BlogImg, userName, email} = data
+    const {topic, blog, BlogImg, userName, email, blogImg} = data
 
     const { id } = useParams()
     return (
@@ -12,7 +12,7 @@ const BlogDetails = ({data}) => {
                 <div className="row justify-content-center">
                     <div className="col-md-8 ">
                         <div className="blog-image">
-                            <img className='w-100' src={BlogImg} alt="blog-bg" />
+                            <img className='w-100' src={blogImg} alt="blog-bg" />
                         </div>
                         <div className="blog-text px-2 py-3">
                             <div className="blog-meta mb-1 d-flex justify-content-between">
@@ -60,7 +60,7 @@ export default BlogDetails;
 //         data.userName = user.displayName
 //         data.userEmail = user.email
 
-//         fetch(`https://blooming-sierra-74368.herokuapp.com/PostBlogComment`, {
+//         fetch(`http://localhost:5000/PostBlogComment`, {
 //             method: "POST",
 //             headers: { "content-type": "application/json" },
 //             body: JSON.stringify(data),
@@ -78,7 +78,7 @@ export default BlogDetails;
 
 
 //     useEffect(() => {
-//         fetch(`https://blooming-sierra-74368.herokuapp.com/getBlogComment/${id}`)
+//         fetch(`http://localhost:5000/getBlogComment/${id}`)
 //             .then((res) => res.json())
 //             .then((data) => {
 //                 setBlogComments(data)

@@ -10,18 +10,38 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(` http://localhost:5000/myLabs/${user?.email}`)
+        fetch(`http://localhost:5000/myLabs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
-    }, [user?.email]);
+    }, [user?.email, labs]);
 
-    console.log(labs)
+
+    const handleLabDeleteRequest = id => {
+
+        const proceed = window.confirm('Are you sure you want to Cancel this lab')
+        if (proceed) {
+            const url = `http://localhost:5000/deleteLab/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = labs?.filter(lab => lab._id !== id);
+                        setLabs(remaining);
+
+                    }
+                })
+        }
+    }
     return (
         <div className='my-questions'>
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My Labs</h2>
                 <Link to={'/dashboard/add-labs'}>
-                    <button className='add-btn btn-danger'>Add Labs</button>
+                    <button className='btn-style'>Add Lab Question</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -32,7 +52,7 @@ const MyLabs = () => {
                         <th >Lab Name</th>
                         <th >DepartMent Name</th>
 
-                        <th >Lab Preview</th>
+                        {/* <th >Lab Preview</th> */}
 
                         <th >Status</th>
                         <th >Request To Delete</th>
@@ -46,12 +66,13 @@ const MyLabs = () => {
                             <td>{lab.labName}</td>
                             <td>{lab.department}</td>
 
-                            <td> <iframe title="question" src={lab.driveLink}
-                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            {/* <td> <iframe title="question" src={lab.driveLink}
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+                            </td> */}
                             <td>{lab.status}</td>
                             <td> <button
-                                className="btn btn-danger"
-                            // onClick={() => handlebookDeleteRequest(book._id)}
+                                className="btn-style download-btn"
+                                onClick={() => handleLabDeleteRequest(lab._id)}
                             >
                                 Delete Lab
                             </button></td>

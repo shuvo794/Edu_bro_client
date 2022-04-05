@@ -6,7 +6,7 @@ import useFirebase from '../../../hooks/useFirebase';
 
 const AdminDashboard = () => {
     const { admin } = useFirebase()
-    console.log(admin)
+  
     return (
         <div className='dashboard'>
             <Row>
@@ -18,37 +18,37 @@ const AdminDashboard = () => {
                         <ul>
                             <li>
                                 <NavLink to={`welcome`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaThLarge className='me-1' /> Dashboard</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-questions`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaBookmark className='me-1' /> Manage Questions</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-blogs`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaCommentDots className='me-1' /> Manage Blogs</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-books`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaTasks className='me-1' /> Manage Books</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-syllabus`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaTasks className='me-1' /> Manage Syllabus</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-notes`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaUserShield className='me-1' /> Manage Notes</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`make-admin`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
+                                    color: isActive ? "#1289A7" : "black",
                                 })}><FaUser className='me-1' /> Make Admin</NavLink>
                             </li>
 

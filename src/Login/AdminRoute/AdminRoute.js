@@ -7,12 +7,12 @@ const AdminRoute = ({ children }) => {
     const { user, isLoading, admin } = useAuth()
     if (isLoading) {
         return <div>
-            <h2 className=''>Loading...</h2>
+            <h2 className='text-center py-5'>Loading...</h2>
         </div>
     }
     if (!admin) {
         return <div>
-            <h2 className=''>Loading...</h2>
+            <h2 className='text-center py-5'>Loading...</h2>
         </div>
     }
     if (user.email && admin) {

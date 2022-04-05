@@ -12,15 +12,15 @@ const AdminQuestion = () => {
 
 
     useEffect(() => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/allquestions`)
+        fetch(`http://localhost:5000/allquestions`)
             .then((res) => res.json())
-            .then((data) => setQuestions(data));
+            .then((data) => setQuestions(data.allQuestions));
     }, [user?.email]);
 
 
 
     const handleUpdate = (id) => {
-        fetch(`https://blooming-sierra-74368.herokuapp.com/QuestionStatusUpdate/${id}`, {
+        fetch(`http://localhost:5000/QuestionStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -38,7 +38,7 @@ const AdminQuestion = () => {
     return (
         < div className="container all-question-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Questions <span className="text-danger">{questions.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Questions <span style={{ color: "#1289A7" }}>{questions.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>
@@ -76,7 +76,7 @@ const AdminQuestion = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(question._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(question._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>

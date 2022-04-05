@@ -2,13 +2,14 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import useFirebase from '../../../hooks/useFirebase';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const EditProfile = () => {
     const { user } = useFirebase()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.complete = true
-        fetch(`https://blooming-sierra-74368.herokuapp.com/updateUser`, {
+        fetch(`http://localhost:5000/updateUser`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -16,7 +17,9 @@ const EditProfile = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)
-                alert('Profile updated Successfully')
+                Swal.fire(
+                    'Updated the profile Successfully.',
+                )
                 reset()
             });
     }

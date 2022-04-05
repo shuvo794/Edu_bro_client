@@ -12,7 +12,7 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/myQuestions/${user?.email}`)
+        fetch(`http://localhost:5000/myQuestions/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
@@ -20,14 +20,12 @@ const MyQuestions = () => {
             });
     }, [user?.email]);
 
-
-    console.log(questions)
     return (
         <div className='my-questions'>
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My questions</h2>
                 <Link to={'/dashboard/add-question'}>
-                    <button className='add-btn btn-danger'>Add Questions</button>
+                    <button className='btn-style'>Post Your Questions</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>
@@ -40,7 +38,7 @@ const MyQuestions = () => {
                         <th >Code</th>
                         <th >Year</th>
 
-                        <th >question Preview</th>
+                        {/* <th >question Preview</th> */}
 
                         <th >Status</th>
                         <th >Request To Delete</th>
@@ -56,11 +54,12 @@ const MyQuestions = () => {
                             <td>{question.year}</td>
                             <td>{question.semester}</td>
 
-                            <td> <iframe title="question" src={question.driveLink}
-                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            {/* <td> <iframe title="question" src={question.driveLink}
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+                            </td> */}
                             <td>{question.status}</td>
                             <td> <button
-                                className="btn btn-danger "
+                                className="btn-style download-btn"
                             // onClick={() => handlequestionDeleteRequest(question._id)}
                             >
                                 Delete question

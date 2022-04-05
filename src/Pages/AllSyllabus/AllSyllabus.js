@@ -7,7 +7,7 @@ const AllSyllabus = () => {
 
     // const [syllabus, setSyllabus] = useState([]);
     // useEffect(() => {
-    //     fetch('https://blooming-sierra-74368.herokuapp.com/allSyllabus')
+    //     fetch('http://localhost:5000/')
     //         .then(res => res.json())
     //         .then(data => setSyllabus(data))
     // }, [])
@@ -16,11 +16,11 @@ const AllSyllabus = () => {
 
     const dispatch = useDispatch()
 
-    const allSyllabusData = useSelector( (state)=> state.questionsArchiveData.syllabusData)
+    const allSyllabusData = useSelector((state) => state.questionsArchiveData.syllabusData)
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getSyllabusAction())
-      },[])
+    }, [])
 
     // end data store via Redux toolkit 
 
@@ -28,17 +28,24 @@ const AllSyllabus = () => {
     return (
         <div className="container text-black mt-5 mb-5" >
             <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Syllabus Collection</h1></div>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
-                {allSyllabusData?.map((syllabuss) => (
+            {
+                allSyllabusData.length === 0 ? <div className='text-center'>
+                    <div class="spinner-border m-5" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div> :
+                    <div className="row g-4">
+                        {allSyllabusData?.map((syllabuss) => (
 
-                    <SyllabusCart
-                        key={syllabuss.id}
-                        data={syllabuss}>
+                            <SyllabusCart
+                                key={syllabuss.id}
+                                data={syllabuss}>
 
-                    </SyllabusCart>
+                            </SyllabusCart>
 
-                ))}
-            </div>
+                        ))}
+                    </div>
+            }
 
         </div>
     );

@@ -15,21 +15,28 @@ const QuestionCart = ({ data }) => {
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
 
     return (
-        <div className="col-12 col-md-4 mb-4">
-            <div className="card custom-cart h-100 hover">
-                <iframe title="question" src={viewUrl}
-                    className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
-                <div className="card-body">
-                    <h4 className="card-title mb-3">{subject}</h4>
-                    <h5 className="card-title">Department: {department}</h5>
-                    <h5 className="card-title">Department: {semester}</h5>
-                    <div className='d-flex justify-content-between'>
-                        <h5 className="card-title">Subject Code: {code}</h5>
-                        <h5 className="card-text ">Year: {year}</h5>
+        <div className="col-12 col-md-12 mb-4">
+            <div className="card custom-cart h-100 hover shadow rounded">
+                <div className="row align-items-center">
+                    <div className="col-md-6">
+                        <iframe title="question" src={viewUrl}
+                            className="img-fluid rounded-start w-100 " style={{ height: "220px" }} allow="autoplay"></iframe>
                     </div>
-                    <div className="d-flex justify-content-between mt-3" >
-                        <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
-                        <Link to={`/question-details/${_id}`}><button className="btn-style" >View Answer</button></Link>
+                    <div className="col-md-6">
+
+                        <div className="card-body">
+                            <h4 className="card-title mb-3">{subject}</h4>
+                            <h5 className="card-title">Department: {department}</h5>
+                            <h5 className="card-title">Semester: {semester}</h5>
+                            <div className='d-flex justify-content-between'>
+                                <h5 className="card-title">Subject Code: {code}</h5>
+                                <h5 className="card-text ">Year: {year}</h5>
+                            </div>
+                            <div className='buttons' >
+                                <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
+                                <Link to={`/question-details/${_id}`}><button className="btn-style" >View Answer</button></Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,8 @@
-
-
-
-
-
-.user-desire-question{
+.user-desire-question {
     position: relative;
-    font-size: 3em;;
-    color: #252839;
-    -webkit-text-stroke: 0.3vw #383d52;
-    text-transform: uppercase;
+    font-size: 40px;
+    color: #75c7c3;
+    -webkit-text-stroke: 0.3vw #75c7c3;
+    text-transform: capitalize;
+    letter-spacing: 5px;
 }

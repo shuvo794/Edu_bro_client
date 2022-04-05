@@ -8,12 +8,31 @@ const MyNotes = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(() => {
-        fetch(` https://blooming-sierra-74368.herokuapp.com/mynotes/${user?.email}`)
+        fetch(`http://localhost:5000/mynotes/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setNotes(data));
-    }, [user?.email]);
+    }, [user?.email, notes]);
 
-    console.log(notes)
+    const handleNoteDeleteRequest = id => {
+
+        const proceed = window.confirm('Are you sure you want to Cancel this note')
+        if (proceed) {
+            const url = `http://localhost:5000/deleteNote/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = notes?.filter(note => note._id !== id);
+                        setNotes(remaining);
+
+                    }
+                })
+        }
+    }
 
     return (
         <div className='my-questions'>
@@ -31,7 +50,7 @@ const MyNotes = () => {
                         <th >Subject Name</th>
                         <th >Topic</th>
 
-                        <th >Note Preview</th>
+                        {/* <th >Note Preview</th> */}
 
                         <th >Status</th>
                         <th >Request To Delete</th>
@@ -45,12 +64,13 @@ const MyNotes = () => {
                             <td>{note.topic}</td>
                             <td>{note.subject}</td>
 
-                            <td> <iframe title="question" src={note.driveLink}
-                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe></td>
+                            {/* <td> <iframe title="question" src={note.driveLink}
+                                className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
+                            </td> */}
                             <td>{note.status}</td>
                             <td> <button
                                 className="btn btn-danger"
-                            // onClick={() => handlenoteDeleteRequest(note._id)}
+                                onClick={() => handleNoteDeleteRequest(note._id)}
                             >
                                 Delete note
                             </button></td>

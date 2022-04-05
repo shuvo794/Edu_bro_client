@@ -4,32 +4,32 @@ const { actions: slice } = questionsArchiveSlice;
 
 export const getDataAction = () => (dispatch) => {
   // dispatch()
-  fetch('https://blooming-sierra-74368.herokuapp.com/allQuestions')
+  fetch('http://localhost:5000/allQuestions')
     .then(response => response.json())
     .then((josn) => dispatch(slice.setData(josn)))
 };
 
 export const getSyllabusAction = () => (dispatch) => {
   // dispatch()
-  fetch('https://blooming-sierra-74368.herokuapp.com/allSyllabus')
+  fetch('http://localhost:5000/allSyllabus')
     .then(response => response.json())
     .then((josn) => dispatch(slice.setSyllabusData(josn)))
 }
 export const getNotesAction = () => (dispatch) => {
   // dispatch()
-  fetch('https://blooming-sierra-74368.herokuapp.com/allnotes')
+  fetch('http://localhost:5000/allnotes')
     .then(response => response.json())
     .then((josn) => dispatch(slice.setNotesData(josn)))
 }
 export const getBlogsAction = () => (dispatch) => {
   // dispatch()
-  fetch('https://blooming-sierra-74368.herokuapp.com/allBlogs')
+  fetch('http://localhost:5000/allBlogs')
     .then(response => response.json())
     .then((josn) => dispatch(slice.setBlogsData(josn)))
 }
 export const getBooksAction = () => (dispatch) => {
   // dispatch()
-  fetch('https://blooming-sierra-74368.herokuapp.com/allBooks')
+  fetch('http://localhost:5000/allBooks')
     .then(response => response.json())
     .then((josn) => dispatch(slice.setBooksData(josn)))
 }
