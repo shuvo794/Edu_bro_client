@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,16 @@ import './UserProfile.css'
 
 const UserProfile = () => {
     const { user } = useFirebase()
+    const [userInfo, setUserInfo] = useState({})
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setUserInfo(data)
+                console.log(data)
+            })
+    }, [user.email])
     return (
         <div className='user-profile shadow-lg'>
             <div className="profile-title d-flex justify-content-between align-items-center">
@@ -18,7 +28,7 @@ const UserProfile = () => {
                     <Col md={3}>
                         <div className="user-verify py-4">
                             <img src={user.photoURL ? user.photoURL : 'https://i.ibb.co/Xsnkx3L/user.png'} alt="" />
-                            <p>{user.department ? "Profile Completed (100%)" : "Profile Completed (40%)"}</p>
+                            <p>{userInfo?.department ? "Profile Completed (100%)" : "Profile Completed (40%)"}</p>
                         </div>
                     </Col>
                     <Col md={9}>
@@ -33,7 +43,7 @@ const UserProfile = () => {
                             </div>
                             <div className="single-box">
                                 <h6>DepartMent</h6>
-                                <p className='text-capitalize'>{user.department ? user.department : "null"}</p>
+                                <p className='text-capitalize'>{userInfo?.department ? userInfo?.department : "null"}</p>
                             </div>
                         </div>
                     </Col>

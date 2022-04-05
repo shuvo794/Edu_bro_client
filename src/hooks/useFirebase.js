@@ -20,6 +20,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [admin, setAdmin] = useState(false)
 
   // Navbar toggle
   const [toggle, setToggle] = useState(false);
@@ -34,7 +35,7 @@ const useFirebase = () => {
   //REGISTER WITH EMAIL END PASSWORD
 
   const registerUser = (email, password, name, location, navigate) => {
-    sendUserInfoToDb(email)
+    // sendUserInfoToDb(email)
     setIsLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
 
@@ -44,21 +45,15 @@ const useFirebase = () => {
         navigate(destination)
         setError("");
 
-       
-
         const newUser = { email, displayName: name }
-        //console.log(newUser);
         setUser(newUser)
-        
-        sendUserInfoToDb(email) 
-        //SEND NAME IN THE FIREBASE
+        // save use to database 
+        sendUserInfoToDb(email, name, 'POST')
+        // send name to firebase after creation 
         updateProfile(auth.currentUser, {
           displayName: name
-        }).then(() => {
-
-        }).catch((error) => {
-
-        });
+        }).then(() => { })
+          .catch((error) => { })
 
       })
       .catch((error) => {
@@ -89,16 +84,16 @@ const useFirebase = () => {
 
     setIsLoading(true)
     signInWithPopup(auth, googleProvider)
-      .then((result) => {
+      .then(result => {
         const user = result.user;
+        setUser(user)
+        // save to database 
+        sendUserInfoToDb(user.email, user.displayName, 'PUT')
+        setError("")
         const destination = location?.state?.from || '/'
         navigate(destination)
-        setError("");
-      })
-      .catch((error) => {
-        setError(error.message);
-      })
-      .finally(() => setIsLoading(false));
+      }).catch(error => setError(error.message))
+      .finally(() => setIsLoading(false))
 
   };
 
@@ -115,15 +110,18 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   }
 
-  const sendUserInfoToDb = (email) => {
-    fetch("http://localhost:5000/addUserInfo", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email }),
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
-  };
+  // save user to database 
+  const sendUserInfoToDb = (email, displayName, method) => {
+    const user = { email, displayName }
+    fetch('http://localhost:5000/users', {
+      method: method,
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user)
+    }).then(res => res.json())
+      .then(data => {
+       
+      })
+  }
 
 
   //OBSERVER USER STATE
@@ -141,6 +139,17 @@ const useFirebase = () => {
   }, []);
 
 
+  //ADMIN CONDITIONAL DATALOAD
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then(res => res.json())
+      .then(data => {
+        setAdmin(data?.role)
+      })
+  }, [user.email])
+
+
+
   return {
     user,
     loginWithGoogle,
@@ -151,7 +160,8 @@ const useFirebase = () => {
     loginWithOwnEmaiAndPass,
     toggle,
     setToggle,
-    handleClick
+    handleClick,
+    admin
   };
 };
 export default useFirebase;

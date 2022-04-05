@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './QuestionCart.css';
 
 const QuestionCart = ({ data }) => {
-    const { driveLink, semester, code, subject, department, year } = data
+    console.log(data);
+    const { driveLink, semester, code, subject, department, year, _id } = data
 
 
     let googleId = driveLink?.slice(32, 65);
@@ -12,19 +15,28 @@ const QuestionCart = ({ data }) => {
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
 
     return (
-        <div className="col">
-            <div className="card custom-cart h-100 hover">
-                <iframe title="question" src={viewUrl}
-                    className="img-fluid rounded-start w-100 " style={{ height: "500px" }} allow="autoplay"></iframe>
-                <div className="card-body">
-                    <h5 className="card-title"><b>Subject Name:</b> {subject}</h5>
-                    <h5 className="card-title"><b>Department:</b> {department}</h5>
-                    <h5 className="card-title"><b>Subject Code:</b> {code}</h5>
-                    <h5 className="card-title"><b>Semester:</b> {semester}</h5>
-                    <h5 className="card-text "><b>Year:</b> {year}</h5>
-                    <div className="d-flex justify-content-around pt-5" >
-                        <div className="btn btn-success me-5 " ><a href={download} className="">Download</a></div>
-                        <div className="btn btn-danger ms-5" ><a href={viewUrl} className="">Show</a></div>
+        <div className="col-12 col-md-12 mb-4">
+            <div className="card custom-cart h-100 hover shadow rounded">
+                <div className="row align-items-center">
+                    <div className="col-md-6">
+                        <iframe title="question" src={viewUrl}
+                            className="img-fluid rounded-start w-100 " style={{ height: "220px" }} allow="autoplay"></iframe>
+                    </div>
+                    <div className="col-md-6">
+
+                        <div className="card-body">
+                            <h4 className="card-title mb-3">{subject}</h4>
+                            <h5 className="card-title">Department: {department}</h5>
+                            <h5 className="card-title">Semester: {semester}</h5>
+                            <div className='d-flex justify-content-between'>
+                                <h5 className="card-title">Subject Code: {code}</h5>
+                                <h5 className="card-text ">Year: {year}</h5>
+                            </div>
+                            <div className='buttons' >
+                                <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
+                                <Link to={`/question-details/${_id}`}><button className="btn-style" >View Answer</button></Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
