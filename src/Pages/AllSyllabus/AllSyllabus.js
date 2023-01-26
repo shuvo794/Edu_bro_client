@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getSyllabusAction } from '../../ReduxManagement/Redux/actions';
-import SyllabusCart from './SyllabusCart';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getSyllabusAction } from "../../ReduxManagement/Redux/actions";
+import SyllabusCart from "./SyllabusCart";
 
 const AllSyllabus = () => {
   const dispatch = useDispatch();
