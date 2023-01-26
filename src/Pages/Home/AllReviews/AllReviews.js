@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
-// import './AllReviews.css'
+
 const AllReviews = () => {
 
   return (
