@@ -107,30 +107,6 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
 
-                {/* <li>
-                                <NavLink to={`pending-questions`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
-                                })}><FaCommentDots className='me-1' /> Pending Questions</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={`add-depertments`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
-                                })}><FaSchool className='me-1' /> Add Depertment</NavLink>
-                            </li> */}
-
-                {/* {admin && <div> */}
-                {/* <li>
-                                <NavLink to={`manage-questions`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
-                                })}><FaTasks className='me-1' /> Manage Questions</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={`make-admin`} style={({ isActive }) => ({
-                                    color: isActive ? "#B22222" : "black",
-                                })}><FaUserShield /> Make Admin</NavLink>
-                            </li> */}
-                {/* </div>} */}
-
                 <Link to={"/"}>
                   <li onClick={userLogOut} className="dashboard-logOut">
                     <FaSignOutAlt className="me-1" /> Log Out
