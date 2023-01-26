@@ -3,7 +3,7 @@
 }
 .btn-style {
     outline: none;
-    background-color: #1289A7;
+    background-color: #0868f7;
     border: 2px solid transparent;
     color: white;
     padding: 4px 20px;
@@ -14,21 +14,21 @@
 }
 .btn-style:hover{
     background-color: white;
-    color: #1289A7;
-    border: 2px solid #1289A7;
+    color: #0868f7;
+    border: 2px solid #0868f7;
 }
 .btn-style.download-btn{
     background-color: white;
-    color: #1289A7;
-    border: 2px solid #1289A7;
+    color: #0868f7;
+    border: 2px solid #0868f7;
 }
 .btn-style.download-btn:hover{
-    background-color: #1289A7;
+    background-color: #0868f7;
     color: white;
     border: 2px solid transparent;
 }
 .btn-style.btn-style.download-btn a{
-    color: #1289A7;
+    color: #0868f7;
     transition: all .5s;
 }
 .btn-style.btn-style.download-btn:hover a{
@@ -52,7 +52,7 @@
     height: 40px;
     padding-left: 20px;
     padding-right: 100px;
-    border: 1px solid #1289A7;
+    border: 1px solid #0868f7;
     border-radius: 30px;
 }
 .search-box input:focus{
@@ -74,12 +74,12 @@
 
 /* pagination */
 .page-item .page-link{
-    color: #1289A7;
+    color: #0868f7;
     background-color: white;
-    border-color: #1289A7;
+    border-color: #0868f7;
 }
 .page-item.active .page-link{
     color: #fff;
-    background-color: #1289A7;
-    border-color: #1289A7;
+    background-color: #0868f7;
+    border-color: #0868f7;
 }
