@@ -14,13 +14,9 @@ const Home = () => {
     <div onClick={handleClick}>
       <Banner></Banner>
       <Services />
-      {/* <Questions></Questions> */}
       <AllReviews></AllReviews>
       <Blogs></Blogs>
       <Counter />
-      {/* <Reviews /> */}
-
-      {/* <TeamMember></TeamMember> */}
     </div>
   );
 };
