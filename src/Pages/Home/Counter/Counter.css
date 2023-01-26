@@ -8,7 +8,7 @@
     margin-bottom: 15px;
 }
 .single-counter:hover{
-    background-color: #1289A7;
+    background-color: #0868f7;
     color: white;
 }
 .single-counter:hover .counter-icon .icon{
@@ -16,7 +16,7 @@
 }
 .counter-icon .icon{
     font-size: 40px;
-    color: #1289A7;
+    color: #0868f7;
     transition: all .4s;
 }
 .counter-text h3 {
@@ -28,7 +28,7 @@
     font-weight: 600;
 }
 .counter-active{
-    background-color: #1289A7;
+    background-color: #0868f7;
     color: white;
     transition: all .4s;
 }
@@ -41,7 +41,7 @@
     color: black;
 }
 .counter-active:hover .icon{
-    color: #1289A7 !important;
+    color: #0868f7 !important;
 } */
 
 .section-title h3 {
@@ -51,7 +51,7 @@
 .section-title span{
     width: 90px;
     height: 3px;
-    background-color: #1289A7;
+    background-color: #0868f7;
     display: inline-block;
     margin-bottom: 10px;
 }
