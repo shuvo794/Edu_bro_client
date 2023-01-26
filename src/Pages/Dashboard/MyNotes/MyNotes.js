@@ -8,31 +8,31 @@ const MyNotes = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mynotes/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setNotes(data));
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/mynotes/${user?.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => setNotes(data));
     }, [user?.email, notes]);
 
-    const handleNoteDeleteRequest = id => {
-
-        const proceed = window.confirm('Are you sure you want to Cancel this note')
-        if (proceed) {
-            const url = `http://localhost:5000/deleteNote/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-
-            })
-                .then(res => res.json())
-                .then(data => {
-
-                    if (data.deletedCount) {
-                        const remaining = notes?.filter(note => note._id !== id);
-                        setNotes(remaining);
-
-                    }
-                })
-        }
-    }
+    const handleNoteDeleteRequest = (id) => {
+      const proceed = window.confirm(
+        "Are you sure you want to Cancel this note"
+      );
+      if (proceed) {
+        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteNote/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaining = notes?.filter((note) => note._id !== id);
+              setNotes(remaining);
+            }
+          });
+      }
+    };
 
     return (
         <div className='my-questions'>

@@ -10,32 +10,31 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myLabs/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setLabs(data));
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myLabs/${user?.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => setLabs(data));
     }, [user?.email, labs]);
 
-
-    const handleLabDeleteRequest = id => {
-
-        const proceed = window.confirm('Are you sure you want to Cancel this lab')
-        if (proceed) {
-            const url = `http://localhost:5000/deleteLab/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-
-            })
-                .then(res => res.json())
-                .then(data => {
-
-                    if (data.deletedCount) {
-                        const remaining = labs?.filter(lab => lab._id !== id);
-                        setLabs(remaining);
-
-                    }
-                })
-        }
-    }
+    const handleLabDeleteRequest = (id) => {
+      const proceed = window.confirm(
+        "Are you sure you want to Cancel this lab"
+      );
+      if (proceed) {
+        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteLab/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaining = labs?.filter((lab) => lab._id !== id);
+              setLabs(remaining);
+            }
+          });
+      }
+    };
     return (
         <div className='my-questions'>
             <div className='d-flex justify-content-between align-items-center my-question-header'>

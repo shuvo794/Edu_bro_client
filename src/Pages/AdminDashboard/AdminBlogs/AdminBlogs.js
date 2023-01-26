@@ -10,23 +10,26 @@ const AdminBlogs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBlogs`)
-            .then((res) => res.json())
-            .then((data) => setBlogs(data));
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allBlogs`
+      )
+        .then((res) => res.json())
+        .then((data) => setBlogs(data));
     }, [user?.email]);
 
-
-
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/BlogStatusUpdate/${id}`, {
-            method: "PUT",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ status }),
-        })
-            .then((res) => res.json())
-            .then((result) => console.log(result));
-        alert('update')
-    }
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/BlogStatusUpdate/${id}`,
+        {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ status }),
+        }
+      )
+        .then((res) => res.json())
+        .then((result) => console.log(result));
+      alert("update");
+    };
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()

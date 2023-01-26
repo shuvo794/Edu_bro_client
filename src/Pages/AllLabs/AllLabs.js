@@ -17,15 +17,17 @@ const AllLabs = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/allLabs?page=${page}&&size=${size}`)
-            .then(res => res.json())
-            .then(data => {
-                setLabs(data.allLabs)
+        fetch(
+          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allLabs?page=${page}&&size=${size}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setLabs(data.allLabs);
 
-                const count = data.count;
-                const pageNumber = Math.ceil(count / size)
-                setPageCount(pageNumber)
-            })
+            const count = data.count;
+            const pageNumber = Math.ceil(count / size);
+            setPageCount(pageNumber);
+          });
     }, [page]);
 
 

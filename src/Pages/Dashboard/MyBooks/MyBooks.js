@@ -9,33 +9,31 @@ const MyBooks = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBooks/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setBooks(data));
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myBooks/${user?.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => setBooks(data));
     }, [user?.email, books]);
 
-
-
-    const handleBookDeleteRequest = id => {
-
-        const proceed = window.confirm('Are you sure you want to Cancel this book')
-        if (proceed) {
-            const url = `http://localhost:5000/deleteBook/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-
-            })
-                .then(res => res.json())
-                .then(data => {
-
-                    if (data.deletedCount) {
-                        const remaining = books?.filter(book => book._id !== id);
-                        setBooks(remaining);
-
-                    }
-                })
-        }
-    }
+    const handleBookDeleteRequest = (id) => {
+      const proceed = window.confirm(
+        "Are you sure you want to Cancel this book"
+      );
+      if (proceed) {
+        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteBook/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaining = books?.filter((book) => book._id !== id);
+              setBooks(remaining);
+            }
+          });
+      }
+    };
 
 
     return (

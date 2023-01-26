@@ -10,9 +10,11 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/review")
-            .then((res) => res.json())
-            .then((data) => setReviews(data));
+        fetch(
+          "https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/review"
+        )
+          .then((res) => res.json())
+          .then((data) => setReviews(data));
     }, []);
 
     var settings = {

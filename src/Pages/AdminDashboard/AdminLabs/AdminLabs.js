@@ -11,23 +11,24 @@ const AdminLabs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allLabs`)
-            .then((res) => res.json())
-            .then((data) => setLabs(data));
+      fetch(`https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allLabs`)
+        .then((res) => res.json())
+        .then((data) => setLabs(data));
     }, [user?.email]);
 
-
-
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/labsStatusUpdate/${id}`, {
-            method: "PUT",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ status }),
-        })
-            .then((res) => res.json())
-            .then((result) => console.log(result));
-        alert('update')
-    }
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/labsStatusUpdate/${id}`,
+        {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ status }),
+        }
+      )
+        .then((res) => res.json())
+        .then((result) => console.log(result));
+      alert("update");
+    };
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()

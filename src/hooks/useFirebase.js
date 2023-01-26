@@ -112,24 +112,21 @@ const useFirebase = () => {
 
   // save user to database 
   const sendUserInfoToDb = (email, displayName, method) => {
-    const user = { email, displayName }
-    fetch('http://localhost:5000/users', {
+    const user = { email, displayName };
+    fetch("https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/users", {
       method: method,
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(user)
-    }).then(res => res.json())
-      .then(data => {
-       
-      })
-  }
-
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {});
+  };
 
   //OBSERVER USER STATE
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-
       } else {
         setUser({});
       }
@@ -138,15 +135,16 @@ const useFirebase = () => {
     return () => unsubscribe;
   }, []);
 
-
   //ADMIN CONDITIONAL DATALOAD
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
-      .then(res => res.json())
-      .then(data => {
-        setAdmin(data?.role)
-      })
-  }, [user.email])
+    fetch(
+      `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/users/${user.email}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setAdmin(data?.role);
+      });
+  }, [user.email]);
 
 
 

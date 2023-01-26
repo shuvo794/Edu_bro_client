@@ -12,19 +12,20 @@ const AddLabsDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`http://localhost:5000/postLabs`, {
+        fetch(
+          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/postLabs`,
+          {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
-                Swal.fire(
-                    'Lab Question Added Successfully.',
-                )
-                reset()
-            });
+          }
+        )
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            Swal.fire("Lab Question Added Successfully.");
+            reset();
+          });
     };
     return (
         <Container>

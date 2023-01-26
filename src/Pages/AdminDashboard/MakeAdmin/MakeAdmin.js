@@ -6,27 +6,30 @@ const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         // console.log(data)
-        fetch('http://localhost:5000/users/admin', {
-            method: 'PUT',
+        fetch(
+          "https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/users/admin",
+          {
+            method: "PUT",
             headers: {
-                'content-type': 'application/json'
+              "content-type": "application/json",
             },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Admin Added Successfully!',
-                        showConfirmButton: false,
-                        timer: 4000
-                    })
-                } else {
-                    alert('Oops! Not working')
-                }
-            })
+            body: JSON.stringify(data),
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount) {
+              Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Admin Added Successfully!",
+                showConfirmButton: false,
+                timer: 4000,
+              });
+            } else {
+              alert("Oops! Not working");
+            }
+          });
 
         reset()
     }

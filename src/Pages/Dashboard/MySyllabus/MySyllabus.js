@@ -9,33 +9,33 @@ const MySyllabus = () => {
     const [syllabus, setSyllabus] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mySyllabus/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setSyllabus(data));
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/mySyllabus/${user?.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => setSyllabus(data));
     }, [user?.email, syllabus]);
 
-
-
-    const handleSyllabusDeleteRequest = id => {
-
-        const proceed = window.confirm('Are you sure you want to Cancel this syllabus')
-        if (proceed) {
-            const url = `http://localhost:5000/deleteSyllabus/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-
-            })
-                .then(res => res.json())
-                .then(data => {
-
-                    if (data.deletedCount) {
-                        const remaining = syllabus?.filter(syllabus => syllabus._id !== id);
-                        setSyllabus(remaining);
-
-                    }
-                })
-        }
-    }
+    const handleSyllabusDeleteRequest = (id) => {
+      const proceed = window.confirm(
+        "Are you sure you want to Cancel this syllabus"
+      );
+      if (proceed) {
+        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteSyllabus/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaining = syllabus?.filter(
+                (syllabus) => syllabus._id !== id
+              );
+              setSyllabus(remaining);
+            }
+          });
+      }
+    };
 
 
     return (

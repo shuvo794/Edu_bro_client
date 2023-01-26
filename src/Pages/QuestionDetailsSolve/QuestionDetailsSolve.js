@@ -20,53 +20,55 @@ const QuestionDetailsSolve = () => {
 
 
 
-    const onSubmit = data => {
-        data.questionId = id
-        data.userName = user.displayName
-        data.email = user.email
-        data.subject = question.subject
-        data.year = question.year
-        data.code = question.code
-        data.department = question.department
+    const onSubmit = (data) => {
+      data.questionId = id;
+      data.userName = user.displayName;
+      data.email = user.email;
+      data.subject = question.subject;
+      data.year = question.year;
+      data.code = question.code;
+      data.department = question.department;
 
-        // post solve 
+      // post solve
 
-        fetch(`http://localhost:5000/addQuestionSolve`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/addQuestionSolve`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      )
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
 
-                alert('order confirmed')
-                reset()
-            });
-
+          alert("order confirmed");
+          reset();
+        });
     };
 
-
-    // get question 
+    // get question
 
     useEffect(() => {
-        fetch(`http://localhost:5000/question/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setQuestion(data)
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/question/${id}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setQuestion(data);
+        });
+    }, [id, reset]);
 
-            })
-    }, [id, reset])
-
-
-
-    // get solve 
+    // get solve
     useEffect(() => {
-        fetch(`http://localhost:5000/questionSolve/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setQuestionSolves(data)
-            });
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/questionSolve/${id}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setQuestionSolves(data);
+        });
     }, [id, reset]);
 
 

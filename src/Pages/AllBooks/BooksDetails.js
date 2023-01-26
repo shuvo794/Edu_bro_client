@@ -24,49 +24,47 @@ const BooksDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBooks/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setSelected(data)
-                reset(data)
-
-            });
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allBooks/${id}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setSelected(data);
+          reset(data);
+        });
     }, [id, reset]);
-
-
-
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setReviews(data)
-                reset(data)
-
-            });
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/review/${id}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setReviews(data);
+          reset(data);
+        });
     }, [id, reset]);
 
+    const onSubmit = (data) => {
+      data.bookId = id;
+      data.googleId = user.googleId;
+      data.userName = user.displayName;
+      data.email = user.email;
 
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/addReview`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      )
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
 
-    const onSubmit = data => {
-        data.bookId = id
-        data.googleId = user.googleId
-        data.userName = user.displayName
-        data.email = user.email
-
-
-        fetch(`http://localhost:5000/addReview`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
-
-                alert('order confirmed')
-            });
-
+          alert("order confirmed");
+        });
     };
 
     const download = `https://drive.google.com/u/0/uc?id=${selected.googleId}&export=download`

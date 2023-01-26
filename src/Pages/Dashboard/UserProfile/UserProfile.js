@@ -10,12 +10,14 @@ const UserProfile = () => {
     const [userInfo, setUserInfo] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setUserInfo(data)
-                console.log(data)
-            })
+        fetch(
+          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/users/${user.email}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setUserInfo(data);
+            console.log(data);
+          });
     }, [user.email])
     return (
         <div className='user-profile shadow-lg'>

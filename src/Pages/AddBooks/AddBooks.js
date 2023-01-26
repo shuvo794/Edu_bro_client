@@ -21,17 +21,19 @@ const AddBooks = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        fetch(`http://localhost:5000/addBook`, {
+        fetch(
+          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/addBook`,
+          {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((result) => {
-
-                alert('Book Added Successfully')
-                reset()
-            });
+          }
+        )
+          .then((res) => res.json())
+          .then((result) => {
+            alert("Book Added Successfully");
+            reset();
+          });
     };
 
     return (

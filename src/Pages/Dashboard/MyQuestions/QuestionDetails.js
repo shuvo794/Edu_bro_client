@@ -14,12 +14,14 @@ const QuestionDetails = () => {
     console.log('test', viewUrl)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/question/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setQuestion(data)
-                console.log(data)
-            })
+        fetch(
+          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/question/${id}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setQuestion(data);
+            console.log(data);
+          });
     }, [id])
 
     const onSubmit = data => {

@@ -19,20 +19,23 @@ const CustomerReview = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch("http://localhost:5000/review", {
+        fetch(
+          "https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/review",
+          {
             method: "POST",
             headers: {
-                "content-type": "application/json",
+              "content-type": "application/json",
             },
             body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.insertedId) {
-                    Swal.fire("Review Added Successfully !");
-                    reset();
-                }
-            });
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire("Review Added Successfully !");
+              reset();
+            }
+          });
     };
 
     return (

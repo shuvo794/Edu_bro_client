@@ -12,35 +12,33 @@ const MyBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBlogs/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setBlogs(data));
+      fetch(
+        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myBlogs/${user?.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => setBlogs(data));
     }, [user?.email, blogs]);
 
-    console.log(blogs)
+    console.log(blogs);
 
-
-
-    const handleBlogDeleteRequest = id => {
-
-        const proceed = window.confirm('Are you sure you want to Cancel this blog')
-        if (proceed) {
-            const url = `http://localhost:5000/deleteBlog/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-
-            })
-                .then(res => res.json())
-                .then(data => {
-
-                    if (data.deletedCount) {
-                        const remaining = blogs?.filter(blog => blog._id !== id);
-                        setBlogs(remaining);
-
-                    }
-                })
-        }
-    }
+    const handleBlogDeleteRequest = (id) => {
+      const proceed = window.confirm(
+        "Are you sure you want to Cancel this blog"
+      );
+      if (proceed) {
+        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteBlog/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaining = blogs?.filter((blog) => blog._id !== id);
+              setBlogs(remaining);
+            }
+          });
+      }
+    };
 
 
 

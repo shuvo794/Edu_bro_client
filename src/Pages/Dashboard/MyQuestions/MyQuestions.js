@@ -12,12 +12,14 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myQuestions/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-                setQuestions(data)
-            });
+        fetch(
+          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myQuestions/${user?.email}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setQuestions(data);
+          });
     }, [user?.email]);
 
     return (
