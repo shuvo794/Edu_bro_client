@@ -2,22 +2,9 @@ import { Container } from 'react-bootstrap';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import Rating from 'react-rating';
-
-
-
-
-
+// import Rating from 'react-rating';
 const AddBooks = () => {
-
-
-
-
-
-
-
-
-    //react hook form
+     //react hook form
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
