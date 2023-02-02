@@ -29,43 +29,40 @@ const QuestionDetailsSolve = () => {
         data.code = question.code
         data.department = question.department
 
-        fetch(`https://edubroist.onrender.com/addQuestionSolve`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/addQuestionSolve`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
-                Swal.fire(
-                    'Answer Posted Successfully.',
-                )
-                reset()
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            Swal.fire("Answer Posted Successfully.");
+            reset();
 
-                setCounter(!counter)
-            });
+            setCounter(!counter);
+          });
     };
 
     // get question 
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/question/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setQuestion(data)
-
-            })
+        fetch(`https://edu-bro-server.onrender.com/question/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setQuestion(data);
+          });
     }, [id, reset])
 
 
 
     // get solve 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/questionSolve/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setQuestionSolves(data)
-            });
+        fetch(`https://edu-bro-server.onrender.com/questionSolve/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setQuestionSolves(data);
+          });
     }, [id, counter]);
 
     const handleSolveDeleteRequest = id => {
@@ -80,7 +77,7 @@ const QuestionDetailsSolve = () => {
                 }
             })
         if (proceed) {
-            const url = `https://edubroist.onrender.com/deleteQuestionSolve/${id}`;
+            const url = `https://edu-bro-server.onrender.com/deleteQuestionSolve/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -25,26 +25,24 @@ const BooksDetails = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/allBooks/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setSelected(data)
-                reset(data)
-
-            });
+        fetch(`https://edu-bro-server.onrender.com/allBooks/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setSelected(data);
+            reset(data);
+          });
     }, [id, reset]);
 
 
 
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/review/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setReviews(data)
-                reset(data)
-
-            });
+        fetch(`https://edu-bro-server.onrender.com/review/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setReviews(data);
+            reset(data);
+          });
     }, [id, reset]);
 
 
@@ -56,23 +54,21 @@ const BooksDetails = () => {
         data.email = user.email
 
 
-        fetch(`https://edubroist.onrender.com/addReview`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/addReview`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-
-
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'Success',
-                    title: 'Review Added Successfully',
-                    showConfirmButton: true,
-                    timer: 4000
-                })
+          .then((res) => res.json())
+          .then((result) => {
+            Swal.fire({
+              position: "top-center",
+              icon: "Success",
+              title: "Review Added Successfully",
+              showConfirmButton: true,
+              timer: 4000,
             });
+          });
 
     };
 

@@ -14,19 +14,17 @@ const AddAssignmentDashboard = () => {
         data.status = 'approved'
         data.date = today
 
-        fetch(`https://edubroist.onrender.com/postAssignment`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/postAssignment`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
-                Swal.fire(
-                    'Assignment Posted Successfully.',
-                )
-                reset()
-            });
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            Swal.fire("Assignment Posted Successfully.");
+            reset();
+          });
     };
     return (
         <div className='py-5'>

@@ -12,13 +12,13 @@ const AdminBooks = () => {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch(`https://edubroist.onrender.com/getAllBooks`)
+    fetch(`https://edu-bro-server.onrender.com/getAllBooks`)
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, [user?.email]);
 
   const handleUpdate = (id) => {
-    fetch(`https://edubroist.onrender.com/BookStatusUpdate/${id}`, {
+    fetch(`https://edu-bro-server.onrender.com/BookStatusUpdate/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),

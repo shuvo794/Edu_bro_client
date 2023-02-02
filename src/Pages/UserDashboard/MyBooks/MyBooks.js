@@ -9,9 +9,9 @@ const MyBooks = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/myBooks/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setBooks(data));
+        fetch(`https://edu-bro-server.onrender.com/myBooks/${user?.email}`)
+          .then((res) => res.json())
+          .then((data) => setBooks(data));
     }, [user?.email, books]);
 
 
@@ -20,7 +20,7 @@ const MyBooks = () => {
 
         const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
-            const url = `https://edubroist.onrender.com/deleteBook/${id}`;
+            const url = `https://edu-bro-server.onrender.com/deleteBook/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

@@ -14,15 +14,13 @@ const AdminNotes = () => {
 
 
     useEffect(() => {
-      fetch(`https://edubroist.onrender.com/getAllNotes`)
+      fetch(`https://edu-bro-server.onrender.com/getAllNotes`)
         .then((res) => res.json())
         .then((data) => setNotes(data));
     }, [user?.email]);
 
-
-
     const handleUpdate = (id) => {
-      fetch(`https://edubroist.onrender.com/notesStatusUpdate/${id}`, {
+      fetch(`https://edu-bro-server.onrender.com/notesStatusUpdate/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ status }),
@@ -36,7 +34,7 @@ const AdminNotes = () => {
         showConfirmButton: true,
         timer: 4000,
       });
-    }
+    };
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()

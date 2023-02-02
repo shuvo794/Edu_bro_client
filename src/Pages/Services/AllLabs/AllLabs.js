@@ -7,9 +7,9 @@ const AllLabs = () => {
     const [labs, setLabs] = useState([]);
 
     useEffect(() => {
-        fetch('https://edubroist.onrender.com/allLabs')
-            .then(res => res.json())
-            .then(data => setLabs(data))
+        fetch("https://edu-bro-server.onrender.com/allLabs")
+          .then((res) => res.json())
+          .then((data) => setLabs(data));
     }, [labs])
 
 

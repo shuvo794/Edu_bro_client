@@ -25,18 +25,16 @@ const AddBlogsDashboard = () => {
         data.status = 'Pending'
 
 
-        fetch(`https://edubroist.onrender.com/postBlogs`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/postBlogs`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                Swal.fire(
-                    'Blog Posted Successfully.',
-                )
-                reset()
-            });
+          .then((res) => res.json())
+          .then((result) => {
+            Swal.fire("Blog Posted Successfully.");
+            reset();
+          });
     };
 
 

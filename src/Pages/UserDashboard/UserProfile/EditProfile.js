@@ -14,7 +14,7 @@ const EditProfile = () => {
   } = useForm();
   const onSubmit = (data) => {
     data.complete = true;
-    fetch(`https://edubroist.onrender.com/updateUser`, {
+    fetch(`https://edu-bro-server.onrender.com/updateUser`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

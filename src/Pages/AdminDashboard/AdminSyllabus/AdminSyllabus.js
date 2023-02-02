@@ -12,15 +12,13 @@ const AdminSyllabus = () => {
 
 
     useEffect(() => {
-      fetch(`https://edubroist.onrender.com/getAllSyllabus`)
+      fetch(`https://edu-bro-server.onrender.com/getAllSyllabus`)
         .then((res) => res.json())
         .then((data) => setSyllabus(data));
     }, [user?.email]);
 
-
-
     const handleUpdate = (id) => {
-      fetch(`https://edubroist.onrender.com/SyllabusStatusUpdate/${id}`, {
+      fetch(`https://edu-bro-server.onrender.com/SyllabusStatusUpdate/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ status }),
@@ -34,7 +32,7 @@ const AdminSyllabus = () => {
         showConfirmButton: true,
         timer: 4000,
       });
-    }
+    };
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()

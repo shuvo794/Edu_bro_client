@@ -11,12 +11,12 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/myQuestions/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-                setQuestions(data)
-            });
+        fetch(`https://edu-bro-server.onrender.com/myQuestions/${user?.email}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setQuestions(data);
+          });
     }, [user?.email]);
 
 
@@ -25,7 +25,7 @@ const MyQuestions = () => {
     const handleQuestionDeleteRequest = id => {
         const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
-            const url = `https://edubroist.onrender.com/deleteQuestion/${id}`;
+            const url = `https://edu-bro-server.onrender.com/deleteQuestion/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

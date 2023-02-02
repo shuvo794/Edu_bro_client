@@ -35,22 +35,21 @@ const AssignmentSolve = () => {
 
         // post solve 
 
-        fetch(`https://edubroist.onrender.com/addAssignmentSolve`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/addAssignmentSolve`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result);
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'Success',
-                    title: 'Assignment Submitted Successfully',
-                    timer: 4000
-                })
-
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            Swal.fire({
+              position: "top-center",
+              icon: "Success",
+              title: "Assignment Submitted Successfully",
+              timer: 4000,
             });
+          });
         reset()
         setCounter(!counter)
     };
@@ -58,23 +57,22 @@ const AssignmentSolve = () => {
 
     // get assignment 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/assignment/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setAssignment(data)
-
-            })
+        fetch(`https://edu-bro-server.onrender.com/assignment/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setAssignment(data);
+          });
     }, [id])
 
 
 
     // get solve 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/assignmentSolve/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setAssignmentSolves(data)
-            });
+        fetch(`https://edu-bro-server.onrender.com/assignmentSolve/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setAssignmentSolves(data);
+          });
     }, [id, counter]);
 
 
@@ -91,7 +89,7 @@ const AssignmentSolve = () => {
             })
 
         if (proceed) {
-            const url = `https://edubroist.onrender.com/deleteAssignmentSolve/${id}`;
+            const url = `https://edu-bro-server.onrender.com/deleteAssignmentSolve/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

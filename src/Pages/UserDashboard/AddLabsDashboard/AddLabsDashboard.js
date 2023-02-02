@@ -12,19 +12,17 @@ const AddLabsDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`https://edubroist.onrender.com/postLabs`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/postLabs`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
-                Swal.fire(
-                    'Lab Added Successfully.',
-                )
-                reset()
-            });
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            Swal.fire("Lab Added Successfully.");
+            reset();
+          });
     };
     return (
         <Container>

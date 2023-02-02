@@ -12,19 +12,17 @@ const AddBooksDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`https://edubroist.onrender.com/postBooks`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/postBooks`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
-                Swal.fire(
-                    'Book Posted Successfully.',
-                )
-                reset()
-            });
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            Swal.fire("Book Posted Successfully.");
+            reset();
+          });
     };
     return (
         <Container>

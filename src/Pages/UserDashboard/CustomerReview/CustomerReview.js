@@ -19,20 +19,20 @@ const CustomerReview = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch("https://edubroist.onrender.com/review", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(data),
+        fetch("https://edu-bro-server.onrender.com/review", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.insertedId) {
-                    Swal.fire("Review Added Successfully !");
-                    reset();
-                }
-            });
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire("Review Added Successfully !");
+              reset();
+            }
+          });
     };
 
     return (

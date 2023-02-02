@@ -4,90 +4,104 @@ import AssignmentCart from './AssignmentCart';
 import spinner from './../../../Assets/Images/Spinner.svg'
 
 const AllAssignments = () => {
-    const [assignments, setAssignments] = useState([]);
-    const [department, setDepartment] = useState("")
-    const [search, setSearch] = useState("")
-    const [semester, setSemester] = useState("")
+  const [assignments, setAssignments] = useState([]);
+  const [department, setDepartment] = useState("");
+  const [search, setSearch] = useState("");
+  const [semester, setSemester] = useState("");
 
-    const [page, setPage] = useState(0)
-    const [pageCount, setPageCount] = useState(0)
-    const size = 10;
+  const [page, setPage] = useState(0);
+  const [pageCount, setPageCount] = useState(0);
+  const size = 10;
 
+  const handlePageChange = (data) => {
+    setPage(data.selected);
+  };
 
+  const HandleSearch = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+  // checkbox er value true or false return kore
 
-    const handlePageChange = (data) => {
-        setPage(data.selected);
-    }
+  // useEffect(() => {
+  //     fetch('https://edu-bro-server.onrender.com/allassignments')
+  //         .then(res => res.json())
+  //         .then(data => setassignments(data))
+  // }, [])
 
+  useEffect(() => {
+    fetch(
+      `https://edu-bro-server.onrender.com/allAssignments?page=${page}&&size=${size}&&department=${department}&&semester=${semester}&&search=${search}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setAssignments(data.allAssignments);
 
-    const HandleSearch = (e) => {
-        e.preventDefault()
-        setSearch(e.target.value)
-    }
-    // checkbox er value true or false return kore
+        const count = data.count;
+        const pageNumber = Math.ceil(count / size);
+        setPageCount(pageNumber);
+      });
+  }, [department, semester, page, search]);
 
-    // useEffect(() => {
-    //     fetch('https://edubroist.onrender.com/allassignments')
-    //         .then(res => res.json())
-    //         .then(data => setassignments(data))
-    // }, [])
+  return (
+    <div className="container text-black mt-5 mb-5">
+      <div className="row align-items-center">
+        <div className="col-md-6">
+          <div className="mb-5">
+            <h1 className="user-desire-question">Find All Assignment</h1>
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="search-box mb-5">
+            <form>
+              <input
+                type="text"
+                name="search"
+                onBlur={HandleSearch}
+                placeholder="Search Assignments"
+              />
+              <span>Search</span>
+            </form>
+          </div>
+        </div>
+      </div>
+      {/* {Assignments.length ? */}
+      <div className="row g-4">
+        <div className="col-12 col-md-2">
+          <div className="question-sidebar">
+            <h5 className="mb-3">Filter Assignments</h5>
+            <form onChange={(e) => setDepartment(e.target.value)}>
+              <input type="radio" id="html" name="fav_language" value="" />
+              <label for="all" className="ps-2 form-check-label fw-bold">
+                All
+              </label>
+              <br />
+              <input type="radio" id="cse" name="fav_language" value="cse" />
+              <label fo r="cse" className="ps-2 form-check-label fw-bold">
+                CSE
+              </label>
+              <br />
+              <input type="radio" id="ece" name="fav_language" value="ece" />
+              <label for="css" className="ps-2 form-check-label fw-bold">
+                ECE
+              </label>
+              <br />
+              <input type="radio" id="bba" name="fav_language" value="bba" />
+              <label for="bba" className="ps-2 form-check-label fw-bold">
+                BBA
+              </label>
+              <br />
+              <input
+                type="radio"
+                id="bba"
+                name="fav_language"
+                value="diploma"
+              />
+              <label for="bba" className="ps-2 form-check-label fw-bold">
+                DIPLOMA
+              </label>
 
-    useEffect(() => {
-        fetch(`https://edubroist.onrender.com/allAssignments?page=${page}&&size=${size}&&department=${department}&&semester=${semester}&&search=${search}`)
-            .then(res => res.json())
-            .then(data => {
-                setAssignments(data.allAssignments)
-
-                const count = data.count;
-                const pageNumber = Math.ceil(count / size)
-                setPageCount(pageNumber)
-            })
-    }, [department, semester, page, search]);
-
-
-
-    return (
-        <div className="container text-black mt-5 mb-5" >
-            <div className="row align-items-center">
-                <div className="col-md-6">
-                    <div className='mb-5'><h1 className="user-desire-question">Find All Assignment</h1>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="search-box mb-5">
-                        <form >
-                            <input type="text" name='search' onBlur={HandleSearch} placeholder='Search Assignments' />
-                            <span >Search</span>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            {/* {Assignments.length ? */}
-            <div className="row g-4" >
-                <div className="col-12 col-md-2">
-                    <div className="question-sidebar">
-                        <h5 className='mb-3'>Filter Assignments</h5>
-                        <form
-                            onChange={(e) => setDepartment(e.target.value)}
-                        >
-
-
-                            <input type="radio" id="html" name="fav_language" value="" />
-                            <label for="all" className='ps-2 form-check-label fw-bold'>All</label>
-                            <br />
-                            <input type="radio" id="cse" name="fav_language" value="cse" />
-                            <label fo r="cse" className='ps-2 form-check-label fw-bold'>CSE</label>
-                            <br />
-                            <input type="radio" id="ece" name="fav_language" value="ece" />
-                            <label for="css" className='ps-2 form-check-label fw-bold'>ECE</label>
-                            <br />
-                            <input type="radio" id="bba" name="fav_language" value="bba" />
-                            <label for="bba" className='ps-2 form-check-label fw-bold'>BBA</label>
-                            <br />
-                            <input type="radio" id="bba" name="fav_language" value="diploma" />
-                            <label for="bba" className='ps-2 form-check-label fw-bold'>DIPLOMA</label>
-
-                            {/* <div className="form-check align-items-center">
+              {/* <div className="form-check align-items-center">
                                 <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
                                     All
@@ -111,8 +125,8 @@ const AllAssignments = () => {
                                     BBA
                                 </label>
                             </div> */}
-                        </form>
-                        {/* 
+            </form>
+            {/* 
                         <div className='mt-3'>
                             <h5>Filter Year</h5>
                             <select onChange={(e) => setYear(e.target.value)} name="year" id="year">
@@ -132,72 +146,69 @@ const AllAssignments = () => {
                                 <option value="2010">2010</option>
                             </select>
                         </div> */}
-                        <div className='mt-3'>
-                            <h5>Semester</h5>
-                            <select onChange={(e) => setSemester(e.target.value)} name="semester" id="semester">
-                                <option value="">Select Semester</option>
-                                <option value="1">1st</option>
-                                <option value="2">2nd</option>
-                                <option value="3">3rd</option>
-                                <option value="4">4th</option>
-                                <option value="5">5th</option>
-                                <option value="6">6th</option>
-                                <option value="7">7th</option>
-                                <option value="8">8th</option>
-                            </select>
-                        </div>
+            <div className="mt-3">
+              <h5>Semester</h5>
+              <select
+                onChange={(e) => setSemester(e.target.value)}
+                name="semester"
+                id="semester"
+              >
+                <option value="">Select Semester</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+                <option value="6">6th</option>
+                <option value="7">7th</option>
+                <option value="8">8th</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-md-10">
+          {assignments.length === 0 ? (
+            <div className=" justify-content-center w-100 d-flex">
+              <img src={spinner} alt="" />
+            </div>
+          ) : (
+            <div className="row">
+              {assignments?.map((assignment) => (
+                <AssignmentCart
+                  key={assignment.id}
+                  data={assignment}
+                ></AssignmentCart>
+              ))}
+            </div>
+          )}
+        </div>
 
-                    </div>
-                </div>
-                <div className="col-12 col-md-10">
-                    {
-                        assignments.length === 0 ? <div className=" justify-content-center w-100 d-flex">
-                            <img src={spinner} alt="" />
-                        </div> :
-                            <div className="row">
-                                {assignments?.map((assignment) => (
-                                    <AssignmentCart
-                                        key={assignment.id}
-                                        data={assignment}>
-                                    </AssignmentCart>
-                                ))}
-                            </div>
-                    }
-                </div>
+        <div className="d-flex mt-5">
+          <div className="mx-auto pagination">
+            <ReactPaginate
+              previousLabel={"previous"}
+              nextLabel={"next"}
+              breakLabel={"..."}
+              marginPagesDisplayed={3}
+              pageRangeDisplayed={3}
+              pageCount={pageCount}
+              onPageChange={handlePageChange}
+              containerClassName="pagination"
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              previousClassName="page-link"
+              nextClassName="page-link"
+              breakClassName="page-item"
+              breakLinkClassName="page-link"
+              activeClassName="active"
+            />
+          </div>
+        </div>
+      </div>
 
-                <div className="d-flex mt-5">
-                    <div className='mx-auto pagination'>
-
-                        <ReactPaginate
-                            previousLabel={'previous'}
-                            nextLabel={'next'}
-                            breakLabel={'...'}
-                            marginPagesDisplayed={3}
-                            pageRangeDisplayed={3}
-                            pageCount={pageCount}
-                            onPageChange={handlePageChange}
-                            containerClassName='pagination'
-                            pageClassName='page-item'
-                            pageLinkClassName='page-link'
-                            previousClassName='page-link'
-                            nextClassName='page-link'
-                            breakClassName='page-item'
-                            breakLinkClassName='page-link'
-                            activeClassName='active'
-                        />
-
-                    </div>
-                </div>
-
-
-            </div >
-
-            {/* : <div><h5>Loading...</h5></div>} */}
-
-
-
-        </div >
-    );
+      {/* : <div><h5>Loading...</h5></div>} */}
+    </div>
+  );
 };
 
 export default AllAssignments;

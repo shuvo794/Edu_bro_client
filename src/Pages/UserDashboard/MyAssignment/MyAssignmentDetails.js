@@ -14,12 +14,12 @@ const QuestionDetails = () => {
     console.log('test', viewUrl)
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/question/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setQuestion(data)
-                console.log(data)
-            })
+        fetch(`https://edu-bro-server.onrender.com/question/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setQuestion(data);
+            console.log(data);
+          });
     }, [id])
 
     const onSubmit = data => {

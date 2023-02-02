@@ -9,14 +9,14 @@ const AdminLab = () => {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch(`https://edubroist.onrender.com/getAllLabs`)
+    fetch(`https://edu-bro-server.onrender.com/getAllLabs`)
       .then((res) => res.json())
       .then((data) => setLabs(data));
   }, []);
   console.log(labs);
 
   const handleUpdate = (id) => {
-    fetch(`https://edubroist.onrender.com/labsStatusUpdate/${id}`, {
+    fetch(`https://edu-bro-server.onrender.com/labsStatusUpdate/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),

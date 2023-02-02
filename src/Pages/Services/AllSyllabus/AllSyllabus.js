@@ -6,9 +6,9 @@ const AllSyllabus = () => {
 
     const [syllabus, setSyllabus] = useState([]);
     useEffect(() => {
-        fetch('https://edubroist.onrender.com/allSyllabus')
-            .then(res => res.json())
-            .then(data => setSyllabus(data))
+        fetch("https://edu-bro-server.onrender.com/allSyllabus")
+          .then((res) => res.json())
+          .then((data) => setSyllabus(data));
     }, [])
 
 

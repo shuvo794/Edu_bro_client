@@ -10,9 +10,9 @@ const MyBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/myBlogs/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setBlogs(data));
+        fetch(`https://edu-bro-server.onrender.com/myBlogs/${user?.email}`)
+          .then((res) => res.json())
+          .then((data) => setBlogs(data));
     }, [user?.email, blogs]);
 
     console.log(blogs)
@@ -22,7 +22,7 @@ const MyBlogs = () => {
     const handleBlogDeleteRequest = id => {
         const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
-            const url = `https://edubroist.onrender.com/deleteBlog/${id}`;
+            const url = `https://edu-bro-server.onrender.com/deleteBlog/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

@@ -12,25 +12,25 @@ const AddNotesDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`https://edubroist.onrender.com/postNotes`, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://edu-bro-server.onrender.com/postNotes`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result)
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
 
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'Success',
-                    title: 'Note Added Successfully',
-                    showConfirmButton: true,
-                    timer: 4000
-                })
-
-                reset()
+            Swal.fire({
+              position: "top-center",
+              icon: "Success",
+              title: "Note Added Successfully",
+              showConfirmButton: true,
+              timer: 4000,
             });
+
+            reset();
+          });
     };
 
     return (

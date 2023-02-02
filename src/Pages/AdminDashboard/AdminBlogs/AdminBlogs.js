@@ -10,13 +10,13 @@ const AdminBlogs = () => {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch(`https://edubroist.onrender.com/getAllBlogs`)
+    fetch(`https://edu-bro-server.onrender.com/getAllBlogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, [user?.email]);
 
   const handleUpdate = (id) => {
-    fetch(`https://edubroist.onrender.com/BlogStatusUpdate/${id}`, {
+    fetch(`https://edu-bro-server.onrender.com/BlogStatusUpdate/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),

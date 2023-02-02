@@ -6,9 +6,9 @@ const AllBooks = () => {
 
     const [books, setBooks] = useState([]);
     useEffect(() => {
-        fetch('https://edubroist.onrender.com/allBooks')
-            .then(res => res.json())
-            .then(data => setBooks(data))
+        fetch("https://edu-bro-server.onrender.com/allBooks")
+          .then((res) => res.json())
+          .then((data) => setBooks(data));
     }, [])
     console.log(books)
 

@@ -12,12 +12,14 @@ const MyAssignment = () => {
     const [assignments, setAssignments] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/myAssignments/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-                setAssignments(data)
-            });
+        fetch(
+          `https://edu-bro-server.onrender.com/myAssignments/${user?.email}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setAssignments(data);
+          });
     }, [user?.email]);
 
 
@@ -43,7 +45,7 @@ const MyAssignment = () => {
         // })
         const proceed = window.process()
         if (proceed) {
-            const url = `https://edubroist.onrender.com/deleteAssignment/${id}`;
+            const url = `https://edu-bro-server.onrender.com/deleteAssignment/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

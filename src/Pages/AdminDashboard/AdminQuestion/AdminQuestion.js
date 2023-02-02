@@ -13,15 +13,14 @@ const AdminQuestion = () => {
 
 
     useEffect(() => {
-      fetch(`https://edubroist.onrender.com/getAllQuestions`)
+      fetch(`https://edu-bro-server.onrender.com/getAllQuestions`)
         .then((res) => res.json())
         .then((data) => setQuestions(data));
     }, []);
     console.log(questions);
 
-
     const handleUpdate = (id) => {
-      fetch(`https://edubroist.onrender.com/QuestionStatusUpdate/${id}`, {
+      fetch(`https://edu-bro-server.onrender.com/QuestionStatusUpdate/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ status }),
@@ -36,7 +35,7 @@ const AdminQuestion = () => {
             timer: 4000,
           })
         );
-    }
+    };
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()

@@ -10,12 +10,12 @@ const UserProfile = () => {
     const [userInfo, setUserInfo] = useState({})
 
     useEffect(() => {
-        fetch(`https://edubroist.onrender.com/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setUserInfo(data)
-                console.log(data)
-            })
+        fetch(`https://edu-bro-server.onrender.com/users/${user.email}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setUserInfo(data);
+            console.log(data);
+          });
     }, [user.email])
     return (
         <div className='user-profile shadow-lg'>
