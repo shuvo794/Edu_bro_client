@@ -1,88 +1,111 @@
 import React, { useEffect, useState } from 'react';
-import useFirebase from '../../../hooks/useFirebase';
-
-const AdminLabs = () => {
-
-    const [labs, setLabs] = useState([])
-    const { user } = useFirebase()
-    console.log(labs)
-
-    const [status, setStatus] = useState('')
+import Swal from "sweetalert2/dist/sweetalert2";
 
 
-    useEffect(() => {
-      fetch(`https://edu-bro-server.onrender.com/allLabs`)
-        .then((res) => res.json())
-        .then((data) => setLabs(data));
-    }, [user?.email]);
+const AdminLab = () => {
+  const [labs, setLabs] = useState([]);
+  console.log(labs);
 
-    const handleUpdate = (id) => {
-      fetch(`https://edu-bro-server.onrender.com/labsStatusUpdate/${id}`, {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ status }),
-      })
-        .then((res) => res.json())
-        .then((result) => console.log(result));
-      alert("update");
-    };
+  const [status, setStatus] = useState("");
 
-    const handleSelectValue = (e) => {
-        const statusData = (e.target.value).toLowerCase()
-        setStatus(statusData)
-    }
+  useEffect(() => {
+    fetch(`https://edubroist.onrender.com/getAllLabs`)
+      .then((res) => res.json())
+      .then((data) => setLabs(data));
+  }, []);
+  console.log(labs);
 
-    return (
-        < div className="container all-note-container" >
-            <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total Notes <span className="text-danger">{labs.length}</span>  </h1>
-            </div>
+  const handleUpdate = (id) => {
+    fetch(`https://edubroist.onrender.com/labsStatusUpdate/${id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ status }),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+    Swal.fire({
+      position: "top-center",
+      icon: "Success",
+      title: "Lab Status Updated",
+      showConfirmButton: true,
+      timer: 4000,
+    });
+  };
 
-            <table className="table table-dark" style={{ width: "100%" }}>
-                <thead  >
-                    <tr className="bg-dark text-white mb-3 p-2" style={{ lab: "1px solid red" }}>
-                        <th >Number</th>
-                        <th >Note Name</th>
-                        <th >Uploader Email</th>
+  const handleSelectValue = (e) => {
+    const statusData = e.target.value.toLowerCase();
+    setStatus(statusData);
+  };
 
-                        {/* <th >note Preview</th> */}
+  return (
+    <div className="container all-lab-container">
+      <div className="text-center pb-3">
+        <h1 className="mb-2 text-center pt-2">
+          Total labs <span style={{ color: "#007aff" }}>{labs?.length}</span>{" "}
+        </h1>
+      </div>
 
-                        <th >Status</th>
-                        <th >Update</th>
-                    </tr>
-                </thead>
-                {labs?.map((lab, index) => (
-                    <tbody key={lab._id}>
-                        <tr role="row" style={{ note: "2px solid gray" }} >
-                            <th scope="row">{index + 1}</th>
-                            <td>{lab.labName}</td>
+      <table className="table table-gray" style={{ width: "100%" }}>
+        <thead>
+          <tr
+            className="bg-dark text-white mb-3 p-2"
+            style={{ lab: "1px solid red" }}
+          >
+            <th>Number</th>
+            <th>Subject</th>
+            <th>Uploader</th>
 
-                            <td>{lab.email}</td>
-                            {/* 
-                    <td> <iframe title="question" src={download}
+            {/* <th >lab Preview</th> */}
+            <th>Status</th>
+            <th>View</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        {labs?.map((lab, index) => (
+          <tbody key={lab._id}>
+            <tr role="row" style={{ lab: "2px solid gray" }}>
+              <th scope="row">{index + 1}</th>
+              <td>{lab.subject}</td>
+              <td>{lab.email}</td>
+              {/* 
+                    <td> <iframe title="lab" src={download}
         className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
         </td> */}
 
-                            <td>
-                                <div >
-                                    <select onChange={handleSelectValue} className="pending p-2 ">
-                                        <option defaultValue={lab.status}>{lab.status}</option>
-                                        <option defaultValue="approved">Approved</option>
-                                        <option defaultValue="pending">Pending</option>
-                                        <option defaultValue="cancelled">Cancelled</option>
-                                    </select>
-                                </div>
-                            </td>
-                            <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(lab._id)}>update</button>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                ))}
-            </table>
-        </div >
-    );
+              <td>
+                <div>
+                  <select
+                    onChange={handleSelectValue}
+                    className="pending p-2 capitalize"
+                  >
+                    <option defaultValue={lab.status}>{lab.status}</option>
+                    <option defaultValue="approved">Approved</option>
+                    <option defaultValue="pending">Pending</option>
+                    <option defaultValue="cancelled">Cancelled</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <button className="btn-style download-btn">
+                  <a href={lab.driveLink} target="_blank">
+                    View
+                  </a>
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn-style"
+                  onClick={() => handleUpdate(lab._id)}
+                >
+                  Update
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+      </table>
+    </div>
+  );
 };
 
-export default AdminLabs;
+export default AdminLab;

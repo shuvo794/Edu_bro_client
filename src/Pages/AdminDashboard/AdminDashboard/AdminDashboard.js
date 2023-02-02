@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from "react-router-dom";
 import {
   FaThLarge,
   FaUser,
@@ -12,9 +12,11 @@ import {
 } from "react-icons/fa";
 import useFirebase from '../../../hooks/useFirebase';
 
+
 const AdminDashboard = () => {
-    const { admin } = useFirebase()
-  
+    const { admin, userLogOut } = useFirebase();
+
+    console.log(admin);
     return (
       <div className="dashboard">
         <Row>
@@ -28,7 +30,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`welcome`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#0868f7" : "black",
+                      color: isActive ? "#007aff" : "black",
                     })}
                   >
                     <FaThLarge className="me-1" /> Dashboard
@@ -36,9 +38,19 @@ const AdminDashboard = () => {
                 </li>
                 <li>
                   <NavLink
+                    to={`my-assignments`}
+                    style={({ isActive }) => ({
+                      color: isActive ? "#007aff" : "black",
+                    })}
+                  >
+                    <FaBookmark className="me-1" /> My Assignments
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
                     to={`admin-questions`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#0868f7" : "black",
+                      color: isActive ? "#007aff" : "black",
                     })}
                   >
                     <FaBookmark className="me-1" /> Manage Questions
@@ -46,9 +58,19 @@ const AdminDashboard = () => {
                 </li>
                 <li>
                   <NavLink
+                    to={`admin-assignments`}
+                    style={({ isActive }) => ({
+                      color: isActive ? "#007aff" : "black",
+                    })}
+                  >
+                    <FaBookmark className="me-1" /> Manage Assignments
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
                     to={`admin-blogs`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#0868f7" : "black",
+                      color: isActive ? "#007aff" : "black",
                     })}
                   >
                     <FaCommentDots className="me-1" /> Manage Blogs
@@ -58,7 +80,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-books`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#0868f7" : "black",
+                      color: isActive ? "#007aff" : "black",
                     })}
                   >
                     <FaTasks className="me-1" /> Manage Books
@@ -68,7 +90,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-syllabus`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#0868f7" : "black",
+                      color: isActive ? "#007aff" : "black",
                     })}
                   >
                     <FaTasks className="me-1" /> Manage Syllabus
@@ -76,9 +98,19 @@ const AdminDashboard = () => {
                 </li>
                 <li>
                   <NavLink
+                    to={`admin-lab`}
+                    style={({ isActive }) => ({
+                      color: isActive ? "#007aff" : "black",
+                    })}
+                  >
+                    <FaTasks className="me-1" /> Manage Lab Report
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
                     to={`admin-notes`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#0868f7" : "black",
+                      color: isActive ? "#007aff" : "black",
                     })}
                   >
                     <FaUserShield className="me-1" /> Manage Notes
@@ -88,16 +120,18 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`make-admin`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#0868f7" : "black",
+                      color: isActive ? "#007aff" : "black",
                     })}
                   >
                     <FaUser className="me-1" /> Make Admin
                   </NavLink>
                 </li>
 
-                <li className="dashboard-logOut">
-                  <FaSignOutAlt className="me-1" /> Log Out
-                </li>
+                <Link to={"/"}>
+                  <li onClick={userLogOut} className="dashboard-logOut btn ">
+                    <FaSignOutAlt className="me-1" /> Log Out
+                  </li>
+                </Link>
               </ul>
             </div>
           </Col>

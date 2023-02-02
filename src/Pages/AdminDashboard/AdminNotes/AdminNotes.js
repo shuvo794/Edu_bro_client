@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Swal from "sweetalert2/dist/sweetalert2";
 import useFirebase from '../../../hooks/useFirebase';
 
 const AdminNotes = () => {
@@ -13,34 +14,43 @@ const AdminNotes = () => {
 
 
     useEffect(() => {
-      fetch(`https://edu-bro-server.onrender.com/allNotes`)
+      fetch(`https://edubroist.onrender.com/getAllNotes`)
         .then((res) => res.json())
         .then((data) => setNotes(data));
     }, [user?.email]);
 
+
+
     const handleUpdate = (id) => {
-      fetch(`https://edu-bro-server.onrender.com/notesStatusUpdate/${id}`, {
+      fetch(`https://edubroist.onrender.com/notesStatusUpdate/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ status }),
       })
         .then((res) => res.json())
         .then((result) => console.log(result));
-      alert("update");
-    };
+      Swal.fire({
+        position: "top-center",
+        icon: "Success",
+        title: "Notes Status Updated",
+        showConfirmButton: true,
+        timer: 4000,
+      });
+    }
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()
         setStatus(statusData)
     }
 
-
+    console.log(status);
 
     return (
       <div className="container all-note-container">
         <div className="text-center pb-3">
           <h1 className="mb-2 text-center pt-2">
-            Total Notes <span style={{ color: "#0868f7" }}>{notes.length}</span>{" "}
+            Total Notes{" "}
+            <span style={{ color: "#007aff" }}>{notes?.length}</span>{" "}
           </h1>
         </div>
 
@@ -57,6 +67,7 @@ const AdminNotes = () => {
               {/* <th >note Preview</th> */}
 
               <th>Status</th>
+              <th>View</th>
               <th>Update</th>
             </tr>
           </thead>
@@ -75,7 +86,7 @@ const AdminNotes = () => {
                   <div>
                     <select
                       onChange={handleSelectValue}
-                      className="pending p-2 "
+                      className="pending p-2 capitalize"
                     >
                       <option defaultValue={note.status}>{note.status}</option>
                       <option defaultValue="approved">Approved</option>
@@ -85,11 +96,18 @@ const AdminNotes = () => {
                   </div>
                 </td>
                 <td>
+                  <button className="btn-style download-btn">
+                    <a href={note.driveLink} target="_blank">
+                      View
+                    </a>
+                  </button>
+                </td>
+                <td>
                   <button
                     className="btn-style"
                     onClick={() => handleUpdate(note._id)}
                   >
-                    update
+                    Update
                   </button>
                 </td>
               </tr>

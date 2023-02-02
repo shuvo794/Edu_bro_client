@@ -6,27 +6,34 @@ const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         // console.log(data)
-        fetch("https://edu-bro-server.onrender.com/users/admin", {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(data),
+        fetch('https://edubroist.onrender.com/users/admin', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
         })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.modifiedCount) {
-              Swal.fire({
-                position: "top-center",
-                icon: "success",
-                title: "Admin Added Successfully!",
-                showConfirmButton: false,
-                timer: 4000,
-              });
-            } else {
-              alert("Oops! Not working");
-            }
-          });
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Admin Added Successfully!',
+                        showConfirmButton: true,
+                        timer: 4000
+                    })
+                } else {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Oops! Not working',
+                        showConfirmButton: true,
+                        timer: 4000
+                    })
+
+                }
+            })
 
         reset()
     }

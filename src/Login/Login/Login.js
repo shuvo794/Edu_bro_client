@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
 
-    const { loginWithGoogle, loginWithOwnEmaiAndPass } = useAuth()
+    const { loginWithGoogle, loginWithOwnEmailAndPass } = useAuth()
 
     //Location & navigate
     const location = useLocation()
@@ -22,10 +22,10 @@ const Login = () => {
 
 
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         // console.log(data.email)
-        loginWithOwnEmaiAndPass(data.email, data.password, location, navigate)
+        loginWithOwnEmailAndPass(data.email, data.password, location, navigate)
     }
     return (
         <div className='py-5'>

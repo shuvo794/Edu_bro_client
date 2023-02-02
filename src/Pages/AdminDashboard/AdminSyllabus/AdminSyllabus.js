@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Swal from "sweetalert2/dist/sweetalert2";
 import useFirebase from '../../../hooks/useFirebase';
 
 const AdminSyllabus = () => {
@@ -11,21 +12,29 @@ const AdminSyllabus = () => {
 
 
     useEffect(() => {
-      fetch(`https://edu-bro-server.onrender.com/`)
+      fetch(`https://edubroist.onrender.com/getAllSyllabus`)
         .then((res) => res.json())
         .then((data) => setSyllabus(data));
     }, [user?.email]);
 
+
+
     const handleUpdate = (id) => {
-      fetch(`https://edu-bro-server.onrender.com/SyllabusStatusUpdate/${id}`, {
+      fetch(`https://edubroist.onrender.com/SyllabusStatusUpdate/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ status }),
       })
         .then((res) => res.json())
         .then((result) => console.log(result));
-      alert("update");
-    };
+      Swal.fire({
+        position: "top-center",
+        icon: "Success",
+        title: "Syllabus Status Updated",
+        showConfirmButton: true,
+        timer: 4000,
+      });
+    }
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()
@@ -38,7 +47,7 @@ const AdminSyllabus = () => {
         <div className="text-center pb-3">
           <h1 className="mb-2 text-center pt-2">
             Total Syllabus{" "}
-            <span style={{ color: "#0868f7" }}>{syllabus.length}</span>{" "}
+            <span style={{ color: "#007aff" }}>{syllabus?.length}</span>{" "}
           </h1>
         </div>
 
@@ -55,6 +64,7 @@ const AdminSyllabus = () => {
               {/* <th >Book Preview</th> */}
 
               <th>Status</th>
+              <th>View</th>
               <th>Update</th>
             </tr>
           </thead>
@@ -73,7 +83,7 @@ const AdminSyllabus = () => {
                   <div>
                     <select
                       onChange={handleSelectValue}
-                      className="pending p-2 "
+                      className="pending p-2 capitalize"
                     >
                       <option defaultValue={syllabuss.status}>
                         {syllabuss.status}
@@ -85,11 +95,18 @@ const AdminSyllabus = () => {
                   </div>
                 </td>
                 <td>
+                  <button className="btn-style download-btn">
+                    <a href={syllabuss.driveLink} target="_blank">
+                      View
+                    </a>
+                  </button>
+                </td>
+                <td>
                   <button
                     className="btn-style"
                     onClick={() => handleUpdate(syllabuss._id)}
                   >
-                    update
+                    Update
                   </button>
                 </td>
               </tr>

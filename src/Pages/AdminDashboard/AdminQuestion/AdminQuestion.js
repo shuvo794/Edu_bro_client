@@ -1,32 +1,42 @@
 import React, { useEffect, useState } from 'react';
-import useFirebase from '../../../hooks/useFirebase';
+import Swal from "sweetalert2/dist/sweetalert2";
+
+
 
 const AdminQuestion = () => {
 
 
-    const [questions, setQuestions] = useState([])
-    const { user } = useFirebase()
+    const [questions, setQuestions] = useState([]);
     console.log(questions)
 
     const [status, setStatus] = useState('')
 
 
     useEffect(() => {
-      fetch(`https://edu-bro-server.onrender.com/allquestions`)
+      fetch(`https://edubroist.onrender.com/getAllQuestions`)
         .then((res) => res.json())
-        .then((data) => setQuestions(data.allQuestions));
-    }, [user?.email]);
+        .then((data) => setQuestions(data));
+    }, []);
+    console.log(questions);
+
 
     const handleUpdate = (id) => {
-      fetch(`https://edu-bro-server.onrender.com/QuestionStatusUpdate/${id}`, {
+      fetch(`https://edubroist.onrender.com/QuestionStatusUpdate/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ status }),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result));
-      alert("update");
-    };
+        .then((result) =>
+          Swal.fire({
+            position: "top-center",
+            icon: "Success",
+            title: "Question Status Updated",
+            showConfirmButton: true,
+            timer: 4000,
+          })
+        );
+    }
 
     const handleSelectValue = (e) => {
         const statusData = (e.target.value).toLowerCase()
@@ -38,7 +48,7 @@ const AdminQuestion = () => {
         <div className="text-center pb-3">
           <h1 className="mb-2 text-center pt-2">
             Total Questions{" "}
-            <span style={{ color: "#0868f7" }}>{questions.length}</span>{" "}
+            <span style={{ color: "#007aff" }}>{questions?.length}</span>{" "}
           </h1>
         </div>
 
@@ -54,6 +64,7 @@ const AdminQuestion = () => {
 
               {/* <th >question Preview</th> */}
               <th>Status</th>
+              <th>View</th>
               <th>Update</th>
             </tr>
           </thead>
@@ -72,7 +83,7 @@ const AdminQuestion = () => {
                   <div>
                     <select
                       onChange={handleSelectValue}
-                      className="pending p-2 "
+                      className="pending p-2 capitalize"
                     >
                       <option defaultValue={question.status}>
                         {question.status}
@@ -84,11 +95,18 @@ const AdminQuestion = () => {
                   </div>
                 </td>
                 <td>
+                  <button className="btn-style download-btn">
+                    <a href={question.driveLink} target="_blank">
+                      View
+                    </a>
+                  </button>
+                </td>
+                <td>
                   <button
                     className="btn-style"
                     onClick={() => handleUpdate(question._id)}
                   >
-                    update
+                    Update
                   </button>
                 </td>
               </tr>

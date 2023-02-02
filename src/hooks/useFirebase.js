@@ -64,7 +64,7 @@ const useFirebase = () => {
   }
 
   //lOGIN WITW EMAIL AND PASSWORD COUSTM 
-  const loginWithOwnEmaiAndPass = (email, password, location, navigate) => {
+  const loginWithOwnEmailAndPass = (email, password, location, navigate) => {
     setIsLoading(true)
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -112,39 +112,41 @@ const useFirebase = () => {
 
   // save user to database 
   const sendUserInfoToDb = (email, displayName, method) => {
-    const user = { email, displayName };
-    fetch("https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/users", {
+    const user = { email, displayName }
+    fetch('https://edubroist.onrender.com/users', {
       method: method,
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {});
-  };
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user)
+    }).then(res => res.json())
+      .then(data => {
+        // console.log(data)
+      })
+  }
+
 
   //OBSERVER USER STATE
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+
       } else {
         setUser({});
       }
       setIsLoading(false);
     });
     return () => unsubscribe;
-  }, []);
+  }, [auth]);
+
 
   //ADMIN CONDITIONAL DATALOAD
   useEffect(() => {
-    fetch(
-      `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/users/${user.email}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setAdmin(data?.role);
-      });
-  }, [user.email]);
+    fetch(`https://edubroist.onrender.com/users/${user.email}`)
+      .then(res => res.json())
+      .then(data => {
+        setAdmin(data?.role)
+      })
+  }, [user.email, admin])
 
 
 
@@ -155,7 +157,7 @@ const useFirebase = () => {
     registerUser,
     isLoading,
     error,
-    loginWithOwnEmaiAndPass,
+    loginWithOwnEmailAndPass,
     toggle,
     setToggle,
     handleClick,

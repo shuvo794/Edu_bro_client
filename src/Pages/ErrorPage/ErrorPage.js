@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineCaretLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import NotFoundImg from "./404.png";
+import NotFoundImg from "../../Assets/Images/404.png";
 import './ErrorPage.css';
 
 const ErrorPage = () => {
