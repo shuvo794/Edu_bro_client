@@ -6,7 +6,7 @@ import BooksCart from './BooksCart';
 const AllBooks = () => {
   // const [books, setBooks] = useState([]);
   // useEffect(() => {
-  //     fetch('https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allBooks')
+  //     fetch('https://edu-bro-server.onrender.com/allBooks')
   //         .then(res => res.json())
   //         .then(data => setBooks(data))
   // }, [])

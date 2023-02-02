@@ -25,14 +25,11 @@ const AddBlogsDashboard = () => {
         data.status = 'Pending'
 
 
-        fetch(
-          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/postBlogs`,
-          {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
-          }
-        )
+        fetch(`https://edu-bro-server.onrender.com/postBlogs`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
+        })
           .then((res) => res.json())
           .then((result) => {
             Swal.fire("Blog Posted Successfully.");

@@ -9,9 +9,7 @@ const MyBooks = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myBooks/${user?.email}`
-      )
+      fetch(`https://edu-bro-server.onrender.com/myBooks/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setBooks(data));
     }, [user?.email, books]);
@@ -21,7 +19,7 @@ const MyBooks = () => {
         "Are you sure you want to Cancel this book"
       );
       if (proceed) {
-        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteBook/${id}`;
+        const url = `https://edu-bro-server.onrender.com/deleteBook/${id}`;
         fetch(url, {
           method: "DELETE",
         })

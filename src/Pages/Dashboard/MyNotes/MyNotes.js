@@ -8,9 +8,7 @@ const MyNotes = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/mynotes/${user?.email}`
-      )
+      fetch(`https://edu-bro-server.onrender.com/mynotes/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setNotes(data));
     }, [user?.email, notes]);
@@ -20,7 +18,7 @@ const MyNotes = () => {
         "Are you sure you want to Cancel this note"
       );
       if (proceed) {
-        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteNote/${id}`;
+        const url = `https://edu-bro-server.onrender.com/deleteNote/${id}`;
         fetch(url, {
           method: "DELETE",
         })

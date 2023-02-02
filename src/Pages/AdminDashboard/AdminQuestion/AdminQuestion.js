@@ -12,22 +12,17 @@ const AdminQuestion = () => {
 
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allquestions`
-      )
+      fetch(`https://edu-bro-server.onrender.com/allquestions`)
         .then((res) => res.json())
         .then((data) => setQuestions(data.allQuestions));
     }, [user?.email]);
 
     const handleUpdate = (id) => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/QuestionStatusUpdate/${id}`,
-        {
-          method: "PUT",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ status }),
-        }
-      )
+      fetch(`https://edu-bro-server.onrender.com/QuestionStatusUpdate/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ status }),
+      })
         .then((res) => res.json())
         .then((result) => console.log(result));
       alert("update");

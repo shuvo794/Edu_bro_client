@@ -9,9 +9,7 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(
-          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myLabs/${user?.email}`
-        )
+        fetch(`https://edu-bro-server.onrender.com/myLabs/${user?.email}`)
           .then((res) => res.json())
           .then((data) => setLabs(data));
     }, [user?.email]);

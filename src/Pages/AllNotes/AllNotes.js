@@ -6,7 +6,7 @@ import AllNotesCart from './AllNotesCart';
 const AllNotes = () => {
   // const [notes, setNotes] = useState([]);
   // useEffect(() => {
-  //     fetch('https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allnotes')
+  //     fetch('https://edu-bro-server.onrender.com/allnotes')
   //         .then(res => res.json())
   //         .then(data => setNotes(data))
   // }, [])

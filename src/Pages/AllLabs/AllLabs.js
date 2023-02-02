@@ -18,7 +18,7 @@ const AllLabs = () => {
     useEffect(() => {
 
         fetch(
-          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allLabs?page=${page}&&size=${size}`
+          `https://edu-bro-server.onrender.com/allLabs?page=${page}&&size=${size}`
         )
           .then((res) => res.json())
           .then((data) => {

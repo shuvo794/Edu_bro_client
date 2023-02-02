@@ -60,7 +60,7 @@ export default BlogDetails;
 //         data.userName = user.displayName
 //         data.userEmail = user.email
 
-//         fetch(`https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/PostBlogComment`, {
+//         fetch(`https://edu-bro-server.onrender.com/PostBlogComment`, {
 //             method: "POST",
 //             headers: { "content-type": "application/json" },
 //             body: JSON.stringify(data),
@@ -78,7 +78,7 @@ export default BlogDetails;
 
 
 //     useEffect(() => {
-//         fetch(`https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/getBlogComment/${id}`)
+//         fetch(`https://edu-bro-server.onrender.com/getBlogComment/${id}`)
 //             .then((res) => res.json())
 //             .then((data) => {
 //                 setBlogComments(data)

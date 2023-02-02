@@ -19,16 +19,13 @@ const CustomerReview = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch(
-          "https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/review",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-          }
-        )
+        fetch("https://edu-bro-server.onrender.com/review", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {

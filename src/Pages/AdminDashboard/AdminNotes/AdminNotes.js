@@ -13,22 +13,17 @@ const AdminNotes = () => {
 
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allNotes`
-      )
+      fetch(`https://edu-bro-server.onrender.com/allNotes`)
         .then((res) => res.json())
         .then((data) => setNotes(data));
     }, [user?.email]);
 
     const handleUpdate = (id) => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/notesStatusUpdate/${id}`,
-        {
-          method: "PUT",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ status }),
-        }
-      )
+      fetch(`https://edu-bro-server.onrender.com/notesStatusUpdate/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ status }),
+      })
         .then((res) => res.json())
         .then((result) => console.log(result));
       alert("update");

@@ -12,9 +12,7 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(
-          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myQuestions/${user?.email}`
-        )
+        fetch(`https://edu-bro-server.onrender.com/myQuestions/${user?.email}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

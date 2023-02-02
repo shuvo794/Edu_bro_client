@@ -11,20 +11,17 @@ const AdminSyllabus = () => {
 
 
     useEffect(() => {
-      fetch(`https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/`)
+      fetch(`https://edu-bro-server.onrender.com/`)
         .then((res) => res.json())
         .then((data) => setSyllabus(data));
     }, [user?.email]);
 
     const handleUpdate = (id) => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/SyllabusStatusUpdate/${id}`,
-        {
-          method: "PUT",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ status }),
-        }
-      )
+      fetch(`https://edu-bro-server.onrender.com/SyllabusStatusUpdate/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ status }),
+      })
         .then((res) => res.json())
         .then((result) => console.log(result));
       alert("update");

@@ -24,9 +24,7 @@ const BooksDetails = () => {
 
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allBooks/${id}`
-      )
+      fetch(`https://edu-bro-server.onrender.com/allBooks/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setSelected(data);
@@ -35,9 +33,7 @@ const BooksDetails = () => {
     }, [id, reset]);
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/review/${id}`
-      )
+      fetch(`https://edu-bro-server.onrender.com/review/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setReviews(data);
@@ -51,14 +47,11 @@ const BooksDetails = () => {
       data.userName = user.displayName;
       data.email = user.email;
 
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/addReview`,
-        {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      )
+      fetch(`https://edu-bro-server.onrender.com/addReview`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data),
+      })
         .then((res) => res.json())
         .then((result) => {
           console.log(result);

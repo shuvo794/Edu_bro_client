@@ -10,9 +10,7 @@ const UserProfile = () => {
     const [userInfo, setUserInfo] = useState({})
 
     useEffect(() => {
-        fetch(
-          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/users/${user.email}`
-        )
+        fetch(`https://edu-bro-server.onrender.com/users/${user.email}`)
           .then((res) => res.json())
           .then((data) => {
             setUserInfo(data);

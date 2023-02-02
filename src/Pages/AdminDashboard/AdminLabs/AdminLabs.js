@@ -11,20 +11,17 @@ const AdminLabs = () => {
 
 
     useEffect(() => {
-      fetch(`https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allLabs`)
+      fetch(`https://edu-bro-server.onrender.com/allLabs`)
         .then((res) => res.json())
         .then((data) => setLabs(data));
     }, [user?.email]);
 
     const handleUpdate = (id) => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/labsStatusUpdate/${id}`,
-        {
-          method: "PUT",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ status }),
-        }
-      )
+      fetch(`https://edu-bro-server.onrender.com/labsStatusUpdate/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ status }),
+      })
         .then((res) => res.json())
         .then((result) => console.log(result));
       alert("update");

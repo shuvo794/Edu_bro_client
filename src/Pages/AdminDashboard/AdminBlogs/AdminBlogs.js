@@ -10,22 +10,17 @@ const AdminBlogs = () => {
 
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allBlogs`
-      )
+      fetch(`https://edu-bro-server.onrender.com/allBlogs`)
         .then((res) => res.json())
         .then((data) => setBlogs(data));
     }, [user?.email]);
 
     const handleUpdate = (id) => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/BlogStatusUpdate/${id}`,
-        {
-          method: "PUT",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ status }),
-        }
-      )
+      fetch(`https://edu-bro-server.onrender.com/BlogStatusUpdate/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ status }),
+      })
         .then((res) => res.json())
         .then((result) => console.log(result));
       alert("update");

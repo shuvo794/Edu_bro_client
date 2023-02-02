@@ -26,7 +26,7 @@ const AllQuestions = () => {
   // checkbox er value true or false return kore
 
   // useEffect(() => {
-  //     fetch('https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allQuestions')
+  //     fetch('https://edu-bro-server.onrender.com/allQuestions')
   //         .then(res => res.json())
   //         .then(data => setQuestions(data))
   // }, [])
@@ -35,7 +35,7 @@ const AllQuestions = () => {
   useEffect(() => {
     console.log(department, year, semester);
     fetch(
-      `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&status=${status}&&semester=${semester}`
+      `https://edu-bro-server.onrender.com/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&status=${status}&&semester=${semester}`
     )
       .then((res) => res.json())
       .then((data) => {

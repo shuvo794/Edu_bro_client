@@ -9,14 +9,11 @@ const EditProfile = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.complete = true
-        fetch(
-          `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/updateUser`,
-          {
-            method: "PUT",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
-          }
-        )
+        fetch(`https://edu-bro-server.onrender.com/updateUser`, {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
+        })
           .then((res) => res.json())
           .then((result) => {
             console.log(result);

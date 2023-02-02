@@ -10,9 +10,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(
-          "https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/review"
-        )
+        fetch("https://edu-bro-server.onrender.com/review")
           .then((res) => res.json())
           .then((data) => setReviews(data));
     }, []);

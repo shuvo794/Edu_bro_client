@@ -12,9 +12,7 @@ const MyBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myBlogs/${user?.email}`
-      )
+      fetch(`https://edu-bro-server.onrender.com/myBlogs/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setBlogs(data));
     }, [user?.email, blogs]);
@@ -26,7 +24,7 @@ const MyBlogs = () => {
         "Are you sure you want to Cancel this blog"
       );
       if (proceed) {
-        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteBlog/${id}`;
+        const url = `https://edu-bro-server.onrender.com/deleteBlog/${id}`;
         fetch(url, {
           method: "DELETE",
         })

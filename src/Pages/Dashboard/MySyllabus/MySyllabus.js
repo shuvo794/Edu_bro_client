@@ -9,9 +9,7 @@ const MySyllabus = () => {
     const [syllabus, setSyllabus] = useState([])
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/mySyllabus/${user?.email}`
-      )
+      fetch(`https://edu-bro-server.onrender.com/mySyllabus/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setSyllabus(data));
     }, [user?.email, syllabus]);
@@ -21,7 +19,7 @@ const MySyllabus = () => {
         "Are you sure you want to Cancel this syllabus"
       );
       if (proceed) {
-        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteSyllabus/${id}`;
+        const url = `https://edu-bro-server.onrender.com/deleteSyllabus/${id}`;
         fetch(url, {
           method: "DELETE",
         })

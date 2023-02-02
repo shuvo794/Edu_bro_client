@@ -32,7 +32,7 @@ const QuestionDetailsSolve = () => {
       // post solve
 
       fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/addQuestionSolve`,
+        `https://edu-bro-server.onrender.com/addQuestionSolve`,
         {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -52,7 +52,7 @@ const QuestionDetailsSolve = () => {
 
     useEffect(() => {
       fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/question/${id}`
+        `https://edu-bro-server.onrender.com/question/${id}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -63,7 +63,7 @@ const QuestionDetailsSolve = () => {
     // get solve
     useEffect(() => {
       fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/questionSolve/${id}`
+        `https://edu-bro-server.onrender.com/questionSolve/${id}`
       )
         .then((res) => res.json())
         .then((data) => {

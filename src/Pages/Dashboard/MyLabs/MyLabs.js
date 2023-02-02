@@ -10,9 +10,7 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-      fetch(
-        `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/myLabs/${user?.email}`
-      )
+      fetch(`https://edu-bro-server.onrender.com/myLabs/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setLabs(data));
     }, [user?.email, labs]);
@@ -22,7 +20,7 @@ const MyLabs = () => {
         "Are you sure you want to Cancel this lab"
       );
       if (proceed) {
-        const url = `https://edu-bro-server-site-4dv298qzu-shuvo794.vercel.app/deleteLab/${id}`;
+        const url = `https://edu-bro-server.onrender.com/deleteLab/${id}`;
         fetch(url, {
           method: "DELETE",
         })
