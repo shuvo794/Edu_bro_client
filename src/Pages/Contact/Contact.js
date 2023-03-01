@@ -2,12 +2,8 @@ import React from 'react';
 import './Contact.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import contact from "./../../Assets/Images/contactUS.gif";
-// import { useForm } from 'react-hook-form';
-// import { NavLink } from 'react-router-dom';
+
 const Contact = () => {
-  // const { register, handleSubmit, } = useForm();
-  // const onSubmit = data => {
-  // };
   return (
     <Container>
       <Row className="my-5 ">

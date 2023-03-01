@@ -12,9 +12,6 @@ const Header = () => {
     <div className="header-area">
       <Navbar expand="lg">
         <Container>
-          {/* <NavLink onClick={handleClick} to="/" className="logo">
-            Edu Bro.
-          </NavLink> */}
           <Nav.Link as={NavLink} to="/" className="logo">
             EDU BRO.
           </Nav.Link>

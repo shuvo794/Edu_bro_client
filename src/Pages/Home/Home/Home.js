@@ -11,7 +11,7 @@ const Home = () => {
   const { handleClick } = useFirebase();
   return (
     <div onClick={handleClick}>
-      <HeroSection></HeroSection>
+      <HeroSection />
       <Services />
       <HomeBooks></HomeBooks>
       <Blogs></Blogs>
