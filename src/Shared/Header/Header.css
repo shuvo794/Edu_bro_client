@@ -1,5 +1,5 @@
 .header-area {
-     background: #007aff;
+     background: #080808;
      padding: 8px 0;
      box-shadow: 0px -3px 10px 2px #282828;
      position: relative;
@@ -7,9 +7,10 @@
 
 .logo {
      width:10.5rem ;
-     height: 3.5rem;
+     height: 1.5rem;
      color: white;
-     margin-top: 13px;
+     margin-top: -5px;
+    
 }
 
 

@@ -13,8 +13,8 @@ const Home = () => {
     <div onClick={handleClick}>
       <HeroSection />
       <Services />
-      <HomeBooks></HomeBooks>
-      <Blogs></Blogs>
+      <HomeBooks />
+      <Blogs />
       <Counter />
     </div>
   );
