@@ -4,7 +4,7 @@
 
 .btn-style {
     outline: none;
-    background-color: #007aff;
+    background-color: #0f0f0f;
     border: 2px solid transparent;
     color: white;
     padding: 4px 20px;
@@ -16,24 +16,24 @@
 
 .btn-style:hover {
     background-color: white;
-    color: #007aff;
-    border: 2px solid #007aff;
+    color: #0f0f0f;
+    border: 2px solid #0f0f0f;
 }
 
 .btn-style.download-btn {
     background-color: white;
-    color: #007aff;
-    border: 2px solid #007aff;
+    color: #0f0f0f;
+    border: 2px solid #0f0f0f;
 }
 
 .btn-style.download-btn:hover {
-    background-color: #007aff;
+    background-color: #0f0f0f;
     color: white;
     border: 2px solid transparent;
 }
 
 .btn-style.btn-style.download-btn a {
-    color: #007aff;
+    color: #0f0f0f;
     transition: all .5s;
 }
 
@@ -60,7 +60,7 @@
     height: 40px;
     padding-left: 20px;
     padding-right: 100px;
-    border: 1px solid #007aff;
+    border: 1px solid #0f0f0f;
     border-radius: 30px;
 }
 
@@ -74,7 +74,7 @@
     right: 0;
     outline: none;
     border: none;
-    background: #007aff;
+    background: #0f0f0f;
     color: white;
     padding: 8px 25px;
     border-radius: 30px;
@@ -84,15 +84,15 @@
 
 /* pagination */
 .page-item .page-link {
-    color: #007aff;
+    color: #0f0f0f;
     background-color: white;
-    border-color: #007aff;
+    border-color: #0f0f0f;
 }
 
 .page-item.active .page-link {
     color: #fff;
-    background-color: #007aff;
-    border-color: #007aff;
+    background-color: #0f0f0f;
+    border-color: #0f0f0f;
 }
 
 .department {

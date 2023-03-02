@@ -45,7 +45,7 @@ const AdminBooks = () => {
     <div className="container all-book-container">
       <div className="text-center pb-3">
         <h1 className="mb-2 text-center pt-2">
-          Total Books <span style={{ color: "#007aff" }}>{books?.length}</span>{" "}
+          Total Books <span style={{ color: "#0f0f0f" }}>{books?.length}</span>{" "}
         </h1>
       </div>
 

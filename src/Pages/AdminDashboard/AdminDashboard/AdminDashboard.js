@@ -30,7 +30,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`welcome`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaThLarge className="me-1" /> Dashboard
@@ -40,7 +40,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`my-assignments`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaBookmark className="me-1" /> My Assignments
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-questions`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaBookmark className="me-1" /> Manage Questions
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-assignments`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaBookmark className="me-1" /> Manage Assignments
@@ -70,7 +70,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-blogs`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaCommentDots className="me-1" /> Manage Blogs
@@ -80,7 +80,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-books`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaTasks className="me-1" /> Manage Books
@@ -90,7 +90,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-syllabus`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaTasks className="me-1" /> Manage Syllabus
@@ -100,7 +100,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-lab`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaTasks className="me-1" /> Manage Lab Report
@@ -110,7 +110,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`admin-notes`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaUserShield className="me-1" /> Manage Notes
@@ -120,7 +120,7 @@ const AdminDashboard = () => {
                   <NavLink
                     to={`make-admin`}
                     style={({ isActive }) => ({
-                      color: isActive ? "#007aff" : "black",
+                      color: isActive ? "#0f0f0f" : "black",
                     })}
                   >
                     <FaUser className="me-1" /> Make Admin

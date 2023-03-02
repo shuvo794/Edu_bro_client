@@ -47,7 +47,7 @@ const AdminQuestion = () => {
         <div className="text-center pb-3">
           <h1 className="mb-2 text-center pt-2">
             Total Questions{" "}
-            <span style={{ color: "#007aff" }}>{questions?.length}</span>{" "}
+            <span style={{ color: "#0f0f0f" }}>{questions?.length}</span>{" "}
           </h1>
         </div>
 

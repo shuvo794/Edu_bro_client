@@ -10,6 +10,7 @@ const EditProfile = () => {
     register,
     handleSubmit,
     reset,
+    // eslint-disable-next-line no-unused-vars
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {

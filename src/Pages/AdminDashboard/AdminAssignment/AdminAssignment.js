@@ -42,7 +42,7 @@ const AdminAssignment = () => {
       <div className="text-center pb-3">
         <h1 className="mb-2 text-center pt-2">
           Total Admin Assignment{" "}
-          <span style={{ color: "#007aff" }}>{assignments?.length}</span>{" "}
+          <span style={{ color: "#0f0f0f" }}>{assignments?.length}</span>{" "}
         </h1>
       </div>
 

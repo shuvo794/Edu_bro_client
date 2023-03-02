@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`welcome`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff;" : "black",
+                    color: isActive ? "#0f0f0f;" : "black",
                   })}
                 >
                   <FaThLarge className="me-1" /> Dashboard
@@ -38,7 +38,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`user-profile`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaUser className="me-1" /> Profile
@@ -48,7 +48,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`my-questions`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaBookmark className="me-1" /> My Questions
@@ -58,7 +58,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`my-labs`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaBookmark className="me-1" /> My Labs
@@ -68,7 +68,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`my-notes`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaBookmark className="me-1" /> My Notes
@@ -78,7 +78,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`my-books`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaCommentDots className="me-1" /> My Books
@@ -88,7 +88,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`my-syllabus`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaSchool className="me-1" /> My Syllabus
@@ -98,7 +98,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`my-blogs`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaTasks className="me-1" /> My Blogs
@@ -108,7 +108,7 @@ const Dashboard = () => {
                 <NavLink
                   to={`user-review`}
                   style={({ isActive }) => ({
-                    color: isActive ? "#007aff" : "black",
+                    color: isActive ? "#0f0f0f" : "black",
                   })}
                 >
                   <FaBookmark className="me-1" /> user review
@@ -116,7 +116,7 @@ const Dashboard = () => {
               </li>
               {/* <li>
                                 <NavLink to={`my-notes`} style={({ isActive }) => ({
-                                    color: isActive ? "#007aff" : "black",
+                                    color: isActive ? "#0f0f0f" : "black",
                                 })}><FaUserShield className='me-1' /> My Notes</NavLink>
                             </li> */}
 

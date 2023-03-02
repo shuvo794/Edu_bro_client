@@ -41,7 +41,7 @@ const AdminLab = () => {
     <div className="container all-lab-container">
       <div className="text-center pb-3">
         <h1 className="mb-2 text-center pt-2">
-          Total labs <span style={{ color: "#007aff" }}>{labs?.length}</span>{" "}
+          Total labs <span style={{ color: "#0f0f0f" }}>{labs?.length}</span>{" "}
         </h1>
       </div>
 
